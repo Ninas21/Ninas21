@@ -1,0 +1,472 @@
+html{
+	scroll-behavior: smooth;
+}
+body{
+	font-family: cursive,monospace;
+	padding: 0;
+	margin: 0;
+}
+ul{
+	padding:0;
+	margin: 0;
+}
+li{
+	list-style-type: none;
+}
+h2{
+	font-family: cursive;
+	text-transform: uppercase;
+	text-align: center;
+	padding-top: 30px;
+	font-size: 2em;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+/* ****************************Deuxième partie**************************** */
+
+header li{
+	float: left;
+	font-size: 1.0em;
+	
+}
+header li a{
+	text-decoration: none;
+	display: inline-block;
+	text-align: center;
+	padding: 10px 10px;
+	margin: none;
+	font-family: cursive;
+	font-size: 1em;
+	color: white;
+
+}
+#logo{
+	font-family:  cursive;
+	font-weight: normal;
+	float: right;
+}
+#iconsIcons{
+	display: flex;
+ 	margin-top:-30px;
+	padding: 0;
+	
+}
+
+#icons{
+	width: 30%;
+	text-align: right;
+	
+}
+#icons a{
+	display: inline-block;
+	padding: 2px 10px;
+	margin: 2px 10px;
+	font-size: 0.9em;
+	color: white;
+	
+}
+#icons a:hover{
+	transform: scale(1.5);
+	transition: 0.1s;
+}
+/* *************************************Partie d'image principale************************ */
+#imagePrincipale{
+	padding-top: 60px;
+	background:  url(Media/AnimauxSAUVA.jpg) no-repeat  10% 0%;
+	background-size: cover;
+	height: 799px;
+}
+#imagePrincipale h1{
+	font-family: cursive;
+	text-align: center;
+	color: #008B8B;
+	font-size: 5em;
+	margin-top: 10px;
+	text-shadow: 3px 6px black;
+}
+#imagePrincipale h3{
+	text-align: center;
+	color: black;
+	font-size: 3em;
+	font-family: cursive;
+	text-shadow: 2px 1px grey;
+	margin-bottom: 50px;
+}
+/* *************************Marge*********************** */
+.Fil {
+	text-align: center;
+	
+}
+.Fil ul{
+	list-style: none;
+	background: #800000;
+	text-align: center;
+	margin:auto;
+	padding: auto;
+	
+}
+.Fil li{
+	display: inline-block;
+}
+.Fil ul li {
+	width: 160px;
+	margin: 15px;
+	padding: auto;
+}
+
+.Fil a{
+	
+	color:#fff;
+	
+	padding: 10px;
+	font-size: 17px;
+	font-family:  cursive;
+	
+}
+.Fil a:hover{
+	background: #000;
+	transition: 0.2s
+}
+/* *****************Connexion et inscription*********** */
+.ConIns{
+	text-align: left;
+	text-align: center;
+}
+.ConIns li{
+	display: inline-block;
+	padding: 10px;
+	margin: 0px;
+}
+.ConIns a{
+	color:#fff;
+	padding: 10px;
+	font-size: 17px;
+	font-family: cursive;
+	
+}
+.ConIns ul{
+	list-style: none;
+	background: #800000;
+	text-align: center;
+	margin:auto;
+	padding: auto;
+	
+}
+
+
+.ConIns a:hover{
+	background: #000;
+	transition: 0.2s
+}
+
+
+
+
+
+/* *************************présentation************************ */
+#partieDeuxieme{
+	background-color: #F5DEB3;
+	padding: 20px ;
+}
+
+#parcPresent{
+	padding: 0px 20% ;
+}
+#parcPresent h2{
+	font-family: cursive, uppercase;
+	font-size: 2em;
+}
+#parcPresent p{
+	font-family: monospace;
+}
+#catalogue{
+	padding: 0px 20%;
+}
+#catalogue h3{
+	text-align: center;
+	color: #079992;
+	font-size: 3em;
+	text-shadow: 1px 2px black;
+}
+#services{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 30px 10%;
+}
+
+.imageServ {
+	text-align: center;
+	margin: 15px;
+	font-weight: 300px;
+}
+.imageServ img{
+	border-radius: 50%; /* on peut mettre 50%  et ça va donner des border complètement rondes, c'est génial!!!*/
+    box-shadow: 5px 4px 5px 4px black;
+}
+.imageServ img:hover{
+	opacity: 0.5;
+	transform: scale(1.05);
+    transition: 0.6s ease-in-out;
+}
+/* ******************** Avantd dernière partie ********************** */
+#jouissance{
+	height: 990px;
+	background-color: #FFE4B5;
+	padding: 1px 2%;
+}
+#jouissance h3{
+	padding-top: 2px;
+	color: #BC8F8F;
+	box-shadow: 6px 6px 6px 6px;
+}
+#animaux{
+	
+	background: url(Media/Girafes1.jpg);
+}
+#jungle{
+	background: url(Media/TIGRE3.jpg);
+}
+#foret{
+	background: url(Fichier2/Anima.jpg);
+}
+#tresors{
+	background: url(Fichier2/Jungle.jpg);
+}
+#jouissance li{
+	margin: 65px 100px 0px 100px;
+	height: 350px;
+	width: 20%;
+	max-width: 500px;
+	border-radius: 40%;
+	float: left;
+	box-shadow: 6px 6px 28px -1px ;
+}
+#jouissance p{
+	height: 45px; 
+	width: 235px;
+	background-color: #01DF74;
+	float: right;
+	margin: 50px -180px 0px 0px;
+	font-size: 1.2em;
+	text-align: center;
+	padding-top: 15px;
+	box-shadow: 4px 4px 0px 1px ;
+
+}
+#jouissance #jungle, #jouissance #tresors{
+	float:right;
+
+}
+#jouissance #animaux, #jouissance #foret{
+	float:left;
+
+}
+
+#jungle p{
+	float: left;
+	background-color: #808080;
+	margin-left: -175px;
+	box-shadow: -3px 3px 0px 1px ;
+	border-radius: 40%;
+}
+#tresors p{
+	float: left;
+	background-color: #6A5ACD;
+	margin-left: -175px;
+	box-shadow: -3px 3px 0px 1px ;
+	border-radius: 40%;
+}
+#animaux p{
+	float: right;
+	background-color: #6A5ACD;
+	margin-right: -175px;
+	box-shadow: -3px 3px 0px 1px ;
+	border-radius: 40%;
+}
+#foret p{
+	float: right;
+	background-color: #808080;
+	margin-right: -175px;
+	box-shadow: -3px 3px 0px 1px ;
+	border-radius: 40%;
+}
+
+
+#jouissance li:hover{
+    opacity: 0.5;
+	transform: scale(1.05);
+    transition: 0.6s ease-in-out;
+}
+/* **********************Restaurants et Motels ********************** */
+#histoire {
+	height: 850px;
+	background-color: #FFE4C4;
+	padding: 100px 10px 100px 10px ;
+}
+#histoire h2{
+	padding-top: 10px;
+	font-family: cursive;
+	font-size: 1.5em;
+	text-align: center;
+}
+#histoire h5 {
+	font-family: cursive;
+	font-size: 1.5em;
+	text-align: center;
+	
+}
+
+
+#histoire p{
+	text-align: center;
+	font-size: 1.0em;
+	margin: 30px;
+	padding: 0px 20% ;
+	font-weight: 300px;
+
+}
+#histoire li{
+	margin: 100px 150px 100px 150px;
+	height: 350px;
+	width:  20%;
+	max-width: 500px;
+	float: center;
+	box-shadow: 6px 6px 28px 3px;
+	font-size: 1.0em;
+	border-radius: 10px;
+
+}
+#Restaurants {
+	
+	float: left;
+	display: inline-block;
+
+}
+#Motels {
+	float: right;
+	display: inline-block;
+}
+
+#histoire li:hover{
+    opacity: 0.5;
+	transform: scale(1.05);
+    transition: 0.6s ease-in-out;
+}
+
+#Restaurants button{
+	border: none;
+	width: 100%;
+	padding: 15px 10px;
+	margin: 1px 0;
+	font-size: 1.2em;
+	font-family: sans-serif;
+	border-radius: 10px;
+
+}
+#Motels button{
+	border: none;
+	width: 100%;
+	padding: 15px 10px;
+	margin: 1px 0;
+	font-size: 1.2em;
+	font-family: sans-serif;
+	border-radius: 10px;
+}
+#Restaurants p{
+    font-family: cursive;
+	text-align: center;
+	font-size: 1.2em;
+	margin: 15px;
+	font-weight: 100;
+	color: black;
+}
+#Motels p{
+    font-family: cursive;
+	text-align: center;
+	font-size: 1.2em;
+	margin: 15px;
+	font-weight: 100;
+}
+#Restaurants a{
+	color: black;
+}
+#Motels a{
+	color: black;
+}
+#Restaurants {
+	background: url(Media/Pizza1.jpg)
+}
+#Motels {
+	background: url(Media/Chambre1.jpg)
+}
+
+
+
+/* ********************** Footer ****************** */
+
+ footer {
+    padding-top: 50px;
+	background:  url(Media/BigLion.jpg) no-repeat  10% 0%;
+	background-size: cover;
+	height: 799px;
+	text-align: center;
+	
+}
+footer h2{
+	color: white;
+	font-family: cursive, uppercase;
+	font-size: 2.5em;
+	margin: 10px;
+}
+
+#telephone h4{
+	color: black;
+	text-align: center;
+	font-family: cursive;
+	font-size: 1.4em;
+	padding: 0px;
+	margin: 10px;
+}
+
+form {
+	margin: auto;
+	max-width: 500px;
+
+}
+input, textarea, button{
+	border: none;
+	width: 55%;
+	padding: 15px 10px;
+	margin: 1px 0;
+	font-size: 1.2em;
+	font-family:  monospace;
+	border-radius: 10%;
+}
+textarea {
+	height: 120px;
+	background-color: #DCDCDC;
+}
+button:hover{
+	background-color: #191919;
+	color: #FFFAE1;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+.Cpright{
+	
+	padding: 120px 10px 120px 10px;
+	text-align: right;
+}
+.Cpright h5 {
+	width: 50%;
+	font-family: cursive;
+	font-size: 1.0em;
+	float: right;
+	color: black;
+	padding: -70px 0px -70px 0px;
+	
+	
+}
