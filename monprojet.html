@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment mon site a été créé ?</title>
+   
+</head>
+
+
+<style>
+.creation-section {
+  background-image: url(image/image4.jpg);
+  background-repeat: no-repeat;      /* Pas de répétition */
+  background-size: cover;            /* L’image couvre toute la zone */
+  background-position: center center; /* Centrer l’image */
+  background-attachment: fixed;
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.creation-section h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+}
+
+.creation-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.image-preview {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.image-preview img {
+  max-width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.caption {
+  font-style: italic;
+  font-size: 0.9em;
+  margin-top: 8px;
+  color: black;
+}
+
+.description {
+  flex: 1 1 55%;
+  background: #f4f4f4;
+  border-radius: 10px;
+
+}
+
+.description h3 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.description p {
+  font-size: 1.05em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: justify;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+
+
+.logo-process {
+  padding: 50px 20px;
+  background: #f4f4f4;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.logo-process h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.step {
+  flex: 0 0 200px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.step:hover {
+  transform: scale(1.05);
+}
+
+.step img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 0.95em;
+  color: #333;
+}
+
+.retour a {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(145deg, #ffffff, #dcdcdc);
+  color: #2c3e50;
+  padding: 10px 22px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.retour a:hover {
+  background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+  transform: scale(1.05);
+}
+
+.retour a:active {
+  transform: scale(0.97);
+}
+
+
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #662D91;       
+  color: #fff;                     /* Texte blanc */
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 30px;             /* Bouton arrondi */
+  box-shadow: 0 4px 10px rgba(45, 46, 131, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+
+
+}
+
+.btn:hover {
+  background-color: #1B1464;       /* Bleu un peu plus clair au survol */
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+
+/* Style de la section "Processus de création" */
+.dev-web {
+  padding: 60px 20px;
+  
+}
+
+.dev-web h2 {
+  text-align: center;
+  color: #662D91;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.dev-step {
+  max-width: 900px;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(102, 45, 145, 0.1);
+}
+
+.step1 h2 {
+  font-size: 1.5rem;
+  color: #2D2E83;
+  margin-bottom: 20px;
+}
+
+.step1 p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.step1 strong {
+  color: #662D91;
+}
+
+
+.galerie {
+  display: flex;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.galerie img {
+  max-width: 200px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.galerie img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+
+footer {
+    background-image: url(image/ban.jpg);
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #000000;
+}
+
+
+
+/* Responsive - petits écrans (smartphones) */
+@media (max-width: 768px) {
+  .creation-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .image-preview,
+  .description {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .description p {
+    text-align: center;
+  }
+
+  .creation-section {
+    padding: 30px 10px;
+  }
+
+  .creation-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+  }
+
+  .description h3 {
+    font-size: 1.3em;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Position du bouton retour pour petits écrans */
+  .retour a {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 25px;
+  }
+
+  /* Timeline : passer en colonne pour éviter le débordement horizontal */
+  .timeline {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .step {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* Responsive - écrans moyens (tablettes) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .creation-content {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .image-preview,
+  .description {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .description p {
+    text-align: justify;
+  }
+
+  .creation-section h2 {
+    font-size: 2.2em;
+  }
+
+  .description h3 {
+    font-size: 1.4em;
+  }
+}
+
+
+</style>
+
+<body>
+
+
+    
+
+
+<section class="creation-section">
+
+    <div class="retour">
+    <a href="accueil.html">Retour</a>
+    </div>
+
+  <div class="container">
+    <h2>Processus de création</h2>
+    <div class="creation-content">
+      <div class="image-preview">
+        <img src="image/LogoboomDG.png" alt="Logo final" />
+        <p class="caption">Logo final créé avec Adobe Illustrator</p>
+        <p class="caption">par Nasrine BEDIA, 2025</p>
+      </div>
+
+
+      <div class="description">
+        <h3>Conception graphique</h3>
+        <p>
+          Le logo et les images de fond ont été conçus à la main sur Adobe Illustrator. Je suis parti(e) d'une idée simple : un boomerang. Mais pourquoi un boomerang 🤔 ? En effet, je suis développeuse web de formation, mais mon parcours m’a rapidement conduite vers le monde du graphisme. Entre code et création, j’ai trouvé un équilibre unique : un va-et-vient constant entre la rigueur technique et l’expression visuelle. C’est ce mouvement — ce retour régulier entre deux disciplines complémentaires — qui a inspiré mon symbole : <strong>le boomerang </strong>. Comme lui, je pars d’un point — le développement — pour explorer la création graphique, puis je reviens, enrichie, avec une vision plus complète, plus sensible.
+      </p>
+      <p>
+          Le boomerang représente pour moi ce cycle <strong> créatif </strong>, cette alliance entre <strong>logique </strong> et <strong> émotion </strong>, entre <strong> structure </strong> et <strong> liberté </strong>. Il symbolise mon identité hybride, toujours en mouvement, toujours en évolution.
+
+          Après plusieurs croquis, j'ai vectorisé les éléments, travaillé les courbes, les couleurs et l’équilibre visuel.
+        </p>
+
+<section class="logo-process">
+  <h2>Évolution du logo</h2>
+  <div class="timeline">
+    <div class="step">
+      <img src="image/Logo_Etapes/14.png" alt="Croquis de base">
+      <p>Croquis de base</p>
+    </div>
+    <div class="step">
+      <img src="image/Logo_Etapes/15.png" alt="Premier test de couleur">
+      <p>Test de couleur</p>
+    </div>
+    <div class="step">
+      <img src="image/Logo_Etapes/17.png" alt="Tests de couleurs">
+      <p>Test de typographie et contraste</p>
+    </div>
+    <div class="step">
+      <img src="image/Logo_Etapes/16.png" alt="Logo final">
+      <p>Choix de typographie final (Myriad pro)</p>
+    </div>
+    <div class="step">
+      <img src="image/Logo_Etapes/18.png" alt="Logo final">
+      <p>Test de logo avec contraste (#29235C), dégradé de couleurs et lettres colorisées partiellement </p>
+    </div>
+    <div class="step">
+      <img src="image/Logo_Etapes/19.png" alt="Logo final">
+      <p>Test d'inversement des lettres "DG" en utilisant l'effet mirroir avec les couleurs "blanc et bleu du code #2D2E83". Le fond a une couleur violet foncé ou pourpre du code #793B8F </p>
+    </div>
+
+    <div class="step">
+      <img src="image/LogoboomDG.png" alt="Logo final"  width="500">
+      <p>Logo final avec dégradé de couleur et lettres à l'intérieur "DG" qui sont les initiales du "Développement web et Graphisme"</p>
+      <p> La couleur du "boomerang et le fond des initiales" est une teinte très claire de violet ou lavande pâle du code #FBF9FC avec dégradé de couleur et luminosité qui donne une touche artistique et soft. Les initiales portent une couleur blanc et bleu du code #2D2E83 qui donne un contraste assez artistique et créatif.</p>
+    </div>
+  </div>
+</section>
+
+
+        <p>
+          Les fonds ont été pensés pour renforcer l'identité visuelle du site tout en restant sobres et lisibles. Chaque élément a été exporté en SVG ou PNG pour une qualité optimale sur le web.
+        </p>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+<a href="image/LOGO_PORTFOLIO.ai" target="_blank" class="btn">Télécharger le fichier sur illustrator</a>
+
+
+<section class="dev-web">
+  <h2>Processus de création du site "Portfolio"</h2>
+  <div class="dev-step">
+    <div class="step1">
+      <h2>Technologies et langages utilisés :</h2>
+
+      <p>
+        Ce site portfolio a été entièrement conçu dans le but de présenter mon travail en développement web et en design graphique. Il s'agit d’un site statique (ou site vitrine), développé en HTML, CSS et JavaScript, sans framework ou CMS, afin de garder un contrôle total sur chaque aspect du code. Le projet a été codé à l’aide de l’éditeur de texte <strong>Sublime Text</strong>, et sera mis en ligne via <strong>GitHub Pages</strong>, une solution d’hébergement gratuite et fiable pour les sites statiques.
+        <br><br>
+        En parallèle du développement web, j’ai utilisé le logiciel <strong>Adobe Illustrator</strong> pour créer les visuels, arrière-plans et logos intégrés au site. Toutes les créations graphiques, y compris le logo "Boomerang DG", ont été réalisées par moi-même dans le cadre de ce projet. Ces contenus sont personnels et protégés — leur réutilisation ou reproduction sans autorisation est strictement interdite.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="galerie">
+  <img src="image/image1.jpg" alt="Image 1" onclick="openLightbox(this.src)">
+  <img src="image/image2.jpg" alt="Image 2" onclick="openLightbox(this.src)">
+  <img src="image/image4.jpg" alt="Image 3" onclick="openLightbox(this.src)">
+  <img src="image/fleur.png" alt="Image 4" onclick="openLightbox(this.src)">
+  <img src="image/imageAccueil7.jpg" alt="Image 5" onclick="openLightbox(this.src)">
+  <img src="image/imageAccueil5.jpg" alt="Image 6" onclick="openLightbox(this.src)">
+  <img src="image/heart.png" alt="Image 7" onclick="openLightbox(this.src)">
+  <img src="image/fond.jpg" alt="Image 8" onclick="openLightbox(this.src)">
+  <img src="image/AFTEREFFECTS.jpg" alt="Image 9 " onclick="openLightbox(this.src)">
+  <img src="image/Travel.jpg" alt="Image 10" onclick="openLightbox(this.src)">
+  <img src="image/shéma.jpg" alt="Image 11" onclick="openLightbox(this.src)">
+  <img src="image/schéma2.jpg" alt="Image 12" onclick="openLightbox(this.src)">
+  <img src="image/cercle.jpg" alt="Image 13" onclick="openLightbox(this.src)">
+  <img src="image/stars.jpg" alt="Image 14" onclick="openLightbox(this.src)">
+  <img src="image/schéma3.jpg" alt="Image 15" onclick="openLightbox(this.src)">
+  <img src="image/cercle2.jpg" alt="Image 16" onclick="openLightbox(this.src)">
+  <img src="image/cercle4.jpg" alt="Image 17" onclick="openLightbox(this.src)">
+  <img src="image/schéma4.jpg" alt="Image 18" onclick="openLightbox(this.src)">
+  <img src="image/schéma5.jpg" alt="Image 19" onclick="openLightbox(this.src)">
+  <img src="image/abeille.jpg" alt="Image 20" onclick="openLightbox(this.src)">
+  <img src="image/abeille2.jpg" alt="Image 21" onclick="openLightbox(this.src)">
+  <img src="image/coeur.jpg" alt="Image 22" onclick="openLightbox(this.src)">
+  <img src="image/imageCV3.jpg" alt="Image 23" onclick="openLightbox(this.src)">
+  
+
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="close" onclick="closeLightbox()">×</span>
+  <img id="lightbox-img" src="" alt="Image en grand">
+</div>
+
+
+</section>
+
+</section>
+
+
+<footer>
+        <div class="container">
+            <p>&copy; 2025 Mon Portfolio by Nasrine BEDIA. Tous droits réservés.</p>
+            <p>Les visuels, logos et contenus présents sur ce site sont des créations personnelles et ne peuvent être utilisés sans autorisation.</p>
+        </div>
+    </footer>
+
+
+<script>
+  function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+
+</body>
+</html>

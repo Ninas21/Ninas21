@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets réalisés en équipe - Chartes graphiques -</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    /* Appliquer une mise en page centrée */
+    .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 5px; 
+    box-sizing: border-box; /* Évite que le padding dépasse les 100vh */
+}
+
+    .project-card {
+        text-align: center; /* Centrer le texte dans la carte */
+        background-color: #f4f4f4; /* Couleur de fond pour la carte */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre autour de la carte */
+        margin: 20px;
+        width: 80%; /* Ajuste la largeur selon tes besoins */
+        max-width: 500px; /* Limite la largeur à 500px */
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .project-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centrer les cartes horizontalement */
+    }
+
+    .project-card h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #2c3e50;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .project-card p {
+        margin-bottom: 20px;
+        color: #2c3e50;
+        font-size: 20px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .btn {
+        font-family: 'Poppins', sans-serif;
+        background-color: #662D91;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+        background-color: linear-gradient(145deg, #ffffff, #dcdcdc);
+    }
+
+    /* Logo */
+.illus img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%; 
+  background: linear-gradient(145deg, #ffffff, #dcdcdc); 
+  padding: 15px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  animation: flip 4s ease-in-out infinite;
+}
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg); /* Position initiale */
+    }
+    50% {
+        transform: rotateY(180deg); /* Retournement à 180 degrés */
+    }
+    100% {
+        transform: rotateY(360deg); /* Retour à la position initiale */
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .illus img {
+        height: 100px;
+        width: 100px;
+        margin: 5px;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 22px;
+        margin: 20px 0;
+    }
+
+    .project-card h3 {
+        font-size: 1.2em;
+    }
+
+    .project-card p {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin: 4px;
+    }
+
+    .project-card {
+        width: 95%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    .project-card h3 {
+        font-size: 1em;
+    }
+
+    .project-card p {
+        font-size: 15px;
+    }
+
+    .btn {
+        font-size: 13px;
+        padding: 7px 12px;
+    }
+}
+</style>
+
+<body>
+
+ <a href="accueil.html#projects" class="btn">Retour</a>
+ 
+
+
+
+<section id="projects" class="section projects">
+    <div class="container">
+        <div class="illus">
+
+            <img src="image/logoAlo!.png" height="200px" width="200px" alt="LogoAi" title="Illustrator">
+            <img src="image/logoAloCameleon!.png" height="200px" width="200px" alt="LogoAi" title="Illustrator">
+           
+        </div>
+
+        <div class="illus">
+         <img src="image/vigiVie!.png" height="200px" width="200px" alt="LogoAi" title="Illustrator">
+             <img src="image/ESOLYlogo.png" height="200px" width="200px" alt="LogoAi" title="Illustrator">
+             <img src="image/hey!!.png" height="200px" width="200px" alt="LogoAi" title="Illustrator">
+        </div>
+
+        <div class="illus">
+         
+             <img src="image/souvenirs.png" height="200px" width="200px" alt="LogoAi" title="Illustrator">
+             <img src="image/KARAKOU.png" height="200px" width="200px" alt="LogoAi" title="Illustrator">
+        </div>
+        <h2>Mes projets</h2>
+        <div class="project-cards">
+            <div class="project-card">
+                <h3>Projets de sites web et applications (chartes graphiques : maquettes et interfaces)</h3>
+                <p>Des projets réalisés (chartes graphiques)</p>
+                <a href="projets/ESOLY.pdf" class="btn">Projet ESOLY</a>
+                <a href="projets/Alo Radio.pdf" class="btn">Projet ALO!</a>
+                <a href="projets/Bracelet-Connecté.pdf" class="btn">Projet bracelet connecté</a>
+                <a href="projets/Vie Critique.pdf" class="btn">Projet IA Tout dans ton dressing</a>
+                <a href="projets/Projet Algérie.pdf" class="btn">Projet Souvenir d'Algérie</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
