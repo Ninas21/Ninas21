@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unity6 3D</title>
+    
+</head>
+
+<style>
+/* Réinitialisation de la marge et du padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style de base pour le corps */
+body {
+   font-family: 'Poppins', sans-serif;
+    background-image: url('image/imageAccueil7.jpg');
+     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+     background-attachment: fixed;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Titre principal */
+h3 {
+    font-size: 30px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding: 10px;
+    
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* Description sous le titre */
+p {
+    font-size: 20px;
+    color: #2c3e50;
+    margin: 20px 0;
+}
+
+/* Animation de l'image pour qu'elle "saute" */
+.image1 img {
+    width: 100px;  /* Définit la taille de l'image */
+    height: 80px;
+    animation: jump 1.5s ease-in-out infinite; /* Animation du saut */
+    display: inline-block;
+}
+
+/* Définition de l'animation de saut */
+@keyframes jump {
+    0% {
+        transform: translateY(0); /* Position initiale */
+    }
+    30% {
+        transform: translateY(-20px); /* Monte */
+    }
+    50% {
+        transform: translateY(0); /* Redescend */
+    }
+    70% {
+        transform: translateY(-10px); /* Monte un peu moins */
+    }
+    100% {
+        transform: translateY(0); /* Position finale */
+    }
+}
+
+/* Conteneur des vidéos */
+.MesVideos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Style des vidéos */
+video {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #000;
+}
+
+/* Bouton retour */
+.btn {
+    display: inline-block;
+    background: linear-gradient(145deg, #ffffff, #dcdcdc); /* blanc argenté */
+  color: #2c3e50; /* texte gris foncé pour contraste */
+    padding: 12px 20px;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e67e22;
+}
+
+
+
+/* Écrans jusqu’à 768px (tablettes et petits laptops) */
+@media screen and (max-width: 768px) {
+    h3 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .image1 img {
+        width: 80px;
+        height: auto;
+        margin: 10px auto;
+    }
+
+    .MesVideos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    video {
+        width: 90%;
+        max-width: 100%;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 16px;
+        margin-top: 20px;
+    }
+}
+
+/* Écrans très petits (ex: iPhone SE, ≤ 400px) */
+@media screen and (max-width: 400px) {
+    h3 {
+        font-size: 20px;
+        padding: 5px;
+    }
+
+    p {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    .image1 img {
+        width: 70px;
+        height: auto;
+    }
+
+    video {
+        width: 95%;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+    }
+}
+</style>
+
+<body>
+
+<h3>Interaction et création de jeu avec Unity6 3D</h3>
+<p>Vidéos réalisées pour montrer l'interaction sur Unity3D </p>
+
+<div class="image1">
+ <img src="image/Unity6-3D.png" height="80px" width="100px" alt="blender" title="">
+</div>
+<!-- Conteneur des vidéos -->
+<div class="MesVideos">
+    <video width="640" height="360" controls>
+        <source src="vidéos/Cube_Unity3D.webm" type="video/webm">
+    </video>
+
+    <video width="640" height="360" controls>
+        <source src="vidéos/JeuBallon_Unity3D.webm" type="video/webm">
+    </video>
+
+    <video width="640" height="360" controls>
+        <source src="vidéos/JeuMaison_Unity3D.webm" type="video/webm">
+    </video>
+
+    <video width="640" height="360" controls>
+        <source src="vidéos/Jeu_Unity3D.webm" type="video/webm">
+    </video>
+</div>
+
+<!-- Bouton retour -->
+<a href="accueil.html#projects" class="btn">Retour</a>
+
+</body>
+</html>
