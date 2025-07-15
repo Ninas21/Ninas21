@@ -1,0 +1,42 @@
+
+html{
+	scroll-behavior: smooth;
+}
+body{
+	font-family: cursive, monospace;
+	background: url(https://cdt49.media.tourinsoft.eu/upload/Camp-des-Girafes---Bioparc.jpg) no-repeat 10% 0%;
+	background-size: cover;
+	height: 1450px;
+}
+p{
+	text-align: center;
+	font-size: 2em;
+	
+}
+.reservation h3{
+	text-align: center;
+	font-size: 2em;
+	color: white;
+}
+.reservation h1{
+	text-align: center;
+	font-size: 1.5em;
+	font-family: cursive;
+	color: #dfe6e9;
+}
+section{
+	text-align: center;
+}
+
+.reservation table tr th h3 {
+	
+	margin: 2px auto;
+	display: inline-block;
+	background-position: center;
+	padding: 15px;
+}
+table tr{
+	font-family:monospace;
+	font-size: 1.3em;
+	color: white;
+}
