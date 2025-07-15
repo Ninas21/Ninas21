@@ -1,0 +1,46 @@
+
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	font-family: cursive, monospace;
+	background-color: #dfe6e9;
+}
+p{
+	text-align: center;
+	font-size: 2em;
+	
+}
+h3,h4{
+	text-align: center;
+	font-size: 1.5em;
+	font-family: monospace;
+	color: black;
+}
+h1{
+	text-align: center;
+	font-size: 1.5em;
+	font-family: cursive;
+	color: black;
+}
+section{
+	text-align: center;
+}
+
+.horaires h1 h3 h4{
+	font-size: 1.5em;
+	font-family: cursive;
+	margin: 2px auto;
+	display: inline-block;
+	background-position: center;
+	padding: 5px;
+}
+
+#date{
+	text-align: center;
+	margin: 43% ;
+	
+	
+}
+
