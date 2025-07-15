@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montage vidéo avec After Effects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style général du corps de la page */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8ff; /* Fond bleu clair */
+    color: #333; /* Texte sombre */
+    line-height: 1.6;
+    padding: 40px;
+    text-align: center; /* Centrer le texte */
+}
+
+/* Style du titre principal */
+h3 {
+    font-size: 25px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding: 0; 
+    background-color: transparent; 
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Style du paragraphe sous le titre */
+p {
+    font-size: 23px;
+    color: #2c3e50; 
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+/* Style des vidéos */
+video {
+    width: 100%;
+    max-width: 640px; /* Limite la taille des vidéos à 640px */
+    height: auto;
+    border-radius: 8px; /* Coins arrondis pour les vidéos */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre autour des vidéos */
+    background-color: #000; /* Fond noir autour de la vidéo */
+    margin: 20px auto; /* Centrer les vidéos avec un peu d'espace */
+}
+
+.btn-retour {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(145deg, #ffffff, #dcdcdc); /* blanc argenté */
+  color: #2c3e50; /* texte gris foncé pour contraste */
+  padding: 10px 22px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.btn-retour:hover {
+  background: linear-gradient(145deg, #f0f0f0, #e0e0e0); /* effet nacré au survol */
+  transform: scale(1.05);
+}
+
+.btn-retour:active {
+  transform: scale(0.97);
+}
+
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    video {
+        max-width: 100%;
+        border-radius: 6px;
+    }
+
+    .btn-retour {
+        font-size: 14px;
+        padding: 8px 18px;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .btn-retour {
+        font-size: 13px;
+        padding: 6px 14px;
+    }
+}
+</style>
+<body>
+
+<h3>Montage vidéo</h3>
+                    <p>Vidéo réalisée avec After Effects dans le cadre d'apprentissage académique</p>
+                    <video width="640" height="360" controls>
+                        <source src="vidéos/AfterEffect.mp4" type="video/mp4">
+                    </video>
+
+<a href="accueil.html#projects" class="btn-retour">Retour</a>
+
+</body>
+</html>
