@@ -1,0 +1,31 @@
+html{
+scroll-behavior: smooth;
+}
+body{
+  background-color: #596275;
+}
+h4{
+  font-family: cursive;
+  font-size: 2em;
+  text-align: center;
+
+}
+h5{
+  font-family: monospace;
+  font-size: 1.3em;
+  text-align: center;
+}
+form{
+  text-align: center;
+  margin: auto;
+	max-width: 500px;
+}
+input {
+	border: solid black;
+	width: 55%;
+	padding: 15px 10px;
+	margin: 1px 0;
+	font-size: 1.2em;
+	font-family:  sans-serif;
+	
+}
