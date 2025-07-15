@@ -1,0 +1,54 @@
+html{
+   scroll-behavior: smooth;
+}
+body{
+   background-color:#63cdda;
+}
+h2{
+   text-align: center;
+   font-family: cursive;
+   font-size: 1.5em;
+}
+h3{
+  text-align: left;
+  font-family: monospace;
+  font-size: 1.3em;
+}
+a{
+	padding: 10px;
+}
+#logo{
+	font-family:  cursive;
+	font-weight: normal;
+	float: right;
+}
+#logo a{
+
+}
+header li{
+	float: right;
+	font-size: 1.0em;
+}
+header li a{
+	text-decoration: none;
+	display: inline-block;
+	text-align: center;
+	padding: 5px 10px;
+	margin: none;
+	font-family: cursive;
+	font-size: 1.0em;
+	color: white;
+	list-style-type: none;
+
+}
+.decon a{
+	text-align: left;
+    font-family: monospace;
+    font-size: 1.0em;
+    box-shadow: 3px 6px 3px 6px;
+    margin: 10px; 
+    padding: 15px;
+}
+.decon{
+	padding: 15px;
+}
