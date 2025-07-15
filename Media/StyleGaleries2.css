@@ -1,0 +1,35 @@
+body{
+	font-family: 'Advent Pro', sans serif;
+}
+p{
+	text-align: center;
+	font-size: 2em;
+	
+}
+h3{
+	text-align: center;
+	font-size: 2em;
+	color: black;
+}
+section{
+	text-align: center;
+}
+
+#Images1 div{
+	
+	margin: 2px auto;
+	display: inline-block;
+	background-position: center;
+	padding: 15px;
+}
+
+#Images2 div{
+	
+	margin: 2px auto;
+	display: inline-block;
+	background-position: center;
+	padding: 15px;
+}
+
+
+
