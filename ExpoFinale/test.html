@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Test.css">
+  <title>Casbah Scroll Gallery</title>
+</head>
+<body>
+  <!-- <div class="gallery-title">Galerie de la Casbah</div> -->
+
+  <div class="scroll-container" id="scrollContainer">
+    <img src="Images/Image1.jpeg" alt="Casbah">
+    <img src="Images/2.jpg" alt="Casbah">
+    <img src="Images/Image2.jpeg" alt="Tattoo Tradition">
+    <img src="Images/4.jpg" alt="Casbah">
+    <img src="Images/Image3.jpeg" alt="Gold Tooth">
+    <img src="Images/3.jpeg" alt="plante"> 
+    <img src="Images/chambre.svg" alt="chambre">
+    <img class="Etiquette" src="Images/Etiquette.svg" alt="Etiquette">
+    <img class="CadreFamille" src="Images/CadreFamille.svg" alt="CadreFamille">
+    <img id="armoireToggle" class="armoire" src="Images/Armoire.svg" alt="Armoir">
+    <img class="coffre" src="Images/Coffre.svg" alt="coffre">
+  </div>
+  <!-- Pop up de l'armoire -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <img id="popupImage" src="Images/Armoire.svg" alt="Armoire ouverte" />
+      <button id="closePopup" class="close-btn">Fermer</button>
+    </div>
+  </div>
+  <!-- Pop up du cadre -->
+  <div id="popupFamily" class="popup" style="display: none;">
+    <div class="popup-content">
+      <button id="closePopupFamily" class="close-btn">&times;</button>
+      <div class="popup-image-wrapper">
+        <button id="prevImage" class="nav-btn">&lt;</button>
+        <img id="currentImage" src="" alt="Image familiale" />
+        <button id="nextImage" class="nav-btn">&gt;</button>
+      </div>
+      <p id="popupFamilyDescription" class="popup-description"></p>
+    </div>
+  </div>
+  <img class="CadreFamille" src="Images/CadreFamille.svg" alt="Cadre Famille">
+  
+
+
+  
+
+  <!-- Calque pour les personnages -->
+  <div class="characters">
+    <img src="Images/grandma_face.png" alt="Grandmother Front" class="character" id="grandmother">
+    <img src="Images/fille_face.png" alt="Girl Front" class="character" id="girl">
+  </div>
+
+  <!-- Flèches pour contrôler le défilement -->
+  <button class="arrow arrow-left" id="arrowLeft">&#8249;</button>
+  <button class="arrow arrow-right" id="arrowRight">&#8250;</button>
+  <!-- script du scroll -->
+  <script>
+    const scrollContainer = document.getElementById('scrollContainer');
+    const arrowLeft = document.getElementById('arrowLeft');
+    const arrowRight = document.getElementById('arrowRight');
+    const grandmother = document.getElementById('grandmother');
+    const girl = document.getElementById('girl');
+
+    // Variables pour suivre l'état du défilement
+    const totalImages = 5;
+    let currentIndex = 0;
+
+    // Chemins des différentes vues des personnages
+    const views = {
+      grandmother: [
+        'Images/grandma_face.png',
+        'Images/grandma_droite.png'
+      ],
+      girl: [
+        'Images/fille_face.png',
+        'Images/fille_droite.png'
+      ]
+    };
+
+    // Fonction pour mettre à jour la position et changer les vues
+    function updateScroll() {
+      const translateValue = -currentIndex * 100; // Chaque image occupe 100% de la largeur
+      scrollContainer.style.transform = `translateX(${translateValue}vw)`;
+
+      // Mettre à jour les personnages selon l'image
+      grandmother.src = views.grandmother[currentIndex % views.grandmother.length];
+      girl.src = views.girl[currentIndex % views.girl.length];
+    }
+
+    // Défilement vers la gauche
+    arrowLeft.addEventListener('click', () => {
+      currentIndex = Math.max(0, currentIndex - 1);
+      updateScroll();
+    });
+
+    // Défilement vers la droite
+    arrowRight.addEventListener('click', () => {
+      currentIndex = Math.min(totalImages - 1, currentIndex + 1);
+      updateScroll();
+    });
+  </script>
+  <!-- script de pop up armoir -->
+  <script>
+      // Sélection des éléments DOM
+const cadreFamilleToggle = document.querySelector('.CadreFamille');
+const popupFamily = document.getElementById('popupFamily');
+const closePopupFamily = document.getElementById('closePopupFamily');
+const currentImage = document.getElementById('currentImage');
+const prevImageBtn = document.getElementById('prevImage');
+const nextImageBtn = document.getElementById('nextImage');
+const popupFamilyDescription = document.getElementById('popupFamilyDescription');
+
+// Détails de la galerie
+const cadreFamilleDetails = {
+  images: [
+    'Images/CadreFamille.svg',
+    'Images/Cadre1.svg',
+    'Images/Cadre2.svg',
+    'Images/Cadre3.svg',
+    'Images/Cadre4.svg'
+  ],
+  description: 'Voici une collection de photos de famille.'
+};
+
+// Index de l'image actuelle
+let currentImageIndex = 0;
+
+// Fonction pour mettre à jour l'image affichée
+function updateCurrentImage() {
+  currentImage.src = cadreFamilleDetails.images[currentImageIndex];
+}
+
+// Gérer l'ouverture du pop-up
+cadreFamilleToggle.addEventListener('click', () => {
+  currentImageIndex = 0; // Réinitialise à la première image
+  console.log();
+  updateCurrentImage();
+  popupFamilyDescription.textContent = cadreFamilleDetails.description; // Ajoute la description
+  popupFamily.style.display = 'flex'; // Affiche le pop-up
+});
+
+// Gérer la navigation vers l'image précédente
+prevImageBtn.addEventListener('click', () => {
+  if (currentImageIndex > 0) {
+    currentImageIndex--;
+    updateCurrentImage();
+  }
+});
+
+// Gérer la navigation vers l'image suivante
+nextImageBtn.addEventListener('click', () => {
+  if (currentImageIndex < cadreFamilleDetails.images.length - 1) {
+    currentImageIndex++;
+    updateCurrentImage();
+  }
+});
+
+// Gérer la fermeture du pop-up
+closePopupFamily.addEventListener('click', () => {
+  popupFamily.style.display = 'none'; // Cache le pop-up
+});
+  </script>
+</body>
+</html>

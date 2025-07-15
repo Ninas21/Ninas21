@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rimass</title>
+
+    <link rel="stylesheet" href="exposition.css">
+</head>
+
+<body>
+    <div id="scene">
+        <img src="Images/background.jpg">
+    </div>
+
+    <div id="static">
+        <div class="characters">
+            <div class="grandmere">
+                <img id="grandma-sprite" src="Images/grandma.png" alt="Grandmother">
+            </div>
+            <div class="fille character" onclick="openImageInNewTab()">
+                <img id="girl-sprite" src="Images/girl-1.png" alt="Girl">
+            </div>
+        </div>
+
+        <div class="dialogue-box">
+            <div id="speaker-image"></div>
+
+            <div id="dialogue-container">
+                <div id="dialogue"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="exposition.js"></script>
+    <script src="chambre.js"></script>
+
+</body>
+
+</html>

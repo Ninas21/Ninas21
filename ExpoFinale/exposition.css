@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    overflow-y: hidden;
+    font-family: Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#scene {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+#background {
+    background-image: url('background.jpg');
+    z-index: 1;
+}
+
+#character {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transition: transform 0.3s ease;
+    z-index: 100;
+}
+
+#dialogue-container {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    right: 10%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 10px;
+    visibility: hidden;
+    z-index: 100;
+}
+
+#dialogue {
+    flex: 1;
+    padding-left: 20px;
+}
+
+#speaker-image {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    z-index: 101;
+    margin-left: -60px;
+}
+
+#static {
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.characters {
+    position: relative;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.grandmere,
+.fille {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.grandmere img,
+.fille img {
+    height: 100%;
+}
+
+.grandmere {
+    z-index: 1;
+}
+
+.fille {
+    z-index: 2;
+}
+
+.dialogue-box {
+    display: flex;
+}
