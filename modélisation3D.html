@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modélisation 3D</title>
+    
+</head>
+
+
+
+<style>
+
+    /* Réinitialisation du style par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style de base */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('image/imageAccueil7.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h3 {
+    text-align: center;
+    color: #2D423B;
+    font-size: 25px;
+    margin-bottom: 20px;
+    margin-left: 320px;
+    margin-right: 320px;
+    
+}
+
+p {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 40px;
+    color: #2D423B;
+}
+
+/* Conteneur pour centrer les vidéos */
+.video-container {
+    display: grid;
+   
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Style des vidéos */
+video {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #000;
+}
+
+
+/* Animation des images Blender dispersées */
+img {
+    position: absolute; /* Permet de déplacer les images de façon libre */
+    animation: scatter 10s infinite ease-in-out;
+    z-index: 10; /* Pour que les images soient visibles devant le reste du contenu */
+    transform-origin: center;
+}
+
+/* Animation de dispersion avec mouvement de gauche à droite */
+@keyframes scatter {
+    0% {
+        transform: translate(0, 0) scale(1) rotate(0deg); /* Position initiale */
+    }
+    25% {
+        transform: translate(300px, 100px) scale(1.1) rotate(45deg); /* Déplacement et échelle */
+    }
+    50% {
+        transform: translate(0, 200px) scale(1.2) rotate(90deg); /* Autre position avec échelle et rotation */
+    }
+    75% {
+        transform: translate(-200px, -150px) scale(0.9) rotate(180deg); /* Autre mouvement avec changement d'échelle */
+    }
+    100% {
+        transform: translate(200px, -300px) scale(1) rotate(360deg); /* Fin du mouvement */
+    }
+}
+
+/* Images placées à gauche */
+.image1 img {
+    left: -100px; /* Position à gauche */
+    animation-delay: 0s; /* Aucune attente pour la première image */
+}
+
+/* Images placées à droite */
+.image2 img {
+    right: -100px; /* Position à droite */
+    animation-delay: 1s; /* Délai de 1 seconde pour la deuxième image */
+}
+
+.image3 img {
+    left: -100px; /* Position à gauche */
+    animation-delay: 2s; /* Délai de 2 secondes pour la troisième image */
+}
+
+
+
+
+/* Bouton retour */
+.btn {
+    display: block;
+    width: 150px;
+    margin: 40px auto;
+    background: linear-gradient(145deg, #ffffff, #dcdcdc); /* blanc argenté */
+  color: #2c3e50; /* texte gris foncé pour contraste */
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e67e22;
+}
+
+
+@media screen and (max-width: 768px) {
+    h3 {
+        font-size: 20px;
+        margin: 0 20px 20px 20px;
+    }
+
+    p {
+        font-size: 18px;
+        margin: 0 20px 30px 20px;
+    }
+
+    .video-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    video {
+        width: 95%;
+        max-width: 100%;
+    }
+
+    .btn {
+        font-size: 16px;
+        width: auto;
+        padding: 10px 15px;
+    }
+
+    /* Réduire la taille et repositionner les images animées */
+    .image1 img,
+    .image2 img,
+    .image3 img {
+        width: 60px;
+        height: auto;
+        animation: none; /* Supprimer l'animation sur mobile pour éviter les débordements */
+        position: static;
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 14px;
+        width: 100%;
+    }
+
+    video {
+        width: 100%;
+    }
+}
+
+
+</style>
+<body>
+
+<h3>Animation du personnage et modélisation des objets</h3>
+<p>Vidéo réalisée pour montrer l'animation avec Blender.</p>
+
+
+<div class="image1">
+ <img src="image/blender.png" height="80px" width="100px" alt="blender" title="">
+</div>
+
+<div class="image2">
+ <img src="image/blender.png" height="80px" width="100px" alt="blender" title="">
+</div>
+
+<div class="image3">
+ <img src="image/blender.png" height="80px" width="100px" alt="blender" title="">
+</div>
+
+ 
+<!-- Conteneur des vidéos -->
+<div class="video-container">
+    <video controls>
+        <source src="vidéos/Vidéo_dinosaur.mp4" type="video/mp4">
+    </video>
+
+    <video controls>
+        <source src="vidéos/dinosAnim.webm" type="video/webm">
+    </video>
+
+    <video controls>
+        <source src="vidéos/CamionAnim.webm" type="video/webm">
+    </video>
+
+    <video controls>
+        <source src="vidéos/poissonVidéo.webm" type="video/webm">
+    </video>
+
+    <video controls>
+        <source src="vidéos/maison.webm" type="video/webm">
+    </video>
+</div>
+
+<!-- Bouton retour -->
+<a href="accueil.html#projects" class="btn">Retour</a>
+
+</body>
+</html>
