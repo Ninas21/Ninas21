@@ -1,0 +1,46 @@
+
+
+html{
+	scroll-behavior: smooth;
+}
+body{
+	font-family: cursive;
+	background-color: #596275;
+}
+p{
+	text-align: center;
+	font-size: 2em;
+	
+}
+h1{
+	text-align: center;
+	font-size: 2em;
+	color: black;
+	font-family: cursive;
+}
+h3{
+	text-align: center;
+	font-size: 1.5em;
+	font-family: monospace;
+	color: #3dc1d3;
+}
+section{
+	text-align: center;
+}
+
+.Actualites div{
+	
+	margin: 2px auto;
+	display: inline-block;
+	background-position: center;
+	padding: 15px;
+}
+
+.Videos div{
+	
+	margin: 2px auto;
+	display: inline-block;
+	background-position: center;
+	padding: 15px;
+	text-align:center;
+}
