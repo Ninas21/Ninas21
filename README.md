@@ -1,5 +1,5 @@
 ## Hi there 👋
-Mon portfolio: https://ninas21.github.io/Ninas21/index.html
+Mon portfolio: https://ninas21.github.io/ninas21/index.html
 
 
 
