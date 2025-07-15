@@ -1,0 +1,175 @@
+
+body {
+	
+	margin: 0;
+    background-color: black;
+    color: white; 
+    height: 100vh;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    
+}
+
+#Legende li {
+    margin: 80px 100px 0 100px;
+    height: 350px;
+    width: 40%;
+    max-width: 400px;
+    border-radius: 40%;
+    float: left;
+    box-shadow: 6px 6px 28px rgba(0, 0, 0, 0.5);
+    padding: 50px;
+}
+
+#Legende p a {
+    height: 45px; 
+    width: 235px;
+    background-color: black;
+    float: right;
+    margin: 50px -180px 0 0;
+    font-size: 1.2em;
+    text-align: center;
+    padding-top: 15px;
+    box-shadow: 4px 4px 0 1px rgba(0, 0, 0, 0.5);
+    border-radius: 20px; 
+}
+
+#Legende #chansons {
+    float: right;
+}
+
+#Legende #histoire {
+    float: left;
+}
+
+ul {
+    list-style-type: none; 
+   padding: 0;           
+   margin: 0;           
+
+}
+
+a {
+    text-decoration: none; 
+           
+}
+
+#histoire p a {
+    float: right;
+    background-color: black;
+    color: gold;
+    font-family: cursive;
+    margin-right: -175px;
+    box-shadow: -3px 3px 0 1px rgba(0, 0, 0, 0.5);
+    border-radius: 40%;
+}
+
+#chansons p a {
+    float: left;
+    background-color: black;
+    color: gold;
+    font-family: cursive;
+    margin-left: -175px;
+    box-shadow: -3px 3px 0 1px rgba(0, 0, 0, 0.5);
+    border-radius: 40%;
+}
+
+#Legende li:hover {
+    opacity: 0.5;
+    transform: scale(1.05);
+    transition: 0.6s ease-in-out;
+}
+
+
+/*CSS pour la bannière */
+
+.Fil {
+	text-align: center;
+	
+	
+}
+.Fil ul{
+
+	list-style: none;
+	background: gold;
+	text-align: center;
+	margin:15px;
+	padding: 10px;
+	height: 15px;
+	border-radius: 8px;
+	
+}
+.Fil li{
+	display: inline-block;
+}
+.Fil ul li {
+	width: 160px;
+	margin: 15px;
+	padding: auto;
+
+}
+
+.Fil a{
+	
+	color:#fff;
+	
+	padding: 10px;
+	font-size: 17px;
+	font-family:  cursive;
+	
+}
+.Fil a:hover{
+	background: #000;
+	transition: 0.2s
+} 
+
+
+.Fil {
+    text-align: center;
+}
+
+.Fil ul {
+    list-style: none;
+    background: gold;
+    text-align: center;
+    margin: 15px;
+    padding: 10px;
+    height: auto; 
+}
+
+.Fil li {
+    display: inline-block;
+    margin: 30px; 
+}
+
+.Fil a {
+    color: #fff;
+    padding: 10px auto; 
+    font-size: 17px;
+    font-family: cursive;
+    text-decoration: none; 
+}
+
+.Fil a:hover {
+    background: #000;
+    transition: background 0.2s; 
+} 
+
+.Fil ul ul {
+    display: none; 
+    position: absolute; 
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.Fil li:hover > ul {
+    display: block; 
+}
+
+.Fil ul li {
+    position: relative; 
+}

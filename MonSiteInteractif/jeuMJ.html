@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz sur la carrière iconique de Michael Jackson</title>
+     <meta name="description" content="Vous voulez aller plus loin dans la musique de Michael Jackson ? Voici un petit jeu de quiz de la carrière de cette légende" />
+    <meta name="keywords" content="Michael Jackson, Roi de la Pop, Jeu, Quiz, Earth Song, Bad, Off the Wall, Pop, carrière de Michael Jackson, Beat it, Chansons, Albums" />
+    <link rel="stylesheet" href="MJ.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 80px;
+        }
+
+        .quiz-container {
+            margin: 0 auto;
+            padding: 30px;
+            max-width: 600px;
+            background-color: #222; 
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn {
+            margin: 10px 0;
+            padding: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: gold; 
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn.correct {
+            background-color: green;
+        }
+
+        .btn.incorrect {
+            background-color: red;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        h1 {
+            color: gold;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="openPageMJ.html" alt="Page d'accueil" title="Page d'accueil" style="text-decoration: none; color: gold; background-color: white; padding: 10px; margin: 10px; display: inline-block; border-radius: 5px;">Retour à l'Accueil</a>
+</header>
+
+
+<div class="photo">
+    <img src="Images/MJ.jpg" alt="MJone" title="MJ1" style= "widht: 420px; height: 420px; float: right; display: inline-block;">
+    <img src="Images/MJmj.jpg" alt="MJtwo" title="MJ2" style= "widht:420px; height: 420px; float: left; display: inline-block;">
+</div>
+<div class="quiz-container">
+    <h1>Quiz sur Michael Jackson</h1>
+    <div id="score">Score: 0</div>
+    <div id="question-container">
+        <div id="question">Question ici</div>
+        <div id="answer-buttons" class="btn-container">
+            <button class="btn">Réponse 1</button>
+            <button class="btn">Réponse 2</button>
+            <button class="btn">Réponse 3</button>
+            <button class="btn">Réponse 4</button>
+        </div>
+    </div>
+    <button id="next-button" class="btn hide">Suivant</button>
+</div>
+
+<script>
+const questionContainer = document.getElementById('question-container');
+const nextButton = document.getElementById('next-button');
+const answerButtons = document.getElementById('answer-buttons');
+const scoreDisplay = document.getElementById('score');
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+const questions = [
+    {
+        
+    // Ajoute d'autres questions ici
+        question: "Quelle est la date de naissance de Michael Jackson ?",
+        answers: ["29 août 1958", "25 décembre 1960", "1er janvier 1970","29 août 1956"],
+        correct: "29 août 1958"
+    },
+    {
+        question: "Quel est le nom de l'album qui contient le hit 'Billie Jean' ?",
+        answers: ["Bad", "Thriller", "Dangerous", "This is it"],
+        correct: "Thriller"
+    },
+    {
+        question: "Quel célèbre pas de danse a été popularisé par Michael Jackson ?",
+        answers: ["The Twist", "Moonwalk", "Macarena", "Hip Hop"],
+        correct: "Moonwalk"
+    },
+
+     {
+        question: "Quelle chanson de Michael Jackson est considérée comme un hymne pour la paix ?",
+        answers: ["Heal the World", "Black or White", "Smooth Criminal", "You are not alone"],
+        correct: "Heal the World"
+    },
+
+    {
+        question: "Avec quel groupe Michael Jackson a-t-il commencé sa carrière ?",
+        answers: ["The Temptations", "The Jackson 5", "Earth, Wind & Fire", "Back Street Boys"],
+        correct: "The Jackson 5"
+    },
+
+    {
+        question: "Quel est le nom du célèbre clip vidéo de Michael Jackson qui met en scène des zombies ?",
+        answers: ["Beat It", "Thriller", "Remember the Time", "Speed Demon"],
+        correct: "Thriller"
+    },
+
+     {
+        question: "Combien de Grammy Awards Michael Jackson a-t-il remportés au cours de sa carrière ?",
+        answers: ["8", "13", "15", "19"],
+        correct: "13"
+    },
+
+    {
+        question: "Quel était le surnom de Michael Jackson ?",
+        answers: ["The King of Pop", "The King of Rock", "The King of Soul", "The King of World"],
+        correct: "The King of Pop"
+    },
+
+    {
+        question: "Quel est le nom de l'album le plus vendu de tous les temps, sorti par Michael Jackson ?",
+        answers: ["Off the Wall", "Thriller", "Bad", "Dangerous"],
+        correct: "Thriller"
+    },
+
+    {
+        question: "Quelle danse emblématique Michael Jackson a-t-il popularisée ?",
+        answers: ["The Twist", "The Moonwalk", "The Robot", "Break danse"],
+        correct: "The Moonwalk"
+    },
+
+    {
+        question: "Dans quel film Michael Jackson a-t-il joué aux côtés de Diana Ross ?",
+        answers: ["The Wiz", "Moonwalker", "This Is It", "Come together"],
+        correct: "The Wiz"
+    },
+
+    {
+        question: "Quel était le titre du premier single de Michael Jackson en solo ?",
+        answers: ["Billie Jean", "Got to Be There", "Don’t Stop 'Til You Get Enough", "Leave me alone"],
+        correct: "Got to Be There"
+    },
+
+    {
+        question: "Combien de frères et sœurs Michael Jackson avait-il dans le groupe The Jackson 5 ? ",
+        answers: ["2", "3", "4", "5"],
+        correct: "4"
+    },
+
+     {
+        question: "Quelle est la date du décès de Michael Jackson ? ",
+        answers: ["1 juin 2008", "25 juin 2009", "14 juin 2010", "29 août 2008"],
+        correct: "25 juin 2009"
+    },
+
+    {
+        question: "Quel est le nom du clip qui a révolutionné la vidéo musicale dans les années 80 ? ",
+        answers: ["Smooth Criminal", "Thriller", "Bad", "Dangerous"],
+        correct: "Thriller"
+    },
+
+    {
+        question: "Quel est le surnom de Michael Jackson, souvent utilisé par ses fans ? ",
+        answers: ["The King of Pop", "The Gloved One", "The Moonwalker", "The Legend of Pop"],
+        correct: "The King of Pop"
+    },
+
+    {
+        question: "Quel est le nom de la chanson où Michael Jackson chante \"You Rock My World\"? ",
+        answers: ["Billie Jean", "You Rock My World", "Black or White", "The Way You Make Me Feel"],
+        correct: "You Rock My World"
+    },
+
+     {
+        question: "Dans quel spectacle annuel Michael Jackson a-t-il performé \"Billie Jean\" avec un célèbre pas de danse en 1983 ? ",
+        answers: ["Super Bowl", "Motown 25", "MTV Video Music Awards", "Spectalcle de Billie Jean"],
+        correct: "Motown 25"
+    },
+
+     {
+        question: "Quel est le titre de la chanson de Michael Jackson qui aborde le thème de l'environnement et de la paix ? ",
+        answers: ["Heal the World", "Earth Song", "Man in the Mirror", "We Are The World"],
+        correct: "Earth Song"
+    },
+
+    {
+        question: "Quelle chanson a été un énorme succès et parle de l'amour et des relations difficiles ? ",
+        answers: ["Billie Jean", "Smooth Criminal", "Black or White", "Bad"],
+        correct: "Billie Jean"
+    },
+
+     {
+        question: "Quel est le nom du célèbre documentaire sur la tournée de Michael Jackson \"History World Tour\" ?",
+        answers: ["This Is It", "The Jacksons: An American Dream", "Michael Jackson: Live in Bucharest", "Super Bowl"],
+        correct: "Michael Jackson: Live in Bucharest"
+    },
+
+    {
+        question: "Quelle chanson de Michael Jackson a été écrite en hommage aux victimes de la violence et du racisme ?",
+        answers: ["Black or White", "They Don't Care About Us", "Keep the Faith", "Give in to me"],
+        correct: "They Don't Care About Us"
+    },
+
+    {
+        question: "Quelle célèbre performance de Michael Jackson a eu lieu lors du Super Bowl XXVII en 1993 ?",
+        answers: ["Billie Jean", "We Are the World", "Jam", "Smooth Criminal"],
+        correct: "Billie Jean"
+    },
+
+     {
+        question: "Quel était le nom du personnage principal dans le court-métrage \"Thriller\" ?",
+        answers: ["Michael", "Vincent Price", "The Wolfman", "Jackson"],
+        correct: "Michael"
+    },
+
+     {
+        question: "Quel est le nom de l'album qui a fait de Michael Jackson une superstar mondiale en 1982 ?",
+        answers: ["Bad", "Thriller", "Dangerous", "This is it"],
+        correct: "Thriller"
+    },
+
+    {
+        question: "Quel mouvement de danse emblématique a été popularisé par Michael Jackson dans le clip de \"Billie Jean\" ?",
+        answers: ["The Moonwalk", "The Robot", "The Twist", "The Lightwalk"],
+        correct: "The Moonwalk"
+    },
+
+    {
+        question: "Quel est le titre de la chanson de Michael Jackson qui parle de l'importance de l'unité et de l'amour ?",
+        answers: ["Heal the World", "Earth Song", "Black or White", "They don't care about us"],
+        correct: "Heal the World"
+    },
+
+    {
+        question: "En quelle année Michael Jackson a-t-il sorti l'album \"Bad\" ?",
+        answers: ["1987", "1991", "1989", "1988"],
+        correct: "1987"
+    },
+
+     {
+        question: "Quel est le nom du projet caritatif auquel Michael Jackson a participé avec d'autres artistes en 1985 ?",
+        answers: ["Earth Song", "Live Aid", "USA for Africa", "We Are the World"],
+        correct: "We Are the World"
+    },
+
+    // Ajoute d'autres questions ici
+];
+
+function startGame() {
+    currentQuestionIndex = 0;
+    score = 0;
+    scoreDisplay.innerText = `Score: ${score}`;
+    nextButton.classList.add('hide');
+    showQuestion(questions[currentQuestionIndex]);
+}
+
+function showQuestion(question) {
+    questionContainer.querySelector('#question').innerText = question.question;
+    answerButtons.innerHTML = '';
+    question.answers.forEach(answer => {
+        const button = document.createElement('button');
+        button.innerText = answer;
+        button.classList.add('btn');
+        button.addEventListener('click', () => selectAnswer(answer, question.correct));
+        answerButtons.appendChild(button);
+    });
+}
+
+function selectAnswer(answer, correctAnswer) {
+    const isCorrect = answer === correctAnswer;
+    if (isCorrect) {
+        score++;
+        scoreDisplay.innerText = `Score: ${score}`;
+    }
+    const buttons = answerButtons.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        if (button.innerText === correctAnswer) {
+            button.classList.add('correct');
+        } else {
+            button.classList.add('incorrect');
+        }
+        button.disabled = true; // Désactiver tous les boutons
+    });
+    nextButton.classList.remove('hide'); // Affiche le bouton "Suivant"
+}
+
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        showQuestion(questions[currentQuestionIndex]);
+        nextButton.classList.add('hide'); // Cache le bouton à chaque nouvelle question
+    } else {
+        alert(`Fin du quiz ! Votre score est ${score}/${questions.length}`);
+    }
+});
+
+startGame();
+</script>
+
+</body>
+</html>

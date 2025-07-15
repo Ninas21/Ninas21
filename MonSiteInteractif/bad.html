@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La chanson Bad de Michael Jackson est sortie en 1987.Elle fait partie de son album éponyme Bad. C'est un morceau énergique et percutant dans laquelle Michael Jackson a adopté une attitude plus rebelle et assertive. "/>
+    <meta name="keywords" content="Michael Jackson, Roi de la Pop, carrière de Michael Jackson, Bad, Album 'Bad' Off the Wall,pop, funk et rock,  Beat it, Chansons, Albums"/>
+    <title>La chanson Bad de Michael Jackson</title>
+    <link rel="stylesheet" href="SiteMichaelJackson.css">
+   
+<div class="photo">
+    <img src="Images/MJ.jpg" alt="MJone" title="MJ1" style= "widht: 80px; height: 80px; float: right; display: inline-block;">
+    <img src="Images/MJmj.jpg" alt="MJtwo" title="MJ2" style= "widht: 80px; height: 80px; float: left; display: inline-block;">
+</div>
+
+
+
+   <style>
+    body{
+        height: 150vh;
+    
+
+    }
+      
+       p {
+      border-top: 2px solid gold;
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: white;
+      text-align: justify;
+      margin-left: 200px; /* Espace à gauche */
+      margin-right: 200px; /* Espace à droite */
+     }
+
+   .titre {
+         margin-left: 100px; /* Espace à gauche */
+    }
+
+      .bad {
+           text-align: center;
+       }
+
+   </style>
+</head>
+<body>
+
+    <a href="SiteMichaelJackson.html" alt="Bouton" title="Retour à Chansons" style="text-decoration: none; color: gold; background-color: white; padding: 10px;margin: 10px; display: inline-block; border-radius: 5px;">Retour à Chansons</a>
+
+
+    <div class="tag-cloud">
+        <a class="tag"  alt="Titre" title="Bad" style="font-size: 30px;">Bad</a>
+        
+    </div>
+
+   
+
+    <div id="content-display" style="margin-top: 20px; color: white;"></div>
+
+
+    <h3 class="titre"> Vous pouvez visualiser les paroles de cette chanson de MJ "Bad": </h3>
+    <div class="bad">
+        <iframe style='width: 450px; height: 360px;' src='https://voyant-tools.org/tool/Reader/?skipToDocId=65f3914a2fe086a08cec8666d2816b14&corpus=5146abf58a9a91bdb9c57a0940e84548'></iframe>
+        <iframe style='width: 450px; height: 360px;' src='https://voyant-tools.org/tool/Cirrus/?corpus=5146abf58a9a91bdb9c57a0940e84548'></iframe>
+        <iframe style='width: 450px; height: 360px;' src='https://voyant-tools.org/tool/TermsRadio/?mode=document&corpus=5146abf58a9a91bdb9c57a0940e84548'></iframe>
+    </div>
+
+<br>
+
+ <p>La chanson "Bad" de Michael Jackson est sortie en 1987.Elle fait partie de son album éponyme <b>Bad</b>. C'est un morceau énergique et percutant dans laquelle Michael Jackson a adopté une attitude plus rebelle et assertive. Les paroles de cette chanson ont été écrites par Michael Jackson où il a essayé de déckarer la onfiance et le pouvoir personnel. Il a introduit un ton audacieux et affirmé pour défendre sa propre identité. La chanson explore la place de Michael Jackson dans le monde. Il voulait passer un message à ceux qui l'intimident et on voit ça clairement dans son clip. Cette chanson "Bad" mélange entre le style musical de pop, funk et rock, en incluant une production rythmée, des cuivres puissants et des basses marquées. Le style vocal de Michael qui est marqué par des cris et des changements rapides de tonalité, ajoute une dimension énergique et presque théâtrale à la chanson. Avec un style de breakdance et du street dance, le clip de Michael jackson, réalisé par Spike lee, a été conçu comme un clip à décor urbain. Il présente dans son clip un côté de puissance et de contrôle. Cette chanson reste une chanson emblématique au niveau musical comme au niveau visuel. </p>
+</br>
+
+
+   <script>
+        const tags = document.querySelectorAll('.tag');
+        const contentDisplay = document.getElementById('content-display');
+
+        tags.forEach(tag => {
+            tag.addEventListener('click', (event) => {
+                event.preventDefault(); // Empêche le lien de naviguer
+                const content = tag.getAttribute('data-content'); // Récupère le contenu associé
+                contentDisplay.textContent = content; // Affiche le contenu
+            });
+        });
+    </script>
+
+
+
+    
+
+
+</body>
+</html>

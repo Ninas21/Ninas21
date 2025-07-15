@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Deviner la Chanson de Michael Jackson</title>
+    <meta name="description" content="Vous voulez aller plus loin dans la musique de Michael Jackson ? Voici un petit jeu de devinette des paroles de cette légende" />
+    <meta name="keywords" content="Michael Jackson, Roi de la Pop, Jeu, Devinette, Earth Song, Bad, Off the Wall, Pop, carrière de Michael Jackson, Beat it, Chansons, Albums" />
+     <link rel="stylesheet" href="MJ.css">
+
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: gold;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#lyrics {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 18px;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: gold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: silver;  /*#0056b3;*/
+}
+
+.hide {
+    display: none;
+}
+    </style>
+    
+</head>
+
+
+
+<body>
+
+    <header>
+
+<a href="openPageMJ.html" alt="Page d'accueil" title="Page d'accueil" style="text-decoration: none; color: gold; background-color: white; padding: 10px; margin: 10px; display: inline-block; border-radius: 5px;">Retour à l'Accueil </a>
+
+    </header>
+
+
+<div class="photo">
+    <img src="Images/MJ.jpg" alt="MJone" title="MJ1" style= "widht: 420px; height: 420px; float: right; display: inline-block;">
+    <img src="Images/MJmj.jpg" alt="MJtwo" title="MJ2" style= "widht:420px; height: 420px; float: left; display: inline-block;">
+</div>
+
+<div class="container">
+    <h1>Devine la Chanson</h1>
+    <div id="lyrics-container">
+        <p id="lyrics">Extrait des paroles ici</p>
+    </div>
+    <input type="text" id="answer" placeholder="Entrez le titre de la chanson">
+    <button id="submit">Soumettre</button>
+    <p id="result"></p>
+    <button id="next" class="hide">Suivant</button>
+</div>
+
+<script src="script.js"></script>
+
+
+
+<script>
+    // Code pour le jeu en JavaScript
+
+const lyricsContainer = document.getElementById('lyrics');
+const answerInput = document.getElementById('answer');
+const submitButton = document.getElementById('submit');
+const resultText = document.getElementById('result');
+const nextButton = document.getElementById('next');
+
+const songs = [
+    { lyrics: "Cause this is thriller, thriller night", title: "Thriller" },
+    { lyrics: "I'm starting with the man in the mirror", title: "Man in the Mirror" },
+    { lyrics: "You rock my world, you know you did", title: "You Rock My World" },
+    { lyrics: "Just beat it, beat it", title: "Beat It" },
+    { lyrics: "Keep On With The Force Don't Stop", title: "Don't Stop Til You Get Enough" },
+    { lyrics: "Annie are you Okay ?", title: "Smooth Criminal" },
+    { lyrics: "Another day has gone, I still all alone ", title: "You are not alone" },
+    { lyrics: "What about sun rise? What about rain?", title: "Earth Song" },
+    { lyrics: "There's a place in your heart And I know that it is love And this place could be much Brighter than tomorrow", title: "Heal The World" },
+    { lyrics: "Your butt is mine Gonna tell you right Just show your face In broad daylight", title: "Bad" },
+    { lyrics: "I Don't Care What You Talkin Bout Baby I Don't Care What You Say", title: "Leave me Alone" },
+    { lyrics: "He says \"I know you, you know me\" One thing I can tell you is you got to be free Come together right now over me", title: "Come Together" },
+    { lyrics: "She Always Takes It With A Heart Of Stone Cause All She Does Is Throw It Back To Me", title: "Give in To Me" },
+    { lyrics: "You and I must make a pact We must bring salvation back Where there is love, I'll be there", title: "I'll be there" },
+    { lyrics: "Hey Pretty Baby With The High Heels On", title: "The way you make me feel" },
+    { lyrics: "Skin head, dead head, everybody gone bad Situation, aggravation, everybody, allegation", title: "They don't care about us" },
+    { lyrics: "But, if You're thinkin' About my baby It dont matter if you're Black or white", title: "Black or White" },
+    { lyrics: "She got your number She know your game She put you under It's so insane", title: "Blood on the dance floor" },
+    { lyrics: "You'll never make me stay So take your weight off of me", title: "Dirty Diana" },
+    { lyrics: "Do You Remember When We Fell In Love We Were So Young", title: "Remember the time" }
+
+
+    
+    
+    
+
+];
+
+let currentSongIndex = 0;
+
+function showLyrics() {
+    answerInput.value = '';
+    resultText.innerText = '';
+    nextButton.classList.add('hide');
+    const currentSong = songs[currentSongIndex];
+    lyricsContainer.innerText = currentSong.lyrics;
+}
+
+submitButton.addEventListener('click', () => {
+    const userAnswer = answerInput.value.trim();
+    const correctAnswer = songs[currentSongIndex].title;
+    
+    if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+        resultText.innerText = 'Bonne réponse !';
+    } else {
+        resultText.innerText = `Mauvaise réponse. La bonne réponse est : ${correctAnswer}`;
+    }
+    nextButton.classList.remove('hide');
+});
+
+nextButton.addEventListener('click', () => {
+    currentSongIndex++;
+    if (currentSongIndex < songs.length) {
+        showLyrics();
+    } else {
+        resultText.innerText = 'Fin du jeu ! Merci d\'avoir joué !';
+        nextButton.classList.add('hide');
+        submitButton.disabled = true;
+    }
+});
+
+showLyrics();
+
+</script>
+
+</body>
+</html>
