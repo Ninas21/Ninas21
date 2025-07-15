@@ -1,0 +1,107 @@
+html{
+	scroll-behavior: smooth;
+}
+body{
+	font-family: cursive;
+	background-color: #dfe6e9; 
+}
+p{
+	text-align: center;
+	font-size: 2em;
+	
+}
+h3{
+	text-align: center;
+	font-size: 2em;
+	color: white;
+}
+h1{
+	text-align: center;
+	font-size: 1.5em;
+	font-family: cursive;
+	color: black;
+}
+section{
+	text-align: center;
+}
+
+.tarifs{
+	
+	margin: 2px auto;
+	display: inline-block;
+	background-position: center;
+	padding: 15px;
+}
+.disparition h1{
+	text-align: center;
+	font-family: cursive;
+	font-size: 1.9em;
+	color: white;
+	box-shadow: -3px -4px 3px 4px black;
+}
+.disparition p{
+    padding: 0px 20% ;
+    font-family: cursive;
+    font-size: 1.5em;
+}
+.disparition h3{
+    font-size: 1.5em;
+    color: black;
+    font-family: cursive;
+}
+.disparition h4{
+    font-size: 1.5em;
+}
+
+
+h3{
+	text-align: center;
+	font-size: 2em;
+	color: black;
+}
+h4{
+	text-align: center;
+	font-size: 1.5em;
+	font-family: cursive;
+	color: #786fa6;
+}
+section{
+	text-align: center;
+}
+
+#Images1 div{
+	
+	margin: 2px auto;
+	display: inline-block;
+	background-position: center;
+	padding: 15px;
+}
+
+#Images2 div{
+	
+	margin: 2px auto;
+	display: inline-block;
+	background-position: center;
+	padding: 15px;
+}
+.recrutement h1{
+    text-align: center;
+	font-size: 1.5em;
+	font-family: cursive;
+	color: black;
+}
+.recrutement h3{
+    text-align: center;
+	font-size: 2em;
+	color: black;
+}
+.recrutement p h3{
+
+     padding: 0px 20% ;
+    font-family: monospace;
+    font-size: 1.5em;
+}
+#mail a{
+	text-align: center;
+	margin: 43%;
+}
