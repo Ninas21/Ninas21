@@ -74,7 +74,7 @@ header li a{
 /* *************************************Partie d'image principale************************ */
 #imagePrincipale{
 	padding-top: 60px;
-	background:  url(Media/AnimauxSAUVA.jpg) no-repeat  10% 0%;
+	background:  url(AnimauxSAUVA.jpg) no-repeat  10% 0%;
 	background-size: cover;
 	height: 799px;
 }
@@ -224,10 +224,10 @@ header li a{
 }
 #animaux{
 	
-	background: url(Media/Girafes1.jpg);
+	background: url(Girafes1.jpg);
 }
 #jungle{
-	background: url(Media/TIGRE3.jpg);
+	background: url(TIGRE3.jpg);
 }
 #foret{
 	background: url(Fichier2/Anima.jpg);
@@ -397,10 +397,10 @@ header li a{
 	color: black;
 }
 #Restaurants {
-	background: url(Media/Pizza1.jpg)
+	background: url(Pizza1.jpg)
 }
 #Motels {
-	background: url(Media/Chambre1.jpg)
+	background: url(Chambre1.jpg)
 }
 
 
@@ -409,7 +409,7 @@ header li a{
 
  footer {
     padding-top: 50px;
-	background:  url(Media/BigLion.jpg) no-repeat  10% 0%;
+	background:  url(BigLion.jpg) no-repeat  10% 0%;
 	background-size: cover;
 	height: 799px;
 	text-align: center;
