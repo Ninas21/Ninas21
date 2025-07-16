@@ -113,7 +113,7 @@
 			<div id="services">
 				<div class="imageServ">
 					
-					<a href="Fichier1/Galeries.html" ><a href="Galeries.html" ><img src="Media/TigreB.jpg" alt="" height= "250 px" width="300 px"></a>
+					<a href="Fichier1/Galeries.html" ><a href="Galeries.html" ><img src="TigreB.jpg" alt="" height= "250 px" width="300 px"></a>
 				</div>
 			    <div class="imageServ">
 					
@@ -121,7 +121,7 @@
 				</div>
 				<div class="imageServ">
 					
-					<a href="Fichier3/Galeries3.html" ><a href="Galeries3.html"><img src="Media/animalRare.jpg" alt="Animaux divers" width="300px" height="250px"></a>
+					<a href="Fichier3/Galeries3.html" ><a href="Galeries3.html"><img src="animalRare.jpg" alt="Animaux divers" width="300px" height="250px"></a>
 				</div>
 			</div>
 		</section>
