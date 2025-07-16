@@ -2,66 +2,125 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8"/>
-	<title> Réserver </title>	
-	<link rel="stylesheet" href="Réserver.css">
+	<title>Réserver</title>	
+	
+
+
+	<style> 
+		body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 20px;
+    padding: 0;
+}
+
+.reservation {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.reservation h1 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.reservation h3 {
+    color: #34495e;
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2980b9;
+    color: white;
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background-color: #f1f9ff;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+	</style>
 </head>
 <body>
-<div class="reservation">
-			<h1> Vos réservations:</h1>
-            <p><h3> Vous pouvez réserver vos places directement en ligne.</h3></p><br>
-            <p><h3>Avertissement: cette fonctionnalité n'est pas disponilble pour le moement. Nous vous invitons à vous déplacer directement auprès de notre parc pour réserver.</h3></p>
-		</div>
-		
-<table>
-	<table style="border: 1px solid black;"></table>
-	
-	<table>
-		
+	<div class="reservation">
+		<h1>Vos réservations :</h1>
+		<h3>Vous pouvez réserver vos places directement en ligne.</h3>
+		<br>
+		<h3>
+			Avertissement : cette fonctionnalité n'est pas disponible pour le moment. 
+			Nous vous invitons à vous déplacer sur place auprès de notre parc pour réserver.
+		</h3>
+	</div>
+
+	<table style="border: 1px solid black; border-collapse: collapse; width: 80%; margin: auto;">
 		<thead>
 			<tr>
-				<th><h3>Sexe</h3></th>
-				<th><h3>Age</h3></th>
-				<th><h3>Situation</h3></th>
-				<th><h3>Tarifs</h3></th>
+				<th style="border: 1px solid black; padding: 8px;">Sexe</th>
+				<th style="border: 1px solid black; padding: 8px;">Âge</th>
+				<th style="border: 1px solid black; padding: 8px;">Situation</th>
+				<th style="border: 1px solid black; padding: 8px;">Tarifs</th>
 			</tr>
 		</thead>
-
 		<tbody>
 			<tr>
-				<td>Adulte</td>
-				<td>-----</td>
-				<th>Salarié ou autre</th>
-				<td>20,00 EUR</td>
+				<td style="border: 1px solid black; padding: 8px;">Adulte</td>
+				<td style="border: 1px solid black; padding: 8px;">-----</td>
+				<td style="border: 1px solid black; padding: 8px;">Salarié ou autre</td>
+				<td style="border: 1px solid black; padding: 8px;">20,00 EUR</td>
 			</tr>
 			<tr>
-				<td>Enfants</td>
-				<td>De 0 à 10 ans</td>
-				<th>-------</th>
-				<td>Gratuit 0,00 EUR</td>
+				<td style="border: 1px solid black; padding: 8px;">Enfants</td>
+				<td style="border: 1px solid black; padding: 8px;">De 0 à 10 ans</td>
+				<td style="border: 1px solid black; padding: 8px;">-------</td>
+				<td style="border: 1px solid black; padding: 8px;">Gratuit 0,00 EUR</td>
 			</tr>
 			<tr>
-				<td>Enfants</td>
-				<td>De 11 ans à 16 ans</td>
-				<th>-----</th>
-				<td>7,00 EUR</td>
+				<td style="border: 1px solid black; padding: 8px;">Enfants</td>
+				<td style="border: 1px solid black; padding: 8px;">De 11 ans à 16 ans</td>
+				<td style="border: 1px solid black; padding: 8px;">-----</td>
+				<td style="border: 1px solid black; padding: 8px;">7,00 EUR</td>
 			</tr>
 			<tr>
-				<td>Adolescents</td>
-				<td>17/ 18 </td>
-				<th>-----</th>
-				<td>10,00 EUR</td>
+				<td style="border: 1px solid black; padding: 8px;">Adolescents</td>
+				<td style="border: 1px solid black; padding: 8px;">17 / 18</td>
+				<td style="border: 1px solid black; padding: 8px;">-----</td>
+				<td style="border: 1px solid black; padding: 8px;">10,00 EUR</td>
 			</tr>
 			<tr>
-				<td>Autre</td>
-				<td>Tout age</td>
-				<th>Bénéficiaire du RSA/AAH/Sans emplois...(Sous présentation d'une attestation)</th>
-				<td>Gratuit 0,00 EUR</td>
+				<td style="border: 1px solid black; padding: 8px;">Autre</td>
+				<td style="border: 1px solid black; padding: 8px;">Tout âge</td>
+				<td style="border: 1px solid black; padding: 8px;">
+					Bénéficiaire du RSA/AAH/Sans emploi... (Sous présentation d'une attestation)
+				</td>
+				<td style="border: 1px solid black; padding: 8px;">Gratuit 0,00 EUR</td>
 			</tr>
-			
 		</tbody>
 	</table>
-</table>
-
-
 </body>
 </html>
