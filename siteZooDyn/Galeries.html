@@ -1,44 +1,106 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8"/>
-	<title>Galerie d'images</title>
-	<link rel="stylesheet" href="StyleGaleries.css">
-	
+  <meta charset="UTF-8" />
+  <title>Galerie d'images</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #4CAF50, #8B4513); /* Vert → Marron */
+  color: #fff;
+  padding: 30px;
+  min-height: 100vh;
+}
+
+.titre {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.titre h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.titre h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #e0e0e0;
+}
+
+/* Galerie grid */
+.galerie {
+  display: flex;
+  justify-content: center;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.image-grid a {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 150px;   /* largeur fixe */
+  height: 150px;  /* hauteur fixe */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* remplissage en coupant ce qui dépasse */
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image-grid a:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+</style>
 
 </head>
 <body>
-		
-	<p><h3>Galerie d'images</h3></p>
-	<p><h4>Les animaux les plus dangereux au monde</h4></p>
-		
-	<section>
-	<div id="Images1"><br>
-		
-		<div id="animal1"><a href="Fichier1/CouleuvreNoire.jpg" height=450px width=450px><img src="Fichier1/CouleuvreNoire.jpg" alt="" title="Couleuvre noire dangereuse" height=150px width=150px></a></div>
-		<div id="animal2"><a href="Fichier1/Couleuvre0.jpg" height=450px width=450px><img src="Fichier1/Couleuvre0.jpg" alt="" title="Couleuvre" height=150px width=150px></a></div>
-		<div id="animal3"><a href="Fichier1/Crocodile.jpg" height=450px width=450px><img src="Fichier1/Crocodile.jpg" alt="" title="Crocodile" height=150px width=150px></a></div>
-		<div id="animal4"><a href="Fichier1/TigreNoir.jpg" height=450px width=450px><img src="Fichier1/TigreNoir.jpg" alt="" title="Tigre noir" height=150px width=150px></a></div>
-		<div id="animal4"><a href="Fichier1/Léopard.jpg" height=450px width=450px><img src="Fichier1/Léopard.jpg" alt="" title="Léopard" height=150px width=150px></a></div>
-		<div id="animal4"><a href="Fichier1/Tigre.jpg" height=450px width=450px><img src="Fichier1/Tigre.jpg" alt="" title="Tigre" height=150px width=150px></a></div>
-		<div id="animal5"><a href="Fichier1/Eléphant0.jpg" height=450px width=450px><img src="Fichier1/Eléphant0.jpg" alt="" title="Eléphant" height=150px width=150px></a></div></br>
 
-	</div>
-        
-    </section>
+  <header class="titre">
+    <h1>Galerie d'images</h1>
+    <h2>Les animaux les plus dangereux au monde</h2>
+  </header>
 
-    <section>
-    <div id="Images2"><br>
-    	<div id="animal4"><a href="Fichier1/Hypo1.jpg" height=450px width=450px><img src="Fichier1/Hypo1.jpg" alt="" title="Hypopotame" height=150px width=150px></a></div>
-    	<div id="animal4"><a href="Fichier1/BigLion.jpg" height=450px width=450px><img src="Fichier1/BigLion.jpg" alt="" title="Lion dangereux" height=150px width=150px></a></div>
-		<div id="animal6"><a href="Fichier1/Dragon.jpg" height=450px width=450px><img src="Fichier1/Dragon.jpg" alt="" title="Dragon" height=150px width=150px></a></div>
-		<div id="animal7"><a href="Fichier1/Ours0.jpg" height=450px width=450px><img src="Fichier1/Ours0.jpg" alt="" title="Ours" height=150px width=150px></a></div>
-		<div id="animal8"><a href="Fichier1/OursPolaire.jpg" height=450px width=450px><img src="Fichier1/OursPolaire.jpg" alt="" title="Ours Polaire dangereux" height=150px width=150px></a></div>
-		<div id="animal9"><a href="Fichier1/KingKong0.jpg" height=450px width=450px><img src="Fichier1/KingKong0.jpg" alt="" title="King kong" height=150px width=150px></a></div>
-		<div id="animal10"><a href="Fichier1/Frog.jpg" height=450px width=450px><img src="Fichier1/Frog.jpg" alt="" title="Grenouille dangereuse" height=150px width=150px></a></div></br>
-      
-	</div>
+  <section class="galerie">
+    <div class="image-grid">
+      <a href="Fichier1/CouleuvreNoire.jpg"><img src="Fichier1/CouleuvreNoire.jpg" alt="Couleuvre noire" title="Couleuvre noire dangereuse" /></a>
+      <a href="Fichier1/Couleuvre0.jpg"><img src="Fichier1/Couleuvre0.jpg" alt="Couleuvre" title="Couleuvre" /></a>
+      <a href="Fichier1/Crocodile.jpg"><img src="Fichier1/Crocodile.jpg" alt="Crocodile" title="Crocodile" /></a>
+      <a href="Fichier1/TigreNoir.jpg"><img src="Fichier1/TigreNoir.jpg" alt="Tigre noir" title="Tigre noir" /></a>
+      <a href="Fichier1/Léopard.jpg"><img src="Fichier1/Léopard.jpg" alt="Léopard" title="Léopard" /></a>
+      <a href="Fichier1/Tigre.jpg"><img src="Fichier1/Tigre.jpg" alt="Tigre" title="Tigre" /></a>
+      <a href="Fichier1/Eléphant0.jpg"><img src="Fichier1/Eléphant0.jpg" alt="Éléphant" title="Éléphant" /></a>
+      <a href="Fichier1/Hypo1.jpg"><img src="Fichier1/Hypo1.jpg" alt="Hippopotame" title="Hippopotame" /></a>
+      <a href="Fichier1/BigLion.jpg"><img src="Fichier1/BigLion.jpg" alt="Lion" title="Lion dangereux" /></a>
+      <a href="Fichier1/Dragon.jpg"><img src="Fichier1/Dragon.jpg" alt="Dragon" title="Dragon" /></a>
+      <a href="Fichier1/Ours0.jpg"><img src="Fichier1/Ours0.jpg" alt="Ours" title="Ours" /></a>
+      <a href="Fichier1/OursPolaire.jpg"><img src="Fichier1/OursPolaire.jpg" alt="Ours Polaire" title="Ours Polaire dangereux" /></a>
+      <a href="Fichier1/KingKong0.jpg"><img src="Fichier1/KingKong0.jpg" alt="King Kong" title="King Kong" /></a>
+      <a href="Fichier1/Frog.jpg"><img src="Fichier1/Frog.jpg" alt="Grenouille" title="Grenouille dangereuse" /></a>
+    </div>
+  </section>
 
-    </section>
 </body>
 </html>
