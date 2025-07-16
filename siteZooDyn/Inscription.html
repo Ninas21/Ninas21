@@ -1,19 +1,94 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8"/>
-	<title> Inscription </title>	
-	<link rel="stylesheet" href="Inscription.css">
+  <meta charset="UTF-8" />
+  <title>Inscription</title>
+  <link rel="stylesheet" href="Inscription.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+
+  	/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #4CAF50, #8B4513);
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container */
+.form-container {
+  background-color: white;
+  color: #333;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 25px;
+  color: #4CAF50;
+}
+
+/* Form */
+form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+form input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+  outline: none;
+}
+
+/* Button */
+form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #4CAF50, #8B4513);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: linear-gradient(to right, #45A049, #A0522D);
+}
+  </style>
 </head>
 <body>
 
-<h4>Inscription</h4>
-			<form method="post">
-	<input type="pseudo" name="pseudo" id="pseudo"placeholder="Votre pseudo" required><br/>
-	<input type="email" name="cemail" id="cemail"placeholder="Votre Email" required><br/>
-	<input type="password" name="password" placeholder="Votre Mot de passe" required><br/>
-	<input type="password" name="cpassword" id="cpassword" placeholder="Confirmer votre Mot de passe" required>
-	<input type="submit" name="formsend" id="formsend" value="ENTRER">
-            </form>
- </body>
-  </html>
+  <main class="form-container">
+    <h2>Inscription</h2>
+    <form method="post">
+      <input type="text" name="pseudo" id="pseudo" placeholder="Votre pseudo" required />
+      <input type="email" name="cemail" id="cemail" placeholder="Votre email" required />
+      <input type="password" name="password" placeholder="Votre mot de passe" required />
+      <input type="password" name="cpassword" id="cpassword" placeholder="Confirmer votre mot de passe" required />
+      <button type="submit" name="formsend" id="formsend">ENTRER</button>
+    </form>
+  </main>
+
+</body>
+</html>
