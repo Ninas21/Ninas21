@@ -13,29 +13,72 @@ h1 {
     
 }
 
-#Legende li {
-    margin: 80px 100px 0 100px;
-    height: 350px;
-    width: 40%;
-    max-width: 400px;
-    border-radius: 40%;
-    float: left;
-    box-shadow: 6px 6px 28px rgba(0, 0, 0, 0.5);
-    padding: 50px;
+
+.legende-container {
+    display: flex;
+    gap: 200px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 80px;
 }
 
-#Legende p a {
-    height: 45px; 
-    width: 235px;
-    background-color: black;
-    float: right;
-    margin: 50px -180px 0 0;
-    font-size: 1.2em;
-    text-align: center;
-    padding-top: 15px;
-    box-shadow: 4px 4px 0 1px rgba(0, 0, 0, 0.5);
-    border-radius: 20px; 
+.carte {
+    width: 380px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
 }
+
+.image-carte {
+    flex: 1;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 6px 6px 28px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease;
+}
+
+.image-carte:hover {
+    transform: scale(1.05);
+}
+
+.titre-gauche, .titre-droite {
+    margin-bottom: 10px;
+}
+
+.titre-gauche {
+    align-self: flex-start;
+}
+
+.titre-droite {
+    align-self: flex-end;
+}
+
+.titre-gauche a, .titre-droite a {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: gold;
+    font-family: cursive;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.titre-gauche a:hover, .titre-droite a:hover {
+    color: silver;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 #Legende #chansons {
     float: right;
@@ -84,92 +127,67 @@ a {
 }
 
 
-/*CSS pour la bannière */
+/* code css pour la bannière*/
 
 .Fil {
-	text-align: center;
-	
-	
-}
-.Fil ul{
-
-	list-style: none;
-	background: gold;
-	text-align: center;
-	margin:15px;
-	padding: 10px;
-	height: 15px;
-	border-radius: 8px;
-	
-}
-.Fil li{
-	display: inline-block;
-}
-.Fil ul li {
-	width: 160px;
-	margin: 15px;
-	padding: auto;
-
-}
-
-.Fil a{
-	
-	color:#fff;
-	
-	padding: 10px;
-	font-size: 17px;
-	font-family:  cursive;
-	
-}
-.Fil a:hover{
-	background: #000;
-	transition: 0.2s
-} 
-
-
-.Fil {
-    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 15px auto 0 auto;
+    background: gold;
+    padding: 10px 0;
+    border-radius: 15px; /* coins arrondis */
 }
 
 .Fil ul {
     list-style: none;
-    background: gold;
+    margin: 0 auto;
+    padding: 0;
     text-align: center;
-    margin: 15px;
-    padding: 10px;
-    height: auto; 
-}
-
-.Fil li {
-    display: inline-block;
-    margin: 30px; 
-}
-
-.Fil a {
-    color: #fff;
-    padding: 10px auto; 
-    font-size: 17px;
-    font-family: cursive;
-    text-decoration: none; 
-}
-
-.Fil a:hover {
-    background: #000;
-    transition: background 0.2s; 
-} 
-
-.Fil ul ul {
-    display: none; 
-    position: absolute; 
-    background-color: #333;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.Fil li:hover > ul {
-    display: block; 
 }
 
 .Fil ul li {
-    position: relative; 
+    position: relative;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.Fil ul li a {
+    color: white;
+    font-size: 17px;
+    font-family: cursive;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.Fil a:hover {
+    background: black;
+    transition: background 0.2s;
+}
+
+/* Sous-menu */
+.Fil ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #333;
+    border-radius: 5px;
+    padding: 0;
+    z-index: 1000;
+}
+
+.Fil ul ul li {
+    display: block;
+    margin: 0;
+}
+
+.Fil ul ul li a {
+    padding: 10px 20px;
+    width: 160px;
+    color: white;
+}
+
+.Fil li:hover > ul {
+    display: block;
 }
