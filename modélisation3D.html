@@ -49,12 +49,14 @@ p {
 }
 
 /* Conteneur pour centrer les vidéos */
-.video-container {
-    display: grid;
-   
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
+.video-container iframe {
+    width: 100%;
+    max-width: 640px;
+    height: 360px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #000;
 }
 
 /* Style des vidéos */
@@ -146,11 +148,10 @@ img {
         margin: 0 20px 30px 20px;
     }
 
-    .video-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+    .video-container iframe {
+    width: 95%;
+    height: auto;
+}
 
     video {
         width: 95%;
