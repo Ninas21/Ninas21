@@ -693,7 +693,26 @@ footer p {
   header {
     padding: 10px 0;
   }
-  
+}
+    
+@media (max-width: 768px) {
+  .projects,
+  .project-cards,
+  .project-cardAF,
+  .project-cardV,
+  .project-cardZ,
+  .project-cardM,
+  .project-cardA,
+  .project-cardI,
+  .project-cardL,
+  .project-cardU,
+  .project-cardB,
+  .project-cardC,
+  .project-cardVR {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
 }
 
 
