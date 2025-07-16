@@ -3,63 +3,103 @@
 <head>
 	<meta charset="UTF-8"/>
 	<title>Mes photos</title>
-	<link rel="stylesheet" href="StyleGaleries2.css"></link>
-	
+
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f9f9f9;
+  color: #333;
+  text-align: center;
+}
+
+h3, h4 {
+  margin-bottom: 10px;
+}
+
+.image-section {
+  margin-bottom: 40px;
+}
+
+.images-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.animal {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.animal:hover {
+  transform: scale(1.05);
+}
+
+.animal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+ 
+</style>
+
 
 </head>
 <body>
-	
-		<p><h3>Ma galerie</h3></p>
-		<p><h4>Les animaux domestiques et les plus doux au monde</h4></p>
-	<section>
-	<div id="Images1"><br>
-		
-		<div id="animal1"><a href="Fichier2/Oiseau1.jpg" height=450px width=450px><img src="Fichier2/Oiseau1.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal2"><a href="Fichier2/Oiseau2.jpg" height=450px width=450px><img src="Fichier2/Oiseau2.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal3"><a href="Fichier2/Oiseau3.jpg" height=450px width=450px><img src="Fichier2/Oiseau3.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal4"><a href="Fichier2/Oiseau5.jpg" height=450px width=450px><img src="Fichier2/Oiseau5.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal5"><a href="Fichier2/OISEAUBO.jpg" height=450px width=450px><img src="Fichier2/OISEAUBO.jpg" alt="" title="OiseauBo" height=150px width=150px></a></div>
-		<div id="animal6"><a href="Fichier2/Oiseau11.jpg" height=450px width=450px><img src="Fichier2/Oiseau11.jpg" alt="" title="Oiseau" height=150px width=150px></a></div></br>
-	</div>
-        
-    </section>
+	<h3>Ma galerie</h3>
+	<h4>Les animaux domestiques et les plus doux au monde</h4>
 
-    <section>
-    <div id="Images2"><br>
-    	<div id="animal6"><a href="Fichier2/Oiseau10.jpg" height=450px width=450px><img src="Fichier2/Oiseau10.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal6"><a href="Fichier2/Oie0.jpg" height=450px width=450px><img src="Fichier2/Oie0.jpg" alt="" title="Oie" height=150px width=150px></a></div>
-		<div id="animal7"><a href="Fichier2/Oiseau6.jpg" height=450px width=450px><img src="Fichier2/Oiseau6.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal8"><a href="Fichier2/Oiseau7.jpg" height=450px width=450px><img src="Fichier2/Oiseau7.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal9"><a href="Fichier2/Oiseau8.jpg" height=450px width=450px><img src="Fichier2/Oiseau8.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal10"><a href="Fichier2/Oiseau9.jpg" height=450px width=450px><img src="Fichier2/Oiseau9.jpg" alt="" title="Oiseau" height=150px width=150px></a></div></br>
-      
-	</div>
+	<section class="image-section">
+		<div class="images-row">
+			<div class="animal"><a href="Fichier2/Oiseau1.jpg"><img src="Fichier2/Oiseau1.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau2.jpg"><img src="Fichier2/Oiseau2.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau3.jpg"><img src="Fichier2/Oiseau3.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau5.jpg"><img src="Fichier2/Oiseau5.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/OISEAUBO.jpg"><img src="Fichier2/OISEAUBO.jpg" alt="OiseauBo" title="OiseauBo"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau11.jpg"><img src="Fichier2/Oiseau11.jpg" alt="Oiseau" title="Oiseau"></a></div>
+		</div>
+	</section>
 
-    </section>
-    <section>
-    <div id="Images2"><br>
-    	<div id="animal6"><a href="Fichier2/Oiseau12.jpg" height=450px width=450px><img src="Fichier2/Oiseau12.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal6"><a href="Fichier2/Oiseau13.jpg" height=450px width=450px><img src="Fichier2/Oiseau13.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal7"><a href="Fichier2/Oiseau14.jpg" height=450px width=450px><img src="Fichier2/Oiseau14.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal8"><a href="Fichier2/Oiseau15.jpg" height=450px width=450px><img src="Fichier2/Oiseau15.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal9"><a href="Fichier2/Oiseau16.jpg" height=450px width=450px><img src="Fichier2/Oiseau16.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal10"><a href="Fichier2/Oiseau17.jpg" height=450px width=450px><img src="Fichier2/Oiseau17.jpg" alt="" title="Oiseau" height=150px width=150px></a></div></br>
-      
-	</div>
+	<section class="image-section">
+		<div class="images-row">
+			<div class="animal"><a href="Fichier2/Oiseau10.jpg"><img src="Fichier2/Oiseau10.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oie0.jpg"><img src="Fichier2/Oie0.jpg" alt="Oie" title="Oie"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau6.jpg"><img src="Fichier2/Oiseau6.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau7.jpg"><img src="Fichier2/Oiseau7.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau8.jpg"><img src="Fichier2/Oiseau8.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau9.jpg"><img src="Fichier2/Oiseau9.jpg" alt="Oiseau" title="Oiseau"></a></div>
+		</div>
+	</section>
 
-    </section>
-    <section>
-    <div id="Images2"><br>
-    	<div id="animal6"><a href="Fichier2/Oiseau18.jpg" height=450px width=450px><img src="Fichier2/Oiseau18.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal6"><a href="Fichier2/Oiseau.jpg" height=450px width=450px><img src="Fichier2/Oiseau.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal7"><a href="Fichier2/Oiseau19.jpg" height=450px width=450px><img src="Fichier2/Oiseau19.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal8"><a href="Fichier2/Oiseau20.jpg" height=450px width=450px><img src="Fichier2/Oiseau20.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal9"><a href="Fichier2/Oiseau21.jpg" height=450px width=450px><img src="Fichier2/Oiseau21.jpg" alt="" title="Oiseau" height=150px width=150px></a></div>
-		<div id="animal10"><a href="Fichier2/Oiseau22.jpg" height=450px width=450px><img src="Fichier2/Oiseau22.jpg" alt="" title="Oiseau" height=150px width=150px></a></div></br>
-      
-	</div>
+	<section class="image-section">
+		<div class="images-row">
+			<div class="animal"><a href="Fichier2/Oiseau12.jpg"><img src="Fichier2/Oiseau12.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau13.jpg"><img src="Fichier2/Oiseau13.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau14.jpg"><img src="Fichier2/Oiseau14.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau15.jpg"><img src="Fichier2/Oiseau15.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau16.jpg"><img src="Fichier2/Oiseau16.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau17.jpg"><img src="Fichier2/Oiseau17.jpg" alt="Oiseau" title="Oiseau"></a></div>
+		</div>
+	</section>
 
-    </section>
-			
+	<section class="image-section">
+		<div class="images-row">
+			<div class="animal"><a href="Fichier2/Oiseau18.jpg"><img src="Fichier2/Oiseau18.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau.jpg"><img src="Fichier2/Oiseau.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau19.jpg"><img src="Fichier2/Oiseau19.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau20.jpg"><img src="Fichier2/Oiseau20.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau21.jpg"><img src="Fichier2/Oiseau21.jpg" alt="Oiseau" title="Oiseau"></a></div>
+			<div class="animal"><a href="Fichier2/Oiseau22.jpg"><img src="Fichier2/Oiseau22.jpg" alt="Oiseau" title="Oiseau"></a></div>
+		</div>
+	</section>
 </body>
 </html>
