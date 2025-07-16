@@ -1,67 +1,184 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8"/>
-	<title> Tarifs </title>	
-	<link rel="stylesheet" href="Tarifs.css">
+  <meta charset="UTF-8"/>
+  <title>Tarifs</title>  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+
+  <style>
+  	/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(to right, #4CAF50, #8B4513);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.header h3 {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+/* Section */
+.pricing-section h4 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #4CAF50;
+}
+
+/* Table Styles */
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-table thead {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.pricing-table tbody tr:hover {
+  background-color: #f2fdf4;
+  transition: background-color 0.3s ease;
+}
+
+.pricing-table td strong {
+  color: #388e3c;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .pricing-table thead {
+    display: none;
+  }
+
+  .pricing-table, .pricing-table tbody, .pricing-table tr, .pricing-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .pricing-table tr {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+  }
+
+  .pricing-table td {
+    text-align: left;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .pricing-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    font-weight: bold;
+    color: #4CAF50;
+    width: 45%;
+  }
+}
+
+  </style>
 </head>
 <body>
-	<section>
-<div class="tarifs">
-			<h1> Nos tarifs:</h1>
-            <p><h3> Les tarifs varient selon l'age et la situation.</h3></p>
-		</div>
-		
-<table>
-	<table style="border: 1px solid black;"></table>
-	<caption> Les tarifs selon les cas:</caption>
-	<table>
-		
-		<thead>
-			<tr>
-				<th>Sexe</th>
-				<th>Age</th>
-				<th>Situation</th>
-				<th>Tarifs</th>
-			</tr>
-		</thead>
 
-		<tbody>
-			<tr>
-				<td>Adulte</td>
-				<td>-----</td>
-				<th>Salarié ou autre</th>
-				<td>20,00 EUR</td>
-			</tr>
-			<tr>
-				<td>Enfants</td>
-				<td>De 0 à 10 ans</td>
-				<th>-------</th>
-				<td>Gratuit 0,00 EUR</td>
-			</tr>
-			<tr>
-				<td>Enfants</td>
-				<td>De 11 ans à 16 ans</td>
-				<th>-----</th>
-				<td>7,00 EUR</td>
-			</tr>
-			<tr>
-				<td>Adolescents</td>
-				<td>17/ 18 </td>
-				<th>-----</th>
-				<td>10,00 EUR</td>
-			</tr>
-			<tr>
-				<td>Autre</td>
-				<td>Tout age</td>
-				<th>Bénéficiaire du RSA/AAH/Sans emplois...(Sous présentation d'une attestation)</th>
-				<td>Gratuit 0,00 EUR</td>
-			</tr>
-			
-		</tbody>
-	</table>
-</table>
+  <header class="header">
+    <h1>Nos tarifs</h1>
+    <h3>Les tarifs varient selon l'âge et la situation</h3>
+  </header>
 
-</section>
+  <main class="container">
+    <section class="pricing-section">
+      <h4>Tarifs selon les cas :</h4>
+
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Sexe</th>
+            <th>Âge</th>
+            <th>Situation</th>
+            <th>Tarif</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Adulte</td>
+            <td>—</td>
+            <td>Salarié ou autre</td>
+            <td>20,00 €</td>
+          </tr>
+          <tr>
+            <td>Enfant</td>
+            <td>0 à 10 ans</td>
+            <td>—</td>
+            <td><strong>Gratuit</strong></td>
+          </tr>
+          <tr>
+            <td>Enfant</td>
+            <td>11 à 16 ans</td>
+            <td>—</td>
+            <td>7,00 €</td>
+          </tr>
+          <tr>
+            <td>Adolescent</td>
+            <td>17 à 18 ans</td>
+            <td>—</td>
+            <td>10,00 €</td>
+          </tr>
+          <tr>
+            <td>Autre</td>
+            <td>Tous âges</td>
+            <td>Bénéficiaire du RSA / AAH / Sans emploi (attestation requise)</td>
+            <td><strong>Gratuit</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
 </body>
 </html>
