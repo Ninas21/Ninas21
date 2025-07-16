@@ -46,6 +46,18 @@ p {
 }
 
 /* Style des vidéos */
+iframe {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #000;
+    margin: 20px auto;
+    display: block;
+    border: none;
+}
+    
 video {
     width: 100%;
     max-width: 640px; /* Limite la taille des vidéos à 640px */
@@ -97,7 +109,10 @@ video {
         font-size: 18px;
         padding: 0 10px;
     }
-
+iframe {
+    width: 95%;
+    max-width: 100%;
+}
     video {
         width: 95%;
         max-width: 100%;
@@ -120,7 +135,9 @@ video {
     p {
         font-size: 16px;
     }
-
+iframe {
+    width: 100%;
+}
     .btn-retour {
         font-size: 13px;
         padding: 7px 16px;
@@ -131,9 +148,7 @@ video {
 
 <h3>Projet VR (Casque immersif)</h3>
                     <p>Ma réalisation du VR (Réalité virtuelle) avec blender et Unity6 dans le cadre d'apprentissage académique</p>
-                    <video width="640" height="360" controls>
-                        <source src="vidéos/réalité_virtuelle.mp4" type="video/mp4">
-                    </video>
+                   <iframe src="https://drive.google.com/file/d/15NluJ2dgkv0W5xkH31UOQlheg5aiueFh/preview" width="640" height="480" allow="autoplay"></iframe>
 
 <a href="accueil.html#projects" class="btn-retour">Retour</a>
 
