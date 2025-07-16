@@ -1,22 +1,131 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8"/>
-	<title> Services </title>	
-	<link rel="stylesheet" href="Tarifs.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nos Services</title>
+  <link rel="stylesheet" href="tarifs.css" />
+
+
+
+  <style>
+  	/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(to right, #4CAF50, #8B4513);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Service Card */
+.service-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #007BFF;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #777;
+  background-color: #f0f0f0;
+  margin-top: 60px;
+  border-top: 1px solid #ddd;
+}
+  </style>
 </head>
 <body>
-<div class="rightbox">
-			<h1> Nos services:</h1>
-            <p><h3> Nous vous présentons nos services disponibles.</h3></p>
-		</div>
-		
-<section>
-	<p><h4> Services d'hotellerie</h4></p>
-	<p><h4> Services de restauration</h4></p>
-	<p><h4> Services de contact</h4></p>
-</section>
 
+  <header class="header">
+    <div class="container">
+      <h1>Nos Services</h1>
+      <p class="subtitle">Découvrez les prestations que nous vous proposons</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="services-grid">
+      <div class="service-card">
+        <h2>🛏️ Hôtellerie</h2>
+        <p>Profitez d’un hébergement de qualité dans un cadre chaleureux et moderne.</p>
+      </div>
+      <div class="service-card">
+        <h2>🍽️ Restauration</h2>
+        <p>Découvrez notre menu gastronomique, alliant saveurs locales et cuisine raffinée.</p>
+      </div>
+      <div class="service-card">
+        <h2>📞 Contact & Assistance</h2>
+        <p>Notre équipe est disponible 24/7 pour répondre à vos besoins et questions.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Votre Entreprise. Tous droits réservés.</p>
+  </footer>
 
 </body>
 </html>
