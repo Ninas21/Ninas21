@@ -3,36 +3,79 @@
 <head>
 	<meta charset="UTF-8"/>
 	<title>Ma galerie</title>
-	<link rel="stylesheet" href="StyleGaleries3.css"></link>
 	
+
+
+<style> 
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f0f0f0;
+  color: #222;
+  text-align: center;
+}
+
+h3, h4 {
+  margin-bottom: 10px;
+}
+
+.image-section {
+  margin-bottom: 40px;
+}
+
+.images-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.animal {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.animal:hover {
+  transform: scale(1.05);
+}
+
+.animal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+</style>
 
 </head>
 <body>
-		
-	<p><h3>Ma galerie</h3></p>
-	<p><h4>Les animaux les plus rares et qui sont en voie de disparition</h4></p>
-	<section>
-	<div id="Images1"><br>
-		
-		<div id="animal1"><a href="Fichier3/ChatRare.jpg" height=450px width=450px><img src="Fichier3/ChatRare.jpg" alt="" title="Chat rare" height=150px width=150px></a></div>
-		<div id="animal2"><a href="Fichier3/CoalaBlanc.jpg" height=450px width=450px><img src="Fichier3/CoalaBlanc.jpg" alt="" title="Coala blanc" height=150px width=150px></a></div>
-		<div id="animal3"><a href="Fichier3/Faon.jpg" height=450px width=450px><img src="Fichier3/Faon.jpg" alt="" title="Faon rare" height=150px width=150px></a></div>
-		<div id="animal4"><a href="Fichier3/GazelleBizarre.jpeg" height=450px width=450px><img src="Fichier3/GazelleBizarre.jpeg" alt="" title="Gazelle rare" height=150px width=150px></a></div>
-		<div id="animal5"><a href="Fichier3/GazelleBlanche.jpg" height=450px width=450px><img src="Fichier3/GazelleBlanche.jpg" alt="" title="Gazelle blanche" height=150px width=150px></a></div></br>
-	</div>
-        
-    </section>
+	<h3>Ma galerie</h3>
+	<h4>Les animaux les plus rares et qui sont en voie de disparition</h4>
 
-    <section>
-    <div id="Images2"><br>
-		<div id="animal6"><a href="Fichier3/Grenouille.jpg" height=450px width=450px><img src="Fichier3/Grenouille.jpg" alt="" title="Grenouille" height=150px width=150px></a></div>
-		<div id="animal7"><a href="Fichier3/LionBlanc.jpg" height=450px width=450px><img src="Fichier3/LionBlanc.jpg" alt="" title="Lion blanc rare" height=150px width=150px></a></div>
-		<div id="animal8"><a href="Fichier3/LionNoir.jpg" height=450px width=450px><img src="Fichier3/LionNoir.jpg" alt="" title="Lion noir rare" height=150px width=150px></a></div>
-		<div id="animal9"><a href="Fichier3/SingeRare.jpg" height=450px width=450px><img src="Fichier3/SingeRare.jpg" alt="" title="Singe rare" height=150px width=150px></a></div>
-		<div id="animal10"><a href="Fichier3/Ecureuil.jpg" height=450px width=450px><img src="Fichier3/Ecureuil.jpg" alt="" title="Ecureuil coloré rare" height=150px width=150px></a></div></br>
-      
-	</div>
+	<section class="image-section">
+		<div class="images-row">
+			<div class="animal"><a href="Fichier3/ChatRare.jpg"><img src="Fichier3/ChatRare.jpg" alt="Chat rare" title="Chat rare" height="150" width="150"></a></div>
+			<div class="animal"><a href="Fichier3/CoalaBlanc.jpg"><img src="Fichier3/CoalaBlanc.jpg" alt="Coala blanc" title="Coala blanc" height="150" width="150"></a></div>
+			<div class="animal"><a href="Fichier3/Faon.jpg"><img src="Fichier3/Faon.jpg" alt="Faon rare" title="Faon rare" height="150" width="150"></a></div>
+			<div class="animal"><a href="Fichier3/GazelleBizarre.jpeg"><img src="Fichier3/GazelleBizarre.jpeg" alt="Gazelle rare" title="Gazelle rare" height="150" width="150"></a></div>
+			<div class="animal"><a href="Fichier3/GazelleBlanche.jpg"><img src="Fichier3/GazelleBlanche.jpg" alt="Gazelle blanche" title="Gazelle blanche" height="150" width="150"></a></div>
+		</div>
+	</section>
 
-    </section>
+	<section class="image-section">
+		<div class="images-row">
+			<div class="animal"><a href="Fichier3/Grenouille.jpg"><img src="Fichier3/Grenouille.jpg" alt="Grenouille" title="Grenouille" height="150" width="150"></a></div>
+			<div class="animal"><a href="Fichier3/LionBlanc.jpg"><img src="Fichier3/LionBlanc.jpg" alt="Lion blanc rare" title="Lion blanc rare" height="150" width="150"></a></div>
+			<div class="animal"><a href="Fichier3/LionNoir.jpg"><img src="Fichier3/LionNoir.jpg" alt="Lion noir rare" title="Lion noir rare" height="150" width="150"></a></div>
+			<div class="animal"><a href="Fichier3/SingeRare.jpg"><img src="Fichier3/SingeRare.jpg" alt="Singe rare" title="Singe rare" height="150" width="150"></a></div>
+			<div class="animal"><a href="Fichier3/Ecureuil.jpg"><img src="Fichier3/Ecureuil.jpg" alt="Ecureuil coloré rare" title="Ecureuil coloré rare" height="150" width="150"></a></div>
+		</div>
+	</section>
 </body>
 </html>
