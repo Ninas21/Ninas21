@@ -39,15 +39,7 @@
             text-align: center;
 }
 
-#chansons {
-    background: url(Images/MJChansons.jpg) no-repeat center center;
-    background-size: cover; 
-}
 
-#histoire {
-    background: url(Images/étoileMJack.png) no-repeat center center;
-    background-size: cover; 
-}
 
 
 
@@ -137,27 +129,25 @@
 <body>
 
 
-    <div class="Fil">
-                <ul>
-                    <li><a href="openPageMJ.html" alt="Bouton" title="Accueil"> Accueil</a></li>
-                    <li><a href="histoire.html" alt="Bouton" title="Histoire"> Histoire</a></li>
-                    <li><a href="SiteMichaelJackson.html" alt="Bouton" title="Chansons"> Chansons</a></li>
+   <div class="Fil">
+    <ul>
+        <li><a href="openPageMJ.html" title="Accueil">Accueil</a></li>
+        <li><a href="histoire.html" title="Histoire">Histoire</a></li>
+        <li><a href="SiteMichaelJackson.html" title="Chansons">Chansons</a></li>
 
-                    <li>
-                        <a href="#"alt="Bouton" title="Jeux"> Jeux</a>
-                         <ul>
-                        <br><a href="jeuMJ.html" alt="Bouton" title="Jeu quiz">Jeu'Quiz'</a></br>
-                        <br><a href="jeuDeviner.html" alt="Bouton" title="Jeu deviner">Jeu'Deviner'</a></br>
-                        <br>
-                         </ul>
-                    </li>
-                    
+        <li>
+            <a href="#" title="Jeux">Jeux</a>
+            <ul>
+                <li><a href="jeuMJ.html" title="Jeu quiz">Jeu 'Quiz'</a></li>
+                <li><a href="jeuDeviner.html" title="Jeu deviner">Jeu 'Deviner'</a></li>
+            </ul>
+        </li>
 
-                    <li><a href="Download.html" alt="Bouton" title="Téléchargement"> Download</a></li>
-                    <li><a href="Projet.html" alt="Bouton" title="Description du projet">  Mon projet</a></li>  
-                    <li><a href="openPageMJ.html" alt="Bouton" title="Retour"> Retour</a></li>      
-                </ul>
-    </div>
+        <li><a href="Download.html" title="Téléchargement">Download</a></li>
+        <li><a href="Projet.html" title="Description du projet">Mon projet</a></li>
+        <li><a href="openPageMJ.html" title="Retour">Retour</a></li>
+    </ul>
+</div>
 
 
    
@@ -187,13 +177,20 @@
 
 
    <section id="Legende">
-            <div>
-            <ul>
-                <li id="chansons"><p><a href="SiteMichaelJackson.html" alt="Catégorie" title="Chansons de MJ">Les chansons de MJ</a></p></li>
-                <li id="histoire"><p><a href="histoire.html"alt="Catégorie" title="Histoire de MJ"> Histoire de MJ</a></p></li>
-            </ul>
+    <div class="legende-container">
+        
+        <div class="carte" id="chansons">
+            <div class="titre-gauche"><a href="SiteMichaelJackson.html"> Les chansons de MJ</a></div>
+            <div class="image-carte" style="background-image: url('Images/MJChansons.jpg');"></div>
         </div>
-        </section>
+
+        <div class="carte" id="histoire">
+            <div class="titre-droite"><a href="histoire.html"> Histoire de MJ</a></div>
+            <div class="image-carte" style="background-image: url('Images/étoileMJack.png');"></div>
+        </div>
+
+    </div>
+</section>
 
 
 <footer class="foot">
