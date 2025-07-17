@@ -162,7 +162,7 @@ h2 {
     font-size: 30px;
     text-align: center;
     padding: 25px;
-    color: #2c3e50;
+    color: #2c3e50; /* Bleu foncé pour les titres */
 }
 
 
@@ -171,11 +171,11 @@ h2 {
 
 .intro {
    background-image: ; 
-   border-radius: 10px; /* Bords arrondis */
-   padding: 20px; /* Espacement interne */
+    border-radius: 10px; /* Bords arrondis */
+    padding: 20px; /* Espacement interne */
    background: linear-gradient(90deg, #4b0082, #8e44ad, #9b59b6);
-   color: #2c3e50;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour donner de la profondeur */
+  color: #2c3e50;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour donner de la profondeur */
     
 }
 
@@ -204,7 +204,7 @@ h2 {
 
 
 .coup{
-    background: #662D91; 
+    background: #662D91; /* blanc argenté */
     margin-left: 250px;  
     margin-right: 250px;
     border-radius: 10px;  
@@ -214,7 +214,7 @@ h2 {
     font-family: 'Poppins', sans-serif;
     margin-bottom: 20px;
     text-align: center;
-    color: #fff; 
+    color: #fff; /* Couleur bleu */
     padding: 50px;
 }
 
@@ -262,7 +262,7 @@ h2 {
 .retour {
     margin-left: 10px;
     display: inline-block;
-    background-color: #2c3e50; 
+    background-color: #2c3e50; /* Bleu foncé */
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -285,7 +285,7 @@ h2 {
 
 .btn {
     display: inline-block;
-    background-color: #2c3e50; 
+    background-color: #2c3e50; /* Bleu foncé */
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -305,6 +305,12 @@ h2 {
     padding: 40px 0;
     border-radius: 10px;
 }
+
+
+
+
+
+
 
 
 
@@ -575,7 +581,15 @@ h2 {
 }
 
 
-
+.project-cardG {
+  width: 90%;
+  max-width: 320px;
+  height: 200px;
+  background-color: lightblue;
+  margin: 20px auto;
+  border: 2px solid red;
+  display: block;
+}
 
 footer {
     background-image: url(image/ban.jpg);
@@ -589,218 +603,318 @@ footer p {
 }
 
 
+
+
+
+
+
+
+
 /*CSS pour rendre le site responsive et compatible */
 
-/* Tablettes et petits écrans */
+/* Smartphones (portrait et petits) */
 @media (max-width: 768px) {
-
-  .banniere {
-    width: 95%;
+  .project-cards {
     flex-direction: column;
-    gap: 20px;
     align-items: center;
+    gap: 20px;
+  }
+
+  .project-card {
+    width: 90%;
+    height: 180px;
   }
 
   .navig ul {
     flex-direction: column;
-    gap: 10px;
-  }
-
-  .Nina img,
-  .Nina .bulles img {
-    margin-left: 0;
-    margin-top: 0;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .about, .profile {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .text p, .coup {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  .project-cards {
-    justify-content: center;
-  }
-
-    
-  .project-cardAF,
-  .project-cardV,
-  .project-cardZ,
-  .project-cardM,
-  .project-cardA,
-  .project-cardI,
-  .project-cardL,
-  .project-cardU,
-  .project-cardB,
-  .project-cardC,
-  .project-cardVR {
-
-    width: 90%;
-    max-width: 300px;
-    margin: 0 auto 20px auto;
-  
-  }
-
-  .logo img {
-    height: 80px;
-    margin-left: 0;
-  }
-
-}
-
-/* Smartphones */
-@media (max-width: 480px) {
-
-  .banniere {
+    background-color: #000;
+    position: absolute;
+    top: 60px;
+    left: 0;
     width: 100%;
-    padding: 10px 5px;
+    display: none;
   }
 
-  .navig ul li a {
-    font-size: 16px;
-    padding: 8px;
-  }
-
-  .Nina h2 {
-    font-size: 24px;
-    padding: 20px 10px;
-  }
-
-  .text p,
-  .coup p {
-    font-size: 18px;
-    padding: 15px 10px;
-  }
-
-  header {
-    padding: 10px 0;
-  }
-  
-}
-
-
-
-
-/* Style pour écran PC environ 950px de large et 1024px de haut */
-@media (min-width: 940px) and (max-width: 960px) and (min-height: 1000px) and (max-height: 1050px) {
-  
-  body {
-    background-color: #f0f0f0; /* Exemple : changer le fond */
-  }
-
-  .project-cardAF,
-  .project-cardV,
-  .project-cardZ,
-  .project-cardM,
-  .project-cardA,
-  .project-cardI,
-  .project-cardL,
-  .project-cardU,
-  .project-cardB,
-  .project-cardC,
-  .project-cardVR {
-    width: 300px;      /* Largeur fixe */
-    height: 350px;     /* Hauteur un peu plus grande pour ce format */
-    margin: 10px auto; /* Centrage horizontal avec marge verticale */
-  }
-
-  .project-cards {
+  .navig.active ul {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
   }
 
-  .banniere {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  /* Exemple d’adaptation pour texte et autres sections */
-  .Nina h2 {
-    font-size: 28px;
-  }
-
-  .text p,
-  .coup p {
-    font-size: 18px;
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-}
-
-
-
-/* Style spécifique pour iPhone SE (375x667) en portrait */
-@media (min-width: 370px) and (max-width: 380px) and (min-height: 660px) and (max-height: 670px) and (orientation: portrait) {
-
-  body {
-    background-color: #fafafa; /* Exemple de changement de fond */
-  }
-
-  .banniere {
-    width: 95%;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0;
-  }
-
-  .navig ul {
-    flex-direction: column;
-    gap: 12px;
-    padding: 0;
-  }
-
-  .navig ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .navig ul li a {
-    font-size: 16px;
-    padding: 10px;
+  .menu-toggle {
     display: block;
   }
 
+  header.menu-open .navig ul {
+    display: flex;
+  }
+}
+
+/* Tablettes et iPad Pro */
+@media (min-width: 769px) and (max-width: 1024px) {
   .project-cards {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    justify-content: space-around;
   }
 
-  .project-cardAF,
-  .project-cardV,
-  .project-cardZ,
-  .project-cardM,
-  .project-cardA,
-  .project-cardI,
-  .project-cardL,
-  .project-cardU,
-  .project-cardB,
-  .project-cardC,
-  .project-cardVR {
-    width: 90%;
-    max-width: 300px;
-    height: 180px;
-    margin: 0 auto 20px auto;
+  .project-card {
+    width: 45%;
+    height: 200px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.5em;
+    text-align: justify;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .text {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navig ul {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    display: none;
+    z-index: 999;
+    padding: 10px 0;
+  }
+
+  header.menu-open .navig ul {
+    display: flex;
+  }
+
+  .navig ul li {
+    margin: 10px 0;
+  }
+
+  .navig ul li a {
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
   }
 
   .Nina h2 {
-    font-size: 22px;
-    padding: 20px 10px;
+    font-size: 1.4em;
+    text-align: center;
+    padding: 10px;
   }
 
-  .text p,
+  .intro {
+    padding: 10px;
+  }
+
+  footer p {
+    font-size: 0.9em;
+    text-align: center;
+    padding: 5px 10px;
+  }
+}
+
+
+
+
+/* ================================
+   ✨ RESPONSIVE GÉNÉRAL < 1200px
+================================= */
+@media (max-width: 1199px) {
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.8em;
+  }
+
+  p, .intro p, .text p {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+}
+
+/* ================================
+   ✨ TABLETTES / IPAD / SURFACE < 1024px
+================================= */
+@media (max-width: 1024px) {
+  .project-card {
+    width: 45%;
+    height: 200px;
+  }
+
+  .banniere {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navig {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+  }
+
+  .navig ul {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+  }
+
+  header.menu-open .navig ul,
+  .navig.active ul {
+    display: flex;
+  }
+
+  .navig ul li a {
+    font-size: 1.2em;
+    color: #fff;
+    padding: 10px 0;
+  }
+
+  .intro,
+  .text,
+  .coup {
+    padding: 15px;
+  }
+
+.coup {
+    width: 65%;
+    margin: 10px auto;
+  }
+
   .coup p {
-    font-size: 16px;
-    margin-left: 15px;
-    margin-right: 15px;
-    padding: 15px 10px;
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+
+/* ================================
+   ✨ SMARTPHONES / IPHONE / GALAXY / OPPO < 768px
+================================= */
+@media (max-width: 768px) {
+  h1, h2 {
+    font-size: 1.5em;
+  }
+
+  .project-card {
+    width: 90%;
+    height: 180px;
+    margin: 15px auto;
+  }
+
+  .intro p, .text p {
+    font-size: 0.80em;
+     margin-left: 20px;
+     margin-right: 20px;
+
+  }
+
+
+#cv h2{
+    font-size: 1.80em;
+}
+
+  .banniere {
+    align-items: center;
+    padding: 10px;
+  }
+
+  .logo img {
+    height: 120px;
+    width: 140px;
+  }
+
+  .coup {
+    width: 65%;
+    margin: 10px auto;
+  }
+
+  .coup p {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+/* ================================
+   ✨ PETITS SMARTPHONES < 480px
+================================= */
+@media (max-width: 480px) {
+  h1, h2 {
+    font-size: 1.3em;
+  }
+
+  p, .intro p, .text p {
+    font-size: 0.80em;
+     margin-left: 50px;
+     margin-right: 50px;
+
+  }
+
+
+#cv h2{
+    font-size: 1.80em;
+}
+
+  .project-card {
+    height: 150px;
+  }
+
+  .banniere {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .menu-toggle {
+    font-size: 1.8em;
+  }
+
+  .navig ul li a {
+    font-size: 1.1em;
+  }
+
+
+}
+
+/* ================================
+   ✨ GRAND ÉCRAN DESKTOP > 1200px
+================================= */
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+    margin: auto;
+  }
+
+  .project-card {
+    width: 30%;
+    height: 250px;
   }
 }
