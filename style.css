@@ -627,10 +627,7 @@ footer p {
   .project-cards {
     justify-content: center;
   }
-.project-cardZ {
-    background-image: url('image/zoo.png');
-    height: 180px;
-  }
+
     
   .project-cardAF,
   .project-cardV,
@@ -647,6 +644,7 @@ footer p {
     width: 90%;
     max-width: 300px;
     margin: 0 auto 20px auto;
+  
   }
 
   .logo img {
