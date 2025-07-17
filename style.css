@@ -855,7 +855,7 @@ footer p {
   left: 50px;
   right:50px;
   width: 40%;
-  height: 30%;
+  height: 50%;
   background-color: #2c003e;
   z-index: 1000;
   display: flex;
@@ -868,7 +868,7 @@ footer p {
   list-style: none;
   padding: 0;
   margin: 10px;
-  width: 80%;
+  width: 70%;
 }
 
 .navig li {
