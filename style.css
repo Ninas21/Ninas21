@@ -7,12 +7,11 @@
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-image: url('images/imageAccueil7.jpg');
-     background-color: #f5f5f5;
+    background-image: url('image/imageAccueil7.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
-    background-attachment: fixed;
+     background-attachment: fixed;
 }
 
 
@@ -163,7 +162,7 @@ h2 {
     font-size: 30px;
     text-align: center;
     padding: 25px;
-    color: #2c3e50; /* Bleu foncé pour les titres */
+    color: #2c3e50;
 }
 
 
@@ -172,11 +171,11 @@ h2 {
 
 .intro {
    background-image: ; 
-    border-radius: 10px; /* Bords arrondis */
-    padding: 20px; /* Espacement interne */
-     background: linear-gradient(90deg, #4b0082, #8e44ad, #9b59b6);
-  color: #2c3e50;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour donner de la profondeur */
+   border-radius: 10px; /* Bords arrondis */
+   padding: 20px; /* Espacement interne */
+   background: linear-gradient(90deg, #4b0082, #8e44ad, #9b59b6);
+   color: #2c3e50;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour donner de la profondeur */
     
 }
 
@@ -195,7 +194,7 @@ h2 {
      
     border-radius: 10px; /* Bords arrondis */
     padding: 20px; /* Espacement interne */
-    background: #662D91; 
+    background: #662D91; /* Fond transparent avec légère opacité */
     color: #fff; /* Couleur du texte */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour donner de la profondeur */
     margin-left: 300px;
@@ -205,7 +204,7 @@ h2 {
 
 
 .coup{
-    background: #662D91; /* blanc argenté */
+    background: #662D91; 
     margin-left: 250px;  
     margin-right: 250px;
     border-radius: 10px;  
@@ -215,7 +214,7 @@ h2 {
     font-family: 'Poppins', sans-serif;
     margin-bottom: 20px;
     text-align: center;
-    color: #fff;
+    color: #fff; 
     padding: 50px;
 }
 
@@ -243,7 +242,7 @@ h2 {
 }
 
 .curri-vitae {
-  background: url(images/ban.jpg);
+  background: url(image/ban.jpg);
   color: #fff;
   padding: 20px;
   width: 30%;
@@ -306,78 +305,14 @@ h2 {
     padding: 40px 0;
     border-radius: 10px;
 }
-.project-section {
-  padding: 40px 20px;
-}
 
-.section-title {
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 40px;
-}
 
-.project-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-.project-card {
-  width: 300px;
-  height: 200px;
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-.project-card:hover {
-  transform: translateY(-10px);
-}
-
-.project-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.project-content {
-  padding: 20px;
-}
-
-.project-title {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.project-description {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 15px;
-}
-
-.project-links {
-  display: flex;
-  justify-content: space-between;
-}
-
-.project-links a {
-  text-decoration: none;
-  color: #3498db;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.project-links a:hover {
-  color: #1d6fa5;
-}
 
 .project-cards {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Permet de passer à la ligne */
+  gap: 20px; /* Ajoute un espace entre les cartes */
 }
 
 
@@ -388,7 +323,7 @@ h2 {
 }
 
 .project-cardV {
-  background-image: url("images/Travel.jpg");
+  background-image: url("image/Travel.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -414,7 +349,7 @@ h2 {
 }
 
 .project-cardZ {
-  background-image: url("images/zoo.png");
+  background-image: url("image/zoo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -437,7 +372,7 @@ h2 {
 }
 
 .project-cardM {
-  background-image: url("images/MJ.png");
+  background-image: url("image/MJ.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -460,7 +395,7 @@ h2 {
 }
 
 .project-cardA {
-  background-image: url("images/famAlg.png");
+  background-image: url("image/FamAlg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -483,7 +418,7 @@ h2 {
 }
 
 .project-cardI {
-  background-image: url("images/chat.png");
+  background-image: url("image/chat.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -506,7 +441,7 @@ h2 {
 }
 
 .project-cardL {
-  background-image: url("images/lampe.png");
+  background-image: url("image/lampe.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -529,7 +464,7 @@ h2 {
 }
 
 .project-cardU {
-  background-image: url("images/labirynthe.png");
+  background-image: url("image/labirynthe.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -551,7 +486,7 @@ h2 {
 }
 
 .project-cardB {
-  background-image: url("images/blend.png");
+  background-image: url("image/blend.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -575,7 +510,7 @@ h2 {
 }
 
 .project-cardC {
-  background-image: url("images/alo.png");
+  background-image: url("image/alo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -599,7 +534,7 @@ h2 {
 }
 
 .project-cardAF {
-  background-image: url("images/AFTEREFFECTS.jpg");
+  background-image: url("image/AFTEREFFECTS.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -623,7 +558,7 @@ h2 {
 }
 
 .project-cardVR {
-  background-image: url("images/VR.png");
+  background-image: url("image/VR.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -643,7 +578,7 @@ h2 {
 
 
 footer {
-    background-image: url(images/ban.jpg);
+    background-image: url(image/ban.jpg);
     text-align: center;
     padding: 20px 0;
 }
@@ -688,25 +623,15 @@ footer p {
     margin-left: 20px;
     margin-right: 20px;
   }
-    
- .project-cards {
-    flex-direction: column;
-    align-items: center;
-  }
 
- .project-cardAF,
-  .project-cardV,
-  /* toutes les autres cartes projets */
-  .project-cardVR {
-    width: 90% !important;
-    max-width: 300px;
-    margin: 0 auto 20px auto;
-  }
-    
   .project-cards {
     justify-content: center;
   }
-
+.project-cardZ {
+    background-image: url('image/zoo.png');
+    height: 180px;
+  }
+    
   .project-cardAF,
   .project-cardV,
   .project-cardZ,
@@ -718,7 +643,7 @@ footer p {
   .project-cardB,
   .project-cardC,
   .project-cardVR {
-background-color: red; /* juste pour tester */
+
     width: 90%;
     max-width: 300px;
     margin: 0 auto 20px auto;
@@ -758,26 +683,7 @@ background-color: red; /* juste pour tester */
   header {
     padding: 10px 0;
   }
-}
-    
-@media (max-width: 768px) {
-  .projects,
-  .project-cards,
-  .project-cardAF,
-  .project-cardV,
-  .project-cardZ,
-  .project-cardM,
-  .project-cardA,
-  .project-cardI,
-  .project-cardL,
-  .project-cardU,
-  .project-cardB,
-  .project-cardC,
-  .project-cardVR {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
+  
 }
 
 
@@ -898,29 +804,5 @@ background-color: red; /* juste pour tester */
     margin-left: 15px;
     margin-right: 15px;
     padding: 15px 10px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .project-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .project-card {
-    width: 90%;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .project-card {
-    width: 90%; /* plus large sur petits écrans */
-    height: auto;
-  }
-
-  .project-cards {
-    flex-direction: column;
-    align-items: center;
   }
 }
