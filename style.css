@@ -718,7 +718,7 @@ footer p {
   .project-cardB,
   .project-cardC,
   .project-cardVR {
-
+background-color: red; /* juste pour tester */
     width: 90%;
     max-width: 300px;
     margin: 0 auto 20px auto;
