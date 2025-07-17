@@ -605,11 +605,6 @@ footer p {
 
 
 
-
-
-
-
-
 /*CSS pour rendre le site responsive et compatible */
 
 /* Smartphones (portrait et petits) */
@@ -738,7 +733,7 @@ footer p {
 
 
 
-/* RESPONSIVE GÉNÉRAL < 1200px */
+/*RESPONSIVE GÉNÉRAL < 1200px*/
 @media (max-width: 1199px) {
   .container {
     width: 95%;
@@ -755,7 +750,7 @@ footer p {
   }
 }
 
-/*TABLETTES / IPAD / SURFACE < 1024px*/
+/* TABLETTES / IPAD / SURFACE < 1024px*/
 @media (max-width: 1024px) {
   .project-card {
     width: 45%;
@@ -813,7 +808,7 @@ footer p {
   }
 }
 
-/*SMARTPHONES / IPHONE / GALAXY / OPPO < 768px */
+/*  SMARTPHONES / IPHONE / GALAXY / OPPO < 768px*/
 @media (max-width: 768px) {
   h1, h2 {
     font-size: 1.5em;
@@ -858,7 +853,7 @@ footer p {
   }
 }
 
-/* PETITS SMARTPHONES < 480px */
+/* PETITS SMARTPHONES < 480px*/
 @media (max-width: 480px) {
   h1, h2 {
     font-size: 1.3em;
@@ -896,7 +891,7 @@ footer p {
 
 }
 
-/* GRAND ÉCRAN DESKTOP > 1200px */
+/* GRAND ÉCRAN DESKTOP > 1200px*/
 @media (min-width: 1200px) {
   .container {
     width: 1200px;
