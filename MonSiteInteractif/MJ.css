@@ -398,6 +398,16 @@ a {
         min-height: 250px;
         box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.4);
     }
+
+     .tag-cloud h1 {
+    font-size: 20px !important;
+    text-align: center;
+  }
+
+  .tag-cloud h2 {
+    font-size: 12px !important;
+    text-align: center;
+  }
 }
 
 
