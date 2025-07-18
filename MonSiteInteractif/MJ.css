@@ -409,9 +409,11 @@ a {
     }
 
 #histoire .image-carte {
-    background-size: 250% auto; /* Agrandit horizontalement l'étoile */
-    background-position: center;
-}
+        height: 300px !important;
+        background-size: 200% auto !important;
+        background-position: center !important;
+    }
+    
 	
     .tag-cloud h1,
     .tag-cloud h2 {
