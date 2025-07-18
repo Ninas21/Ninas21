@@ -409,7 +409,7 @@ a {
     }
 
 #histoire .image-carte {
-    background-size: 150% auto; /* Agrandit horizontalement l'étoile */
+    background-size: 250% auto; /* Agrandit horizontalement l'étoile */
     background-position: center;
 }
 	
