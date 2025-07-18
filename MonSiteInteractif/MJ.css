@@ -417,26 +417,57 @@ a {
         font-size: 14px;
     }
 
-    .Image-MJ img {
-        width: 70%;
-        max-width: 350px;
-        height: auto;
-        margin: auto;
-    }
+   .Image-MJ img {
+    width: 70%;
+    max-width: 350px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 
 
-    .image-carte {
-        border-radius: 15px;
-        min-height: 200px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-    }
+.Image-MJ {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
 
     .web,
     .web1 {
         font-size: 13px;
     }
+
+   .legende-container {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    .carte {
+        width: 90%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .image-carte {
+        height: 180px;
+        border-radius: 15px;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .titre-gauche a,
+    .titre-droite a {
+        font-size: 16px;
+        padding: 8px 16px;
+        display: inline-block;
+    }
+
+
+
 
     footer {
         font-size: 13px;
