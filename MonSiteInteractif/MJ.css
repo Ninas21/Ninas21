@@ -474,7 +474,15 @@ a {
     }
 
 
+ .tag-cloud h1 {
+    font-size: 20px !important;
+    text-align: center;
+  }
 
+  .tag-cloud h2 {
+    font-size: 12px !important;
+    text-align: center;
+  }
 
     footer {
         font-size: 13px;
