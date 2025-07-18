@@ -480,3 +480,26 @@ a {
         font-size: 13px;
     }
 }
+
+
+/* Ajustements responsive pour la tag-cloud sur smartphones */
+@media (max-width: 600px) {
+  .tag-cloud {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tag-cloud .tag {
+    margin: 10px auto !important;
+    font-size: 18px !important;
+    text-align: center;
+    padding: 0 10px;
+    display: block;
+  }
+
+  .tag-cloud h1,
+  .tag-cloud h2 {
+    font-size: 20px !important;
+    text-align: center;
+  }
+}
