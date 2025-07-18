@@ -95,9 +95,10 @@ video {
 }
 
 
+/* Pour les écrans jusqu'à 768px */
 @media screen and (max-width: 768px) {
     body {
-        padding: 20px;
+        padding: 60px 20px 20px 20px; /* ajoute de l’espace en haut */
     }
 
     h3 {
@@ -109,23 +110,20 @@ video {
         font-size: 18px;
         padding: 0 10px;
     }
-iframe {
-    width: 95%;
-    max-width: 100%;
-}
-    video {
+
+    iframe, video {
         width: 95%;
         max-width: 100%;
     }
 
     .btn-retour {
-        font-size: 14px;
-        padding: 8px 18px;
-        top: 15px;
-        left: 15px;
+        position: relative; /* plus de absolute sur mobile */
+        display: inline-block;
+        margin-bottom: 20px; /* espace sous le bouton */
     }
 }
 
+    
 /*CSS pour rendre la page responsive*/
 @media screen and (max-width: 400px) {
     h3 {
