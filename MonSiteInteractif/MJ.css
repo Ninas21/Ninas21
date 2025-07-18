@@ -341,7 +341,11 @@ a {
 /* Smartphones modernes (max 768px) */
 @media (max-width: 768px) {
     
-
+#histoire .image-carte {
+        height: 300px !important;
+        background-size: 200% auto !important;
+        background-position: center !important;
+    }
     
 
     .carte {
