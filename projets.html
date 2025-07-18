@@ -132,23 +132,47 @@
     }
 }
 
+/* Responsive : pour petits écrans (smartphones jusqu'à 450px) */
 @media screen and (max-width: 450px) {
-    h2 {
-        font-size: 20px;
-    }
+  .illus {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
 
-    .project-card h3 {
-        font-size: 1em;
-    }
+  .illus img {
+    width: 90px !important;
+    height: 90px !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
 
-    .project-card p {
-        font-size: 15px;
-    }
+  .project-card {
+    padding: 12px;
+    margin: 8px auto;
+    width: 95%;
+  }
 
-    .btn {
-        font-size: 13px;
-        padding: 7px 12px;
-    }
+  .project-card h3 {
+    font-size: 1em;
+  }
+
+  .project-card p {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
 }
 </style>
 
