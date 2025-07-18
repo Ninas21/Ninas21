@@ -408,6 +408,11 @@ a {
         padding: 8px;
     }
 
+#histoire .image-carte {
+    background-size: 150% auto; /* Agrandit horizontalement l'étoile */
+    background-position: center;
+}
+	
     .tag-cloud h1,
     .tag-cloud h2 {
         font-size: 18px;
