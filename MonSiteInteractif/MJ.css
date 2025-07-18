@@ -1,5 +1,4 @@
 
-
 body {
 	
 	margin: 0;
@@ -248,6 +247,8 @@ a {
     }
 }
 
+
+
 @media (max-width: 600px) {
     .Fil {
         padding: 10px 5px;
@@ -335,6 +336,8 @@ a {
     }
 }
 
+
+
 /* Smartphones modernes (max 768px) */
 @media (max-width: 768px) {
     
@@ -389,7 +392,14 @@ a {
         font-size: 13px;
         padding: 8px;
     }
+
+    .image-carte {
+        border-radius: 20px;
+        min-height: 250px;
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.4);
+    }
 }
+
 
 /* Petits téléphones (max 480px) — iPhone SE, Galaxy Mini, etc. */
 @media (max-width: 480px) {
@@ -405,6 +415,22 @@ a {
 
     .tag {
         font-size: 14px;
+    }
+
+    .Image-MJ img {
+        width: 70%;
+        max-width: 350px;
+        height: auto;
+        margin: auto;
+    }
+
+
+    .image-carte {
+        border-radius: 15px;
+        min-height: 200px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
     }
 
     .web,
