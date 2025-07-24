@@ -757,7 +757,59 @@ footer p {
   }
 }
 
+#hidden-box {
+  position: fixed;
+  top: 0; /* ← au lieu de top: 10px */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  background: linear-gradient(135deg, #6A0DAD, #F9F9FF);
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  transition: width 0.5s ease;
+  overflow: hidden;
+  z-index: 999;
+  border-radius: 0 0 8px 8px; /* coins arrondis uniquement en bas */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
 
+    #hidden-box.open {
+      width: 80%; /* devient large */
+    }
+
+    #toggle-btn {
+      cursor: pointer;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .infos h1, h3, p, ul{
+        color: #fff;
+    }
+    #content {
+      display: none;
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    #hidden-box.open #content {
+      display: block;
+    }
+
+    #close-btn {
+      float: right;
+      background: linear-gradient(to bottom, #6c3faa, #d1a0f7);
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    #close-btn:hover {
+      background-color: #555;
+    }
 
 
 /*RESPONSIVE GÉNÉRAL < 1200px*/
