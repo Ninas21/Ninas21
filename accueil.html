@@ -324,7 +324,17 @@ toggleButton.addEventListener('click', () => {
   document.querySelector('header').classList.toggle('menu-open');
   toggleButton.setAttribute('aria-expanded', isActive);
 });
+const box = document.getElementById('hidden-box');
+    const toggleBtn = document.getElementById('toggle-btn');
+    const closeBtn = document.getElementById('close-btn');
 
+    toggleBtn.addEventListener('click', () => {
+      box.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      box.classList.remove('open');
+    });
 
     </script>
 
