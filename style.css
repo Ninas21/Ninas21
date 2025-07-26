@@ -649,44 +649,44 @@ footer p {
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-    #hidden-box.open {
-      width: 80%; /* devient large */
-    }
+#hidden-box.open {
+   width: 80%; /* devient large */
+}
 
-    #toggle-btn {
-      cursor: pointer;
-      font-weight: bold;
-      color: #fff;
-    }
+#toggle-btn {
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+}
 
-    .infos h1, h3, p, ul{
-        color: #fff;
-        margin: 20px;
-    }
-    #content {
-      display: none;
-      margin-top: 10px;
-      text-align: left;
-    }
+.infos h1, h3, p, ul{
+  color: #fff;
+  margin: 20px;
+}
+#content {
+  display: none;
+  margin-top: 10px;
+  text-align: left;
+}
 
-    #hidden-box.open #content {
-      display: block;
-    }
+#hidden-box.open #content {
+  display: block;
+}
 
-    #close-btn {
-      float: right;
-      margin-right: 20px;
-      background: linear-gradient(to bottom, #6c3faa, #d1a0f7);
-      color: #fff;
-      border: none;
-      padding: 5px 10px;
-      cursor: pointer;
-      border-radius: 4px;
-    }
+#close-btn {
+  float: right;
+  margin-right: 20px;
+  background: linear-gradient(to bottom, #6c3faa, #d1a0f7);
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
 
-    #close-btn:hover {
-      background-color: #555;
-    }
+#close-btn:hover {
+  background-color: #555;
+}
 
 
 /*CSS pour rendre le site responsive et compatible */
