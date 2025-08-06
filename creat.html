@@ -171,7 +171,47 @@
   color: white;
 }
 
+/*Code pour rendre la page responsive */
 
+@media (max-width: 768px) {
+  .slides img {
+    height: auto;
+  }
+
+  .slider-container {
+    max-width: 100%;
+    margin: 20px auto;
+  }
+
+  .section-title {
+    font-size: 1.8em;
+  }
+
+  .btn-retour {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.4em;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+  }
+
+  .thumb {
+    height: 100px;
+  }
+
+  .nav {
+    font-size: 24px;
+    padding: 8px;
+  }
+}
   </style>
 </head>
 
@@ -351,3 +391,4 @@
 </body>
 
 </html>
+
