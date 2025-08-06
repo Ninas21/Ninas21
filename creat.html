@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Galerie - Dessins & Logos</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('image/image_Accueil7.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top center;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+     text-align: center;
+    }
+
+
+    .main-content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .section-title span {
+      display: block;
+      font-size: 0.8em;
+      color: #666;
+      margin-top: 8px;
+    }
+
+    /* SLIDER */
+    .slider-container {
+      position: relative;
+      max-width: 800px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 500px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: white;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 10px;
+      cursor: pointer;
+      user-select: none;
+      z-index: 1;
+      border-radius: 50%;
+    }
+
+    .nav:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    /* GALLERY (MINIATURES CLIQUABLES) */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin: 40px auto;
+      padding: 0 20px;
+      max-width: 1000px;
+    }
+
+    .thumb {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .thumb:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* OVERLAY */
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 10, 10, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: opacity 0.3s ease;
+    }
+
+    #overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+    }
+
+    #closeBtn {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 40px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    #closeBtn:hover {
+      color: #ccc;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+
+.btn-retour {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #ffffffcc; /* blanc semi-transparent */
+  color: #333;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-retour:hover {
+  background-color: #F2E9DD;
+  color: white;
+}
+
+
+  </style>
+</head>
+<body>
+<a href="accueil.html#projects" class="btn-retour">Retour</a>
+  <div class="main-content">
+    <h1 class="section-title">
+      Galerie pour mes créations avec Illustrator
+      <span>entre dessins et logos</span>
+    </h1>
+
+    <div class="slider-container">
+      <div class="slides">
+        <img src="image/Bouteille d'eau.jpg" alt="1">
+        <img src="image/Cafetière.jpg" alt="2">
+        <img src="image/Coeur2.jpg" alt="3">
+        <img src="image/Couscous.jpg" alt="4">
+        <img src="image/Cornet de glace.jpg" alt="5">
+        <img src="image/Croissant.jpg" alt="Image 6" class="thumb">
+    <img src="image/Drapeau Algérie.jpg" alt="Image 7" class="thumb">
+    <img src="image/Fraise.jpg" alt="Image 8" class="thumb">
+    <img src="image/Lampe.jpg" alt="Image 9" class="thumb">
+
+    <img src="image/LOGO-CaféCrème.jpg" alt="Image 10" class="thumb">
+    <img src="image/MOI-LOGO.jpg" alt="Image 11" class="thumb">
+    <img src="image/Mug.jpg" alt="Image 12" class="thumb">
+    <img src="image/paix-logo.jpg" alt="Image 13" class="thumb">
+    <img src="image/plat.jpg" alt="Image 14" class="thumb">
+    <img src="image/Smartphone.jpg" alt="Image 15" class="thumb">
+    <img src="image/Stylo.jpg" alt="Image 16" class="thumb">
+    <img src="image/Tasse.jpg" alt="Image 17" class="thumb">
+    <img src="image/Théière.jpg" alt="Image 18" class="thumb">
+
+
+    <img src="image/Verre d'eau.jpg" alt="Image 19" class="thumb">
+    <img src="image/YHG-LOGO.jpg" alt="Image 20" class="thumb">
+    <img src="image/VnIRE.jpg" alt="Image 21" class="thumb">
+    <img src="image/Une île.jpg" alt="Image 22" class="thumb">
+    <img src="image/Tote Bag.jpg" alt="Image 23" class="thumb">
+    <img src="image/THU-LOGO.jpg" alt="Image 24" class="thumb">
+    <img src="image/Route.jpg" alt="Image 25" class="thumb">
+    <img src="image/Rivière.jpg" alt="Image 26" class="thumb">
+    <img src="image/Plage.jpg" alt="Image 27" class="thumb">
+
+
+    <img src="image/Plage 2.jpg" alt="Image 28" class="thumb">
+    <img src="image/Pâtisserie2.jpg" alt="Image 29" class="thumb">
+    <img src="image/Pastèque.jpg" alt="Image 30" class="thumb">
+    <img src="image/Papillon.jpg" alt="Image 31" class="thumb">
+    <img src="image/Oiseau.jpg" alt="Image 32" class="thumb">
+    <img src="image/Oeuf.jpg" alt="Image 33" class="thumb">
+    <img src="image/Mouches.jpg" alt="Image 34" class="thumb">
+    <img src="image/Make-Up.jpg" alt="Image 35" class="thumb">
+    <img src="image/Lunettes.jpg" alt="Image 36" class="thumb">
+
+    <img src="image/HNH-LOGO.jpg" alt="Image 37" class="thumb">
+    <img src="image/Fresh-Summer.jpg" alt="Image 38" class="thumb">
+    <img src="image/Forêt.jpg" alt="Image 39" class="thumb">
+    <img src="image/Fleurs.jpg" alt="Image 40" class="thumb">
+    <img src="image/ELI-LOGO.jpg" alt="Image 41" class="thumb">
+    <img src="image/Donut-LOGO.jpg" alt="Image 42" class="thumb">
+    <img src="image/Désert.jpg" alt="Image 43" class="thumb">
+    <img src="image/Crèmes.jpg" alt="Image 44" class="thumb">
+    <img src="image/Compagnie Aérienne.jpg" alt="Image 45" class="thumb">
+
+    <img src="image/Bougie.jpg" alt="Image 46" class="thumb">
+    <img src="image/Auto-Ecole.jpg" alt="Image 47" class="thumb">
+    <img src="image/Arbre.jpg" alt="Image 48" class="thumb">
+    <img src="image/Voiture.jpg" alt="Image 49" class="thumb">
+      </div>
+      <div class="nav prev">&#10094;</div>
+      <div class="nav next">&#10095;</div>
+    </div>
+
+    <div class="gallery">
+      
+    <img src="image/Bouteille d'eau.jpg" alt="Image 1" class="thumb">
+    <img src="image/Cafetière.jpg" alt="Image 2" class="thumb">
+    <img src="image/Coeur2.jpg" alt="Image 3" class="thumb">
+    <img src="image/Couscous.jpg" alt="Image 4" class="thumb">
+    <img src="image/Cornet de glace.jpg" alt="Image 5" class="thumb">
+    <img src="image/Croissant.jpg" alt="Image 6" class="thumb">
+    <img src="image/Drapeau Algérie.jpg" alt="Image 7" class="thumb">
+    <img src="image/Fraise.jpg" alt="Image 8" class="thumb">
+    <img src="image/Lampe.jpg" alt="Image 9" class="thumb">
+
+    <img src="image/LOGO-CaféCrème.jpg" alt="Image 10" class="thumb">
+    <img src="image/MOI-LOGO.jpg" alt="Image 11" class="thumb">
+    <img src="image/Mug.jpg" alt="Image 12" class="thumb">
+    <img src="image/paix-logo.jpg" alt="Image 13" class="thumb">
+    <img src="image/plat.jpg" alt="Image 14" class="thumb">
+    <img src="image/Smartphone.jpg" alt="Image 15" class="thumb">
+    <img src="image/Stylo.jpg" alt="Image 16" class="thumb">
+    <img src="image/Tasse.jpg" alt="Image 17" class="thumb">
+    <img src="image/Théière.jpg" alt="Image 18" class="thumb">
+
+
+    <img src="image/Verre d'eau.jpg" alt="Image 19" class="thumb">
+    <img src="image/YHG-LOGO.jpg" alt="Image 20" class="thumb">
+    <img src="image/VnIRE.jpg" alt="Image 21" class="thumb">
+    <img src="image/Une île.jpg" alt="Image 22" class="thumb">
+    <img src="image/Tote Bag.jpg" alt="Image 23" class="thumb">
+    <img src="image/THU-LOGO.jpg" alt="Image 24" class="thumb">
+    <img src="image/Route.jpg" alt="Image 25" class="thumb">
+    <img src="image/Rivière.jpg" alt="Image 26" class="thumb">
+    <img src="image/Plage.jpg" alt="Image 27" class="thumb">
+
+
+    <img src="image/Plage 2.jpg" alt="Image 28" class="thumb">
+    <img src="image/Pâtisserie2.jpg" alt="Image 29" class="thumb">
+    <img src="image/Pastèque.jpg" alt="Image 30" class="thumb">
+    <img src="image/Papillon.jpg" alt="Image 31" class="thumb">
+    <img src="image/Oiseau.jpg" alt="Image 32" class="thumb">
+    <img src="image/Oeuf.jpg" alt="Image 33" class="thumb">
+    <img src="image/Mouches.jpg" alt="Image 34" class="thumb">
+    <img src="image/Make-Up.jpg" alt="Image 35" class="thumb">
+    <img src="image/Lunettes.jpg" alt="Image 36" class="thumb">
+
+    <img src="image/HNH-LOGO.jpg" alt="Image 37" class="thumb">
+    <img src="image/Fresh-Summer.jpg" alt="Image 38" class="thumb">
+    <img src="image/Forêt.jpg" alt="Image 39" class="thumb">
+    <img src="image/Fleurs.jpg" alt="Image 40" class="thumb">
+    <img src="image/ELI-LOGO.jpg" alt="Image 41" class="thumb">
+    <img src="image/Donut-LOGO.jpg" alt="Image 42" class="thumb">
+    <img src="image/Désert.jpg" alt="Image 43" class="thumb">
+    <img src="image/Crèmes.jpg" alt="Image 44" class="thumb">
+    <img src="image/Compagnie Aérienne.jpg" alt="Image 45" class="thumb">
+
+    <img src="image/Bougie.jpg" alt="Image 46" class="thumb">
+    <img src="image/Auto-Ecole.jpg" alt="Image 47" class="thumb">
+    <img src="image/Arbre.jpg" alt="Image 48" class="thumb">
+    <img src="image/Voiture.jpg" alt="Image 49" class="thumb">
+    </div>
+
+    <div id="overlay" class="hidden">
+      <span id="closeBtn">&times;</span>
+      <img id="fullImage" src="" alt="Zoom">
+    </div>
+  </div>
+
+  <script>
+    // Slider logic
+    const slides = document.querySelector('.slides');
+    const images = document.querySelectorAll('.slides img');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    let index = 0;
+
+    function showSlide(i) {
+      index = (i + images.length) % images.length;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prev.addEventListener('click', () => showSlide(index - 1));
+    next.addEventListener('click', () => showSlide(index + 1));
+
+    // Gallery image click logic
+    const thumbs = document.querySelectorAll('.thumb');
+    const overlay = document.getElementById('overlay');
+    const fullImage = document.getElementById('fullImage');
+    const closeBtn = document.getElementById('closeBtn');
+
+    thumbs.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImage.src = img.src;
+        overlay.classList.remove('hidden');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      overlay.classList.add('hidden');
+      fullImage.src = '';
+    });
+  </script>
+
+</body>
+</html>
