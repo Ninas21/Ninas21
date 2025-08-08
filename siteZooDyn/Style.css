@@ -74,7 +74,7 @@ header li a{
 /* *************************************Partie d'image principale************************ */
 #imagePrincipale{
 	padding-top: 60px;
-	background:  url(AnimauxSAUVA.jpg) no-repeat  10% 0%;
+	background:  url(animaux-sauv.png) no-repeat  10% 0%;
 	background-size: cover;
 	height: 799px;
 }
