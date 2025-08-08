@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site web de "Femme algérienne"</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style général du corps de la page */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8ff; /* Fond bleu clair */
+    color: #333; /* Texte sombre */
+    line-height: 1.6;
+    padding: 40px;
+    text-align: center; /* Centrer le texte */
+}
+
+/* Style du titre principal */
+h3 {
+    font-size: 25px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding: 0; 
+    background-color: transparent; 
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Style du paragraphe sous le titre */
+p {
+    font-size: 23px;
+    color: #2c3e50; 
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+
+
+.btn-retour {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(145deg, #ffffff, #dcdcdc); /* blanc argenté */
+  color: #2c3e50; /* texte gris foncé pour contraste */
+  padding: 10px 22px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.btn-retour:hover {
+  background: linear-gradient(145deg, #f0f0f0, #e0e0e0); /* effet nacré au survol */
+  transform: scale(1.05);
+}
+
+.btn-retour:active {
+  transform: scale(0.97);
+}
+
+
+
+.projects-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.project-block {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.project-description {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.project-description h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #1a4d4f;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #1a4d4f;
+  padding-bottom: 10px;
+}
+
+.project-description h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+
+.project-description p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.project-description ul {
+  padding-left: 20px;
+}
+
+.project-description li {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+  background: #333;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border-left: 4px solid #1a4d4f;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.project-description strong {
+  color: #1a4d4f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-description {
+    padding: 20px;
+  }
+  .project-description h2 {
+    font-size: 1.6rem;
+  }
+}
+
+
+
+
+.project-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.project-cardA-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.project-cardA {
+  background-image: url("image/FamAlg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-cardA:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+   
+
+    .btn-retour {
+        font-size: 14px;
+        padding: 8px 18px;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 450px) {
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .btn-retour {
+        font-size: 13px;
+        padding: 6px 14px;
+    }
+}
+</style>
+<body>
+
+    <section class="section projects">
+  <div class="container">
+    <h2 class="projects-title">Mon projet de création d'un site web d'une exposition virtuelle (travail d'équipe)</h2>
+
+    <div class="project-block">
+      <h3>Exposition virtuelle</h3>
+      <p>Site web – Exposition virtuelle “Souvenirs d’une femme algérienne” supervisé par 
+
+<strong>Mr. Arnaud LABORDERIE </strong></p>
+
+      <section class="project-description">
+        <h4>Site web interactif sur la carrière de Michael Jackson à l'université Paris 8 (2024/2025)</h4>
+
+        <p>
+          Projet réalisé en équipe dans le cadre d’un cours, ayant pour objectif de créer une exposition virtuelle immersive autour de la culture et des traditions féminines algériennes.
+        </p>
+
+
+<p><strong>Concept</strong></p>
+<p>Le site retrace les souvenirs d’une femme algérienne à travers ses tenues, ses coutumes et ses objets traditionnels. L’expérience de navigation transporte l’utilisateur dans un univers visuel mêlant patrimoine et émotions.<p>
+
+
+  <p> <strong>Contributions et réalisations</strong> </p>
+        <ul>
+          <li><strong>Développement web en HTML, CSS et JavaScript </strong> pour une navigation fluide et interactive.</li>
+          <li><strong>Créations graphiques originales :</strong> illustrations de la grand-mère, de la petite fille et de lieux emblématiques d’Algérie réalisées sous Adobe Illustrator et Photoshop.</li>
+          <li>Intégration harmonieuse des visuels et du contenu culturel pour offrir une immersion authentique.</li>
+          
+        </ul>
+
+        <p><strong>Objectif</strong></p>
+
+        <p>Mettre en valeur la richesse du patrimoine féminin algérien en combinant narration visuelle, design graphique et développement web.</p>
+      </section>
+
+      <div class="project-container">
+       
+         <a href="ExpoFinale/index.html" class="project-cardA-link">
+                     <div class="project-cardA"></div>
+                 </a>
+                
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="accueil.html#projects" class="btn-retour">Retour</a>
+
+</body>
+</html>
