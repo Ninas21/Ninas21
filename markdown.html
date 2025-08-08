@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown/ PinkMyPad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style général du corps de la page */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8ff; /* Fond bleu clair */
+    color: #333; /* Texte sombre */
+    line-height: 1.6;
+    padding: 40px;
+    text-align: center; /* Centrer le texte */
+}
+
+/* Style du titre principal */
+h3 {
+    font-size: 25px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding: 0; 
+    background-color: transparent; 
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Style du paragraphe sous le titre */
+p {
+    font-size: 23px;
+    color: #2c3e50; 
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+
+
+.btn-retour {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(145deg, #ffffff, #dcdcdc); /* blanc argenté */
+  color: #2c3e50; /* texte gris foncé pour contraste */
+  padding: 10px 22px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.btn-retour:hover {
+  background: linear-gradient(145deg, #f0f0f0, #e0e0e0); /* effet nacré au survol */
+  transform: scale(1.05);
+}
+
+.btn-retour:active {
+  transform: scale(0.97);
+}
+
+
+
+.projects-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.project-block {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.project-description {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.project-description h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #1a4d4f;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #1a4d4f;
+  padding-bottom: 10px;
+}
+
+.project-description h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+
+.project-description p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.project-description ul {
+  padding-left: 20px;
+}
+
+.project-description li {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+  background: #333;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border-left: 4px solid #1a4d4f;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.project-description strong {
+  color: #1a4d4f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-description {
+    padding: 20px;
+  }
+  .project-description h2 {
+    font-size: 1.6rem;
+  }
+}
+
+
+
+
+.project-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.project-cardMA-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.project-cardMA {
+  background-image: url("image/Mark2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 200px;
+  margin-right: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-cardMA:hover {
+  transform: scale(1.05);
+}
+
+.project-cardMA2-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.project-cardMA2 {
+  background-image: url("image/Mark1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 200px;
+  margin-left: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-cardMA2:hover {
+  transform: scale(1.05);
+}
+
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+   
+
+    .btn-retour {
+        font-size: 14px;
+        padding: 8px 18px;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 450px) {
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .btn-retour {
+        font-size: 13px;
+        padding: 6px 14px;
+    }
+}
+</style>
+<body>
+
+    <section class="section projects">
+  <div class="container">
+    <h2 class="projects-title">Markdown /Gestion de projet</h2>
+
+    <div class="project-block">
+      <h3>Site web avec Markdown sur ThinkMyPad</h3>
+      
+
+<strong>avec Mr. Nicolas SAURET </strong>
+</p>
+
+      <section class="project-description">
+        <h4>Gestion de projet, Design Thinking et Communication visuelle</h4>
+
+        <p>
+         Au cours de cette formation, j’ai découvert et expérimenté plusieurs méthodes de gestion de projet, en apprenant à choisir l’approche la plus adaptée selon les besoins. J’ai également acquis des compétences en <strong>Markdown</strong> pour documenter et organiser efficacement les tâches.
+        </p>
+
+     
+
+        <p>
+          En appliquant la méthode <strong>Design Thinking</strong>, j’ai participé à des ateliers collaboratifs utilisant des notes autocollantes colorées (Post-it) et supports visuels grand format (affiches, paperboards) pour structurer les idées, prioriser et favoriser la créativité.
+        </p>
+
+         <p>
+          Nous avons aussi travaillé sur le <strong>storytelling</strong> pour construire des récits engageants autour des projets, et sur le <strong>storyboard</strong> pour planifier visuellement les étapes clés et l’expérience utilisateur.
+        </p>
+
+         <p>
+          Cette expérience m’a permis de développer :
+        </p>
+
+           <ul>
+          <li>Une approche centrée sur l’utilisateur</li>
+          <li>Des compétences en travail d’équipe et facilitation</li>
+          <li>La capacité à structurer et présenter un projet de façon claire et impactante</li>
+          
+        </ul>
+
+      </section>
+
+      <div class="project-container">
+       
+           <a href="https://pinkmypad.net/libreon/T6qFa_iaSeSYbVyzkXjy2Q" class="project-cardMA-link">
+                     <div class="project-cardMA"></div>
+                 </a>
+                
+                    
+               <a href="https://pinkmypad.net/libreon/tu09FA7RTECd93WtP8sWjA" class="project-cardMA2-link">
+                     <div class="project-cardMA2"></div>
+                 </a>
+                
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="accueil.html#projects" class="btn-retour">Retour</a>
+
+</body>
+</html>
