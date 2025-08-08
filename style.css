@@ -593,12 +593,13 @@ footer p {
 }
 
 .project-cardMA {
-  background-image: url("images/Mark2.png");
+  background-image: url("image/Mark2.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 300px;
   height: 200px;
+  margin-left: 450px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   cursor: pointer;
@@ -609,27 +610,6 @@ footer p {
     background-color: rgba(255, 255, 255, 0.4); /* Fond plus clair au survol */
 }
 
-.project-cardMA2-link {
-  display: inline-block;
-  text-decoration: none;
-}
-
-.project-cardMA2 {
-  background-image: url("images/Mark1.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 300px;
-  height: 200px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  cursor: pointer;
-}
-
-.project-cardMA2:hover {
-    transform: scale(1.05);
-    background-color: rgba(255, 255, 255, 0.4); /* Fond plus clair au survol */
-}
 
 .project-cardCR-link {
   display: inline-block;
@@ -643,6 +623,7 @@ footer p {
   background-repeat: no-repeat;
   width: 300px;
   height: 200px;
+  margin-left: 450px; 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   cursor: pointer;
@@ -1055,5 +1036,6 @@ footer p {
     height: 250px;
   }
 }
+
 
 
