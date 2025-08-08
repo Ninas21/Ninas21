@@ -593,7 +593,7 @@ footer p {
 }
 
 .project-cardMA {
-  background-image: url("image/Mark2.png");
+  background-image: url("images/Mark2.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1036,6 +1036,7 @@ footer p {
     height: 250px;
   }
 }
+
 
 
 
