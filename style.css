@@ -348,7 +348,7 @@ h2 {
 }
 
 .project-cardZ {
-  background-image: url("images/zoo.png");
+  background-image: url("images/animaux-sauv.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1055,4 +1055,5 @@ footer p {
     height: 250px;
   }
 }
+
 
