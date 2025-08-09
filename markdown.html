@@ -139,56 +139,46 @@ p {
 .project-container {
   display: flex;
   justify-content: center;
+  width: 100%;
+  max-width: 100%; /* éviter les restrictions de largeur */
+  margin: 0 auto; /* centre le bloc dans son parent */
   margin-top: 20px;
+  gap: 20px;
 }
-
-.project-cardMA-link {
+.project-cardMARK-link,
+.project-cardMARK2-link {
   display: inline-block;
   text-decoration: none;
 }
 
-.project-cardMA {
-  background-image: url("images/Mark2.png");
+.project-cardMARK,
+.project-cardMARK2 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 300px;
   height: 200px;
- 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-.project-cardMA:hover {
+.project-cardMARK {
+  background-image: url("image/Mark2.png");
+}
+
+.project-cardMARK2 {
+  background-image: url("image/Mark1.png");
+}
+
+.project-cardMARK:hover,
+.project-cardMARK2:hover {
   transform: scale(1.05);
 }
 
-.project-cardMA2-link {
-  display: inline-block;
-  text-decoration: none;
-}
 
-.project-cardMA2 {
-  background-image: url("images/Mark1.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 300px;
-  height: 200px;
- 
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
 
-.project-cardMA2:hover {
-  transform: scale(1.05);
-}
-
-    
 /* Responsive */
 @media (max-width: 768px) {
   .project-description {
@@ -198,6 +188,7 @@ p {
     font-size: 1.6rem;
   }
 }
+
 
 @media screen and (max-width: 768px) {
     body {
@@ -270,7 +261,9 @@ p {
           Nous avons aussi travaillé sur le <strong>storytelling</strong> pour construire des récits engageants autour des projets, et sur le <strong>storyboard</strong> pour planifier visuellement les étapes clés et l’expérience utilisateur.
         </p>
 
-         <p> Cette expérience m’a permis de développer :</p>
+         <p>
+          Cette expérience m’a permis de développer :
+        </p>
 
            <ul>
           <li>Une approche centrée sur l’utilisateur</li>
@@ -278,15 +271,18 @@ p {
           <li>La capacité à structurer et présenter un projet de façon claire et impactante</li>
           
         </ul>
+
       </section>
 
       <div class="project-container">
-           <a href="https://pinkmypad.net/libreon/T6qFa_iaSeSYbVyzkXjy2Q" class="project-cardMA-link">
-                     <div class="project-cardMA"></div>
+       
+           <a href="https://pinkmypad.net/libreon/T6qFa_iaSeSYbVyzkXjy2Q" class="project-cardMARK-link">
+                     <div class="project-cardMARK"></div>
                  </a>
+                
                     
-               <a href="https://pinkmypad.net/libreon/tu09FA7RTECd93WtP8sWjA" class="project-cardMA2-link">
-                     <div class="project-cardMA2"></div>
+               <a href="https://pinkmypad.net/libreon/tu09FA7RTECd93WtP8sWjA" class="project-cardMARK2-link">
+                     <div class="project-cardMARK2"></div>
                  </a>
                 
       </div>
@@ -298,5 +294,4 @@ p {
 
 </body>
 </html>
-
 
