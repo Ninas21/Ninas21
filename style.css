@@ -638,7 +638,7 @@ footer p {
 
 #hidden-box {
   position: fixed;
-  top: 0; /* ← au lieu de top: 10px */
+  top: 0; 
   left: 50%;
   transform: translateX(-50%);
   width: 100px;
@@ -664,7 +664,7 @@ footer p {
 }
 
 .infos h1, h3, p, ul{
-  color: #fff;
+  color: #333;
   margin: 20px;
 }
 #content {
@@ -1036,6 +1036,7 @@ footer p {
     height: 250px;
   }
 }
+
 
 
 
