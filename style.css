@@ -586,60 +586,75 @@ footer p {
     color: #000000;
 }
 
-.project-cardMA-link {
+.project-cardMA-link,
+.project-cardCR-link {
   display: inline-block;
   text-decoration: none;
 }
 
+/* Carte MA */
 .project-cardMA {
+  position: relative; /* pour centrer le texte à l’intérieur */
   background-image: url("images/Mark2.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 300px;
   height: 200px;
-  margin-left: 450px;
+  margin: 20px auto; /* centre horizontalement */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   cursor: pointer;
+  display: flex; /* pour centrer le texte */
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, background-color 0.3s;
+  color: white; /* texte visible sur l’image */
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
 }
 
 .project-cardMA:hover {
-    transform: scale(1.05);
-    background-color: rgba(255, 255, 255, 0.4); /* Fond plus clair au survol */
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
-
-.project-cardCR-link {
-  display: inline-block;
-  text-decoration: none;
-}
-
+/* Carte CR */
 .project-cardCR {
+  position: relative;
   background-image: url("images/moi.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 300px;
   height: 200px;
-  margin-left: 450px; 
+  margin: 20px auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, background-color 0.3s;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
 }
 
 .project-cardCR:hover {
-    transform: scale(1.05);
-    background-color: rgba(255, 255, 255, 0.4); /* Fond plus clair au survol */
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Responsive mobile */
-@media (max-width: 480px) {
-  .project-card,
+/* Media query pour petits écrans */
+@media (max-width: 768px) {
   .project-cardMA,
   .project-cardCR {
-    flex: 1 1 100%; /* 1 par ligne */
-    max-width: 100%;
+    width: 90%;
+    height: 200px; /* conserve la hauteur pour garder le texte visible */
+    margin: 15px auto;
   }
 }
 
@@ -985,6 +1000,7 @@ footer p {
     height: 250px;
   }
 }
+
 
 
 
