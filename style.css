@@ -586,13 +586,11 @@ footer p {
     color: #000000;
 }
 
-.project-cardMA-link,
-.project-cardCR-link {
+.project-cardMA-link {
   display: inline-block;
   text-decoration: none;
 }
 
-/* Carte MA */
 .project-cardMA {
   background-image: url("images/Mark2.png");
   background-size: cover;
@@ -600,20 +598,23 @@ footer p {
   background-repeat: no-repeat;
   width: 300px;
   height: 200px;
-  margin: 20px auto; /* centre horizontalement */
+  margin-left: 450px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   cursor: pointer;
-  display: block; /* nécessaire pour que margin auto fonctionne */
-  transition: transform 0.3s, background-color 0.3s;
 }
 
 .project-cardMA:hover {
-  transform: scale(1.05);
-  background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.4); /* Fond plus clair au survol */
 }
 
-/* Carte CR */
+
+.project-cardCR-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
 .project-cardCR {
   background-image: url("images/moi.png");
   background-size: cover;
@@ -621,28 +622,17 @@ footer p {
   background-repeat: no-repeat;
   width: 300px;
   height: 200px;
-  margin: 20px auto; /* centre horizontalement */
+  margin-left: 450px; 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   cursor: pointer;
-  display: block;
-  transition: transform 0.3s, background-color 0.3s;
 }
 
 .project-cardCR:hover {
-  transform: scale(1.05);
-  background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.4); /* Fond plus clair au survol */
 }
 
-/* Media query pour petits écrans */
-@media (max-width: 768px) {
-  .project-cardMA,
-  .project-cardCR {
-    width: 90%;   /* réduit la largeur pour s’adapter à l’écran */
-    height: auto; /* hauteur automatique si nécessaire */
-    margin: 15px auto;
-  }
-}
 /* Responsive mobile */
 @media (max-width: 480px) {
   .project-card,
@@ -995,6 +985,7 @@ footer p {
     height: 250px;
   }
 }
+
 
 
 
