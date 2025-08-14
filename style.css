@@ -586,78 +586,50 @@ footer p {
     color: #000000;
 }
 
-.project-cardMA-link,
-.project-cardCR-link {
-  display: inline-block;
-  text-decoration: none;
-}
-
-/* Carte MA */
-.project-cardMA {
-  position: relative; /* pour centrer le texte à l’intérieur */
-  background-image: url("images/Mark2.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 300px;
-  height: 200px;
-  margin: 20px auto; /* centre horizontalement */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  cursor: pointer;
-  display: flex; /* pour centrer le texte */
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s, background-color 0.3s;
-  color: white; /* texte visible sur l’image */
-  font-size: 2em;
-  font-weight: bold;
-  text-align: center;
-}
-
-.project-cardMA:hover {
-  transform: scale(1.05);
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-/* Carte CR */
-.project-cardCR {
-  position: relative;
-  background-image: url("images/moi.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 300px;
-  height: 200px;
-  margin: 20px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  cursor: pointer;
+.projects-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s, background-color 0.3s;
-  color: white;
-  font-size: 2em;
-  font-weight: bold;
-  text-align: center;
+  justify-content: flex-end; /* cartes à droite */
+  gap: 20px; /* espace entre les cartes */
+  flex-wrap: wrap; /* pour responsive */
 }
 
+/* cartes */
+.project-cardMA, .project-cardCR {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  display: flex;          /* centrage texte */
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.project-cardMA { background-image: url("images/Mark2.png"); }
+.project-cardCR { background-image: url("images/moi.png"); }
+
+.project-cardMA:hover,
 .project-cardCR:hover {
   transform: scale(1.05);
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Media query pour petits écrans */
+/* Responsive */
 @media (max-width: 768px) {
-  .project-cardMA,
-  .project-cardCR {
-    width: 90%;
-    height: 200px; /* conserve la hauteur pour garder le texte visible */
-    margin: 15px auto;
+  .projects-container {
+    justify-content: center; /* cartes centrées sur mobile */
+  }
+  .project-cardMA, .project-cardCR {
+    width: 90%; 
   }
 }
-
 
 /* Smartphones (portrait et petits) */
 @media (max-width: 768px) {
@@ -1000,6 +972,7 @@ footer p {
     height: 250px;
   }
 }
+
 
 
 
