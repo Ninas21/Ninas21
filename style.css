@@ -586,58 +586,63 @@ footer p {
     color: #000000;
 }
 
-
-/* Conteneur des cartes */
-.project-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: flex-start; /* ou center si tu veux centrer */
+.project-cardMA-link,
+.project-cardCR-link {
+  display: inline-block;
+  text-decoration: none;
 }
 
-/* Cartes générales */
-.project-card,
-.project-cardMA,
-.project-cardCR {
-  flex: 1 1 calc(33.333% - 20px); /* 3 par ligne */
-  max-width: 300px;
-  height: 200px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+/* Carte MA */
+.project-cardMA {
+  background-image: url("images/Mark2.png");
   background-size: cover;
   background-position: center;
-  transition: transform 0.3s;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 200px;
+  margin: 20px auto; /* centre horizontalement */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  display: block; /* nécessaire pour que margin auto fonctionne */
+  transition: transform 0.3s, background-color 0.3s;
 }
 
-.project-cardMA {
-  background-image: url('images/mark2.png');
+.project-cardMA:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
+/* Carte CR */
 .project-cardCR {
-  background-image: url('images/moi.png');
+  background-image: url("images/moi.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 200px;
+  margin: 20px auto; /* centre horizontalement */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  display: block;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
-.project-card:hover,
-.project-cardMA:hover,
 .project-cardCR:hover {
   transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
-
-
-
-
-/*CSS pour rendre le site responsive et compatible */
-
-/* Responsive tablette */
+/* Media query pour petits écrans */
 @media (max-width: 768px) {
-  .project-card,
   .project-cardMA,
   .project-cardCR {
-    flex: 1 1 calc(50% - 20px); /* 2 par ligne */
+    width: 90%;   /* réduit la largeur pour s’adapter à l’écran */
+    height: auto; /* hauteur automatique si nécessaire */
+    margin: 15px auto;
   }
 }
-
 /* Responsive mobile */
 @media (max-width: 480px) {
   .project-card,
@@ -990,6 +995,7 @@ footer p {
     height: 250px;
   }
 }
+
 
 
 
