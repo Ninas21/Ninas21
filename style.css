@@ -642,7 +642,7 @@ footer p {
   left: 50%;
   transform: translateX(-50%);
   width: 100px;
-  background: linear-gradient(135deg, #6A0DAD, #F9F9FF);
+  background: #f5e2ee;
   border: 1px solid #ccc;
   padding: 1px;
   text-align: center;
@@ -1036,6 +1036,7 @@ footer p {
     height: 250px;
   }
 }
+
 
 
 
