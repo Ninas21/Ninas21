@@ -609,6 +609,14 @@ footer p {
   transition: transform 0.3s;
 }
 
+.project-cardMA {
+  background-image: url('images/mark2.png');
+}
+
+.project-cardCR {
+  background-image: url('images/moi.png');
+}
+
 .project-card:hover,
 .project-cardMA:hover,
 .project-cardCR:hover {
@@ -982,6 +990,7 @@ footer p {
     height: 250px;
   }
 }
+
 
 
 
