@@ -587,51 +587,32 @@ footer p {
 }
 
 
-.project-cardMA-link {
-  display: inline-block;
-  text-decoration: none;
+/* Conteneur des cartes */
+.project-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start; /* ou center si tu veux centrer */
 }
 
-.project-cardMA {
-  background-image: url("images/Mark2.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 300px;
-  height: 200px;
-  margin-left: 450px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  cursor: pointer;
-}
-
-.project-cardMA:hover {
-    transform: scale(1.05);
-    background-color: rgba(255, 255, 255, 0.4); /* Fond plus clair au survol */
-}
-
-
-.project-cardCR-link {
-  display: inline-block;
-  text-decoration: none;
-}
-
+/* Cartes générales */
+.project-card,
+.project-cardMA,
 .project-cardCR {
-  background-image: url("images/moi.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 300px;
+  flex: 1 1 calc(33.333% - 20px); /* 3 par ligne */
+  max-width: 300px;
   height: 200px;
-  margin-left: 450px; 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s;
 }
 
+.project-card:hover,
+.project-cardMA:hover,
 .project-cardCR:hover {
-    transform: scale(1.05);
-    background-color: rgba(255, 255, 255, 0.4); /* Fond plus clair au survol */
+  transform: scale(1.05);
 }
 
 
@@ -639,6 +620,26 @@ footer p {
 
 
 /*CSS pour rendre le site responsive et compatible */
+
+/* Responsive tablette */
+@media (max-width: 768px) {
+  .project-card,
+  .project-cardMA,
+  .project-cardCR {
+    flex: 1 1 calc(50% - 20px); /* 2 par ligne */
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 480px) {
+  .project-card,
+  .project-cardMA,
+  .project-cardCR {
+    flex: 1 1 100%; /* 1 par ligne */
+    max-width: 100%;
+  }
+}
+
 
 /* Smartphones (portrait et petits) */
 @media (max-width: 768px) {
@@ -981,6 +982,7 @@ footer p {
     height: 250px;
   }
 }
+
 
 
 
