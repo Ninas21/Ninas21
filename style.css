@@ -588,8 +588,9 @@ footer p {
 
 
 .project-cardMA-link {
-  display: inline-block;
-  text-decoration: none;
+  display: block;
+  width: fit-content;  /* ou une largeur fixe */
+  margin: 0 auto;
 }
 
 .project-cardMA {
@@ -612,8 +613,9 @@ footer p {
 
 
 .project-cardCR-link {
-  display: inline-block;
-  text-decoration: none;
+  display: block;
+  width: fit-content;  /* ou une largeur fixe */
+  margin: 0 auto;
 }
 
 .project-cardCR {
@@ -983,6 +985,7 @@ footer p {
     height: 250px;
   }
 }
+
 
 
 
