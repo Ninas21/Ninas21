@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Galerie - Logos</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('images/image_Accueil7.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top center;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+     text-align: center;
+    }
+
+
+    .main-content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .section-title span {
+      display: block;
+      font-size: 0.8em;
+      color: #666;
+      margin-top: 8px;
+    }
+
+    /* SLIDER */
+    .slider-container {
+      position: relative;
+      max-width: 800px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 500px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: white;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 10px;
+      cursor: pointer;
+      user-select: none;
+      z-index: 1;
+      border-radius: 50%;
+    }
+
+    .nav:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    /* GALLERY (MINIATURES CLIQUABLES) */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin: 40px auto;
+      padding: 0 20px;
+      max-width: 1000px;
+    }
+
+    .thumb {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .thumb:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* OVERLAY */
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 10, 10, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: opacity 0.3s ease;
+    }
+
+    #overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+    }
+
+    #closeBtn {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 40px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    #closeBtn:hover {
+      color: #ccc;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+
+.btn-retour {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #ffffffcc; /* blanc semi-transparent */
+  color: #333;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-retour:hover {
+  background-color: #F2E9DD;
+  color: white;
+}
+
+
+/*Code pour rendre la page responsive */
+
+@media (max-width: 768px) {
+  .slides img {
+    height: auto;
+  }
+
+  .slider-container {
+    max-width: 100%;
+    margin: 20px auto;
+  }
+
+  .section-title {
+    font-size: 1.8em;
+  }
+
+  .btn-retour {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.4em;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+  }
+
+  .thumb {
+    height: 100px;
+  }
+
+  .nav {
+    font-size: 24px;
+    padding: 8px;
+  }
+}
+  </style>
+</head>
+
+  
+<body>
+<a href="creat.html#creat" class="btn-retour">Retour</a>
+  <div class="main-content">
+    <h1 class="section-title">
+      Galerie des logos fictifs créés avec illustrator
+     
+    </h1>
+
+    <div class="slider-container">
+      <div class="slides">
+        
+      </div>
+      <div class="nav prev">&#10094;</div>
+      <div class="nav next">&#10095;</div>
+    </div>
+
+    <div class="gallery">
+
+   
+       
+        
+    
+    
+
+    <img src="images/LOGO-CaféCrème.jpg" alt="Image 10" class="thumb">
+    <img src="images/MOI-LOGO.jpg" alt="Image 11" class="thumb">
+    
+    <img src="images/paix-logo.jpg" alt="Image 13" class="thumb">
+    
+
+
+    
+    <img src="images/YHG-LOGO.jpg" alt="Image 20" class="thumb">
+    <img src="images/VnIRE.jpg" alt="Image 21" class="thumb">
+    
+    <img src="images/THU-LOGO.jpg" alt="Image 24" class="thumb">
+   
+
+
+    
+
+    <img src="images/HNH-LOGO.jpg" alt="Image 37" class="thumb">
+    
+    <img src="images/ELI-LOGO.jpg" alt="Image 41" class="thumb">
+    <img src="images/Donut-LOGO.jpg" alt="Image 42" class="thumb">
+    
+    </div>
+
+    <div id="overlay" class="hidden">
+      <span id="closeBtn">&times;</span>
+      <img id="fullImage" src="" alt="Zoom">
+    </div>
+  </div>
+
+  <script>
+    // Slider logic
+    const slides = document.querySelector('.slides');
+    const images = document.querySelectorAll('.slides img');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    let index = 0;
+
+    function showSlide(i) {
+      index = (i + images.length) % images.length;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prev.addEventListener('click', () => showSlide(index - 1));
+    next.addEventListener('click', () => showSlide(index + 1));
+
+    // Gallery image click logic
+    const thumbs = document.querySelectorAll('.thumb');
+    const overlay = document.getElementById('overlay');
+    const fullImage = document.getElementById('fullImage');
+    const closeBtn = document.getElementById('closeBtn');
+
+    thumbs.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImage.src = img.src;
+        overlay.classList.remove('hidden');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      overlay.classList.add('hidden');
+      fullImage.src = '';
+    });
+  </script>
+
+</body>
+
+</html>
