@@ -626,7 +626,6 @@ footer p {
   background-repeat: no-repeat;
   width: 300px;
   height: 200px;
-  
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   cursor: pointer;
@@ -1031,6 +1030,7 @@ footer p {
     height: 250px;
   }
 }
+
 
 
 
