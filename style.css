@@ -640,8 +640,9 @@ footer p {
 
 
 .project-cardFI-link {
-  display: inline-block;
-  text-decoration: none;
+   display: block;
+  width: fit-content;  /* ou une largeur fixe */
+  margin: 0 auto;
 }
 
 .project-cardFI {
@@ -662,8 +663,9 @@ footer p {
 }
 
 .project-cardUS-link {
-  display: inline-block;
-  text-decoration: none;
+   display: block;
+  width: fit-content;  /* ou une largeur fixe */
+  margin: 0 auto;
 }
 
 .project-cardUS {
@@ -1029,6 +1031,7 @@ footer p {
     height: 250px;
   }
 }
+
 
 
 
