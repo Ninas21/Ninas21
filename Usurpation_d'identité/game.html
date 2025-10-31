@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Début du jeu</title>
+  <link rel="stylesheet" href="game.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url("images/fond2.png") no-repeat center center/cover;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: #f5f5f5;
+      overflow: hidden;
+    }
+
+    /*  Texte d’intro  */
+    .cinematic h1:first-of-type {
+      font-size: 2.4rem;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+      animation: fadeInDown 1.5s ease forwards;
+    }
+
+    .cinematic h1:last-of-type {
+      font-size: 1.2rem;
+      color: #ddd;
+      opacity: 0;
+      max-width: 700px;
+      margin-top: 20px;
+      line-height: 1.8;
+      animation: fadeText 2s ease 1.5s forwards;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeText {
+      to { opacity: 1; }
+    }
+
+    /* Bandes cinéma */
+    body::before,
+    body::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 2;
+      transition: transform 1s ease;
+    }
+
+    body::before { top: 0; transform: translateY(0); }
+    body::after { bottom: 0; transform: translateY(0); }
+
+    body.no-bars::before { transform: translateY(-100%); }
+    body.no-bars::after { transform: translateY(100%); }
+
+    /*  Notification 1  */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      top: 20px; 
+      background: rgba(255,255,255,0.95);
+      color: #111;
+      display: flex;
+      align-items: center;
+      padding: 12px 18px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      gap: 10px;
+      transform: translateX(150%);
+      transition: transform 0.6s ease, opacity 0.5s;
+      opacity: 0;
+      z-index: 10;
+      cursor: pointer;
+    }
+
+    .notification.show {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .notif-icon {
+      width: 32px;
+      height: 32px;
+      image-rendering: pixelated;
+    }
+
+
+
+/*  Notification 2  */
+.notification2 {
+  position: fixed;
+  top: 80px; /*  décalage vers le bas pour être sous la 1ère */
+  right: 20px;
+  top: 100px; 
+  background: rgba(255,255,255,0.95);
+  color: #111;
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  gap: 10px;
+  transform: translateX(150%);
+  transition: transform 0.6s ease, opacity 0.5s;
+  opacity: 0;
+  z-index: 9; /* légèrement en dessous de la première */
+  cursor: pointer;
+}
+
+.notification2.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.notif-icon2 {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+
+
+    /*  Popup  */
+    .popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 20;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s;
+      padding-right: 10%;
+    }
+
+    .popup.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .popup-content {
+      background: #ffffff;
+      color: #111;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: left;
+      width: 200px;
+      position: relative;
+      animation: popIn 0.4s ease forwards;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .popup-content h2 { 
+      margin-top: 0;
+       color: #222;
+      }
+
+    .popup-image { 
+    width: 50%;
+    margin: 10px 0 15px;
+    border-radius: 8px;
+    image-rendering: pixelated;
+      }
+    .close-btn { 
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
+      color: #555;
+      cursor: pointer;
+      transition: color 0.3s;
+        }
+    .close-btn:hover { 
+      color: #ff4d4d;
+    }
+
+.popup-header {
+  display: flex;              
+  align-items: center;         
+  gap: 15px;                   
+  margin-bottom: 10px;
+}
+
+.popup-header h4 {
+  margin: 0;                   
+  font-size: 0.6em;
+}
+
+.popup-image1 {
+  width: 80px;                 /* taille ajustable */
+  height: 80px;
+  border-radius: 50%;          /* rend l'image ronde */
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+
+.popup-image2 {
+  width: 40px;                 /* taille ajustable */
+  height: 40px;
+  border-radius: 50%;          /* rend l'image ronde */
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.popup-buttons button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#ignoreBtn {
+  background: #ccc;
+  color: #000;
+}
+#ignoreBtn:hover { background: #999; transform: scale(1.05); }
+
+#replyBtn {
+  background: #3b82f6;
+  color: white;
+}
+#replyBtn:hover { background: #2563eb; transform: scale(1.05); }
+
+.chat-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15px;
+  position: relative;
+}
+
+
+.chat-bar input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.chat-bar button {
+  align-self: flex-end;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.chat-bar button:hover { background: #2563eb; }
+
+
+
+
+
+
+
+    /*  Barre déroulante  */
+    .choice-bar-dropdown {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.95);
+  border-radius: 14px;
+  padding: 10px 15px;
+  width: 70%;
+  max-width: 800px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  z-index: 30;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  color: #222;
+}
+
+.choice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.choice-text {
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-line; /* garde les retours à la ligne */
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+.arrow {
+  transition: transform 0.3s;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+
+    .dropdown-choices {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    .dropdown-choices.show {
+      max-height: 500px;
+    }
+
+    .dropdown-choices li {
+      background: #000000;
+      margin: 5px 0;
+      padding: 8px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-choices li.show-item {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .dropdown-choices li:hover {
+      background: #F9F9F9;
+      color: #000000;
+      transform: scale(1.05);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(3px); }
+    }
+
+
+
+
+
+
+
+
+
+/* Contenu de la galerie */
+.gallery-images-list {
+  position: fixed;
+  top: 220px; /* juste en dessous de l'app */
+  right: 20px;
+  width: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  background: rgba(0,0,0,0.9);
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 14;
+}
+
+.gallery-images-list img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+.gallery-images-list img:hover {
+  transform: scale(1.05);
+}
+
+
+#galleryApp {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  top: 180px;
+  right: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: transparent !important;  /* supprime le fond noir */
+  box-shadow: none;                    /* supprime toute ombre résiduelle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  cursor: not-allowed;
+}
+
+#galleryApp img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  background: transparent;
+}
+
+#galleryContent {
+  display: none;
+  position: fixed;
+  bottom: 180px;
+  right: 30px;
+  width: 220px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  gap: 8px;
+  z-index: 49;
+}
+
+.gallery-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.gallery-images img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+
+
+.choices-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.choice-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.choice-btn:hover {
+  background: #2563eb;
+  transform: scale(1.03);
+}
+
+.choice-btn.bad {
+  background: #e11d48;
+}
+
+.choice-btn.bad:hover {
+  background: #9f1239;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="cinematic">
+    <h1>Le jeu commence !</h1>
+    <h1 id="monologue">
+      Ici vidéo ou monologue du protagoniste : "Cela va faire X temps que tu as fugué..."
+    </h1>
+  </div>
+
+  <!-- Notification 1 -->
+  <div id="notification" class="notification">
+    <img src="images/galerie-pixel.png" alt="Galerie" class="notif-icon">
+    <div class="notif-text">
+       Découvrez ce qui s'est passé ce jour-là l'année dernière !
+    </div>
+  </div>
+
+
+   <!-- Notification 2 -->
+  <div id="notification2" class="notification2">
+    <img src="images/galerie-pixel.png" alt="Galerie" class="notif-icon2">
+    <div class="notif-text2">
+       Notification message reçu 
+    </div>
+  </div>
+
+<!-- App verrouillée -->
+<div id="galleryApp">
+  <img id="galleryAppImg" src="images/galerie-pixel2.png" alt="App verrouillée">
+</div>
+
+<!-- Contenu de la galerie -->
+<div id="galleryContent">
+  <h4>Galerie Laila</h4>
+  <div class="gallery-images">
+    <img src="images/tatou1.jpeg" alt="Image 1">
+    <img src="images/tatou2.jpeg" alt="Image 2">
+    <img src="images/tatou3.jpeg" alt="Image 3">
+  </div>
+</div>
+
+  <!-- Popup -->
+  
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span id="closePopup" class="close-btn">×</span>
+
+    <div class="popup-header">
+      <img src="images/femme1.jpg" alt="Image trouvée" class="popup-image1">
+      <h4>Jasmine BAUDIN</h4>
+    </div>
+     <img src="images/femme1.jpg" alt="Image trouvée" class="popup-image2">
+    <p>Tu as reçu une image provenant de la galerie de ton ami disparu...</p>
+    <p>Hey!</p>
+    <img src="images/anniv.jpeg" alt="Image trouvée" class="popup-image">
+  </div>
+</div>
+
+ 
+<!-- Popup 2 -->
+<div id="popup2" class="popup">
+  <div class="popup-content">
+    <span id="closePopup2" class="close-btn">×</span>
+
+    <div class="popup-header">
+      <img src="images/femme2.png" alt="Image trouvée" class="popup-image1">
+      <h4>Laila Martin</h4>
+    </div>
+
+    <p id="popup2-text">Tu viens de recevoir un nouveau message de ton ami Laila:</p>
+    <p id="popup2-text"> <strong>Hey toi ! </p>
+    
+    
+
+    <!-- Boutons IGNORER / RÉPONDRE -->
+    <div id="popup2-buttons" class="popup-buttons">
+      <button id="ignoreBtn">Ignorer</button>
+      <button id="replyBtn">Répondre</button>
+    </div>
+
+    <div id="chatBar" class="chat-bar" style="display:none;">
+  <p id="chatQuestion">Choisis ta réponse :</p>
+  <div id="choicesContainer" class="choices-container"></div>
+</div>
+    </div>
+  </div>
+</div>
+ 
+
+
+
+  <!-- Barre de texte déroulant -->
+<div class="choice-bar-dropdown">
+  <div class="choice-header">
+    <span id="choice-title"></span>
+    <div class="arrow" id="dropdownArrow">▼</div>
+  </div>
+  <div id="choice-text" class="choice-text"></div>
+</div>
+
+  <script src="game.js"></script>
+</body>
+</html>

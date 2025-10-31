@@ -1,0 +1,60 @@
+{
+  "intro_01": {
+    "scene_id": "intro_01",
+    "titre": "Scène d’introduction",
+    "description": "Scène d’intro qui vient instaurer le plot de notre histoire.",
+    "options": {
+      "video": {
+        "type": "video",
+        "contenu": {
+          "protagoniste": "parle de son ami disparu",
+          "dialogue": [
+            "Cela va faire X temps que tu as fugué...",
+            "Je n’arrive toujours pas à croire que tu sois parti."
+          ],
+          "evenements": [
+            "notification anniversaire de l’ami",
+            "on apprend la disparition sans nouvelle"
+          ]
+        }
+      },
+      "audio": {
+        "type": "audio",
+        "contenu": {
+          "forme": "monologue avec sous-titres",
+          "texte": "Texte audio décrivant la disparition de l’ami du protagoniste."
+        }
+      }
+    },
+    "next_scene": "notification_examen"
+  },
+
+  "notification_examen": {
+    "scene_id": "notification_examen",
+    "titre": "Notification d’examen",
+    "description": "Le protagoniste reçoit une notification d’examen sur son téléphone. Cette interruption contraste avec la tension émotionnelle de la scène précédente.",
+    "type": "notification",
+    "contenu": {
+      "message": "Rappel : Examen demain à 9h00.",
+      "reaction_protagoniste": "Soupire, regarde l’écran sans vraiment lire.",
+      "effet": "Ramène le personnage à la réalité après son monologue."
+    },
+    "previous_scene": "intro_01"
+  },
+
+  "next_scene_decouvre": "notification_galerie"
+  },
+
+  "notification_galerie": {
+    "scene_id": "notification_galerie",
+    "titre": "Notification galerie",
+    "description": "Découvrez ce qui s'est passé ce jour-là l'année dernière.",
+    "type": "notification",
+    "contenu": {
+      "message": "Découvrez ce qui s'est passé ce jour-là l'année dernière.",
+      "reaction_protagoniste": "Soupire, regarde l’écran sans vraiment lire.",
+      "effet": "Ramène le personnage à la réalité après son monologue."
+    },
+    "previous_scene": "intro_01"
+  }
+}

@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: url("images/fond2.png") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Conteneur principal */
+.splash {
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Animation d’entrée */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Logo  */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 330px;
+  opacity: 0;
+  transform: scale(0.2);
+  animation: zoomIn 1.2s ease-out forwards;
+}
+
+@keyframes zoomIn {
+  0% { opacity: 0; transform: scale(0.2); }
+  60% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/*  Zone de saisie */
+.text-zone {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 290px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.4);
+  background: #F9F9F9;
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 10px #4f46e5;
+}
+
+
+
+/*  Texte d’aide  */
+.code {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #000000;
+}
+
+/*  Transition vers le jeu  */
+.fade-out {
+  animation: fadeOut 0.8s ease forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(1.3); }
+}
