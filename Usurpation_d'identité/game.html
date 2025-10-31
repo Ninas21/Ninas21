@@ -154,16 +154,18 @@
     }
 
     .popup-content {
-      background: #ffffff;
-      color: #111;
-      padding: 25px;
-      border-radius: 15px;
-      text-align: left;
-      width: 200px;
-      position: relative;
-      animation: popIn 0.4s ease forwards;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    }
+  background: #ffffff;
+  color: #111;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: left;
+  width: 350px;          /* largeur un peu plus grande */
+  max-height: 70vh;      /* hauteur maximale = 80% de la fenêtre */
+  overflow-y: auto;      /* scroll si contenu trop grand */
+  position: relative;
+  animation: popIn 0.4s ease forwards;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
 
     @keyframes popIn {
       from { transform: scale(0.8); opacity: 0; }
@@ -291,8 +293,7 @@
 
 
 
-    /*  Barre déroulante  */
-    .choice-bar-dropdown {
+ .choice-bar-dropdown {
   position: fixed;
   bottom: 25px;
   left: 50%;
@@ -307,7 +308,18 @@
   border: 2px solid #ccc;
   font-size: 16px;
   color: #222;
+
+  /* FIXE */
+  height: 70px;           /* hauteur fixe */
+  overflow-y: auto;        /* scroll si texte trop long */
 }
+
+.choice-text {
+  margin-top: 10px;
+  white-space: pre-line;
+  line-height: 1.6;
+}
+
 
 .choice-header {
   display: flex;
@@ -317,14 +329,6 @@
   font-weight: bold;
 }
 
-.choice-text {
-  margin-top: 10px;
-  max-height: 200px;
-  overflow-y: auto;
-  white-space: pre-line; /* garde les retours à la ligne */
-  font-weight: normal;
-  line-height: 1.6;
-}
 
 .arrow {
   transition: transform 0.3s;
@@ -470,7 +474,7 @@
 .choices-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .choice-btn {
@@ -479,7 +483,7 @@
   border-radius: 8px;
   background: #3b82f6;
   color: white;
-  font-weight: bold;
+  font-size: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -491,6 +495,8 @@
 
 .choice-btn.bad {
   background: #e11d48;
+  padding: 10px;
+  
 }
 
 .choice-btn.bad:hover {
