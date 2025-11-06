@@ -159,7 +159,7 @@
   background: #f5deb3; /* beige */
   color: #111;
   padding: 25px;
-  
+
   font-family: 'Press Start 2P', cursive; /* typo pixel */
   font-size: 10px; /* taille texte ajustable */
   letter-spacing: 1px;
@@ -572,7 +572,7 @@ body::before {
   transform: scale(1.05);
 }
 
-/*Titres dans les popups (ex: Laila Martin, "Calendrier", etc.) */
+/*Titres dans les popups (Laila Martin, "Calendrier", etc.) */
 .popup-header h4 {
   font-family: 'Press Start 2P', cursive;
   font-size: 11px;
@@ -604,7 +604,7 @@ body::before {
 
 /* La deuxième notification apparaît juste en dessous */
 #notification2 {
-  top: 65px; /* ← ajuste selon la hauteur de la première */
+  top: 65px; /* ajuster selon la hauteur de la première */
 }
 
 /* Apparition douce */
@@ -669,12 +669,12 @@ body::before {
 /* Boutons “méchants / reject / bad” */
 .choice-btn.bad,
 .choice-btn.reject {
-  background-color: #f87171 !important; /* marron pixel */
+  background-color: #f87171 !important; /* rouge pixel */
   color: #111 !important;
 }
 .choice-btn.bad:hover,
 .choice-btn.reject:hover {
-  background-color: #f87171 !important; /* marron foncé */
+  background-color: #f87171 !important; /* rouge pixel */
 }
 
 #replyBtn {
@@ -768,13 +768,13 @@ body::before {
 #spamApp {
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 30px;
   cursor: not-allowed;
 }
 
 #spamAppImg {
-  width: 64px;
-  height: 64px;
+  width: 60px;
+  height: 60px;
   filter: grayscale(100%);
   transition: filter 0.3s ease, transform 0.2s ease;
 }
@@ -789,13 +789,101 @@ body::before {
 }
 
 
+#banqueApp {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  top: 180px;
+  left: 20px;
+  background: transparent !important; /* pas de fond */
+  box-shadow: none;                   /* pas d'ombre */
+  border: none;                       /* pas de bordure */
+  overflow: visible;                  /* permet à l’image de s’afficher sans découpe */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  cursor: not-allowed;                /* grisé tant que l’app est verrouillée */
+}
+
+#banqueApp img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;                /* garde les proportions d’origine de mon icône */
+  border-radius: 0;                   /* plus de cercle */
+  background: transparent;
+  display: block;
+}
+
+#searchApp {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  top: 280px;
+  left: 20px;
+  background: transparent !important; /* pas de fond */
+  box-shadow: none;                   /* pas d'ombre */
+  border: none;                       /* pas de bordure */
+  overflow: visible;                  /* permet à l’image de s’afficher sans découpe */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  cursor: not-allowed;                /* grisé tant que l’app est verrouillée */
+}
+
+#searchApp img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;                /* garde les proportions d’origine de mon icône */
+  border-radius: 0;                   /* plus de cercle */
+  background: transparent;
+  display: block;
+}
+
+
+/* Notification système d'alerte (IBAN) */
+.system-notif {
+  position: fixed;
+  top: 180px;
+  left: 95px;
+  
+  max-width: 320px;
+  background: #fff7e6;
+  color: #111;
+  border: 3px solid #b8860b;
+  padding: 10px 12px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  z-index: 9999;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  border-radius: 6px;
+  opacity: 1;
+}
+
+.system-notif--alert { background:#fff1f0; border-color:#d04b4b; }
+
+.system-notif__title { font-weight:700; margin-bottom:6px; }
+.system-notif__line { margin-bottom:4px; font-size: 11px; }
+.system-notif__close {
+  position:absolute;
+  top:4px;
+  left:6px;
+  border:none;
+  background:transparent;
+  font-size:18px;
+  cursor:pointer;
+}
+
+
+
   </style>
 </head>
 <body>
   <div class="cinematic">
     <h1>Le jeu commence !</h1>
     <h1 id="monologue">
-      Ici vidéo ou monologue du protagoniste : "Cela va faire X temps que tu as fugué..."
+     
     </h1>
   </div>
 
@@ -857,10 +945,26 @@ body::before {
 
 
 
-
+<!-- Application Spam -->
 <div id="spamApp" class="app-icon" style="position:absolute; top:10px; left:10px;">
   <img id="spamAppImg" src="images/spam.png" alt="Spam App" width="60">
 </div>
+
+<!-- Application Banque -->
+<div class="app" id="banqueApp" style="pointer-events:none; cursor:not-allowed;">
+  <img src="images/banque_off.png" id="banqueAppImg" alt="Banque" />
+  
+</div>
+
+<!-- Application Moteur de recherche -->
+<div class="app" id="searchApp" style="pointer-events:none; cursor:not-allowed;">
+  <img src="images/recherche_off.png" id="searchAppImg" alt="Recherche" />
+  
+</div>
+
+
+
+
 
 
 <!-- Contenu de la galerie -->
@@ -904,7 +1008,7 @@ body::before {
 
     <p id="popup2-text">Tu viens de recevoir un nouveau message de ton ami Laila:</p>
 
-   <!-- <p id="popup2-tex"> <strong>Hey toi ! </p>-->
+   
     
     <!-- Boutons IGNORER / RÉPONDRE -->
     <div id="popup2-buttons" class="popup-buttons">
@@ -924,14 +1028,7 @@ body::before {
 
 
 
-  <!-- Barre de texte déroulant 
-<div class="choice-bar-dropdown">
-  <div class="choice-header">
-    <span id="choice-title"></span>
-    <div class="arrow" id="dropdownArrow">▼</div>
-  </div>
-  <div id="choice-text" class="choice-text"></div>
-</div> -->
+
 
 <!-- Barre de texte déroulant avec effet pixel -->
 <div class="choice-bar-dropdown">
@@ -945,9 +1042,11 @@ body::before {
 
 
   <script src="game.js"></script>
+  <script src="IndiceUnCalendrierPasConsulte.js"></script>
   <script src="IndiceZeroVoiceMail.js"></script>
   <script src="IndiceUnVoiceMail.js"></script>
   <script src="sceneCalendrier.js"></script>
+  
 
 
 </body>
