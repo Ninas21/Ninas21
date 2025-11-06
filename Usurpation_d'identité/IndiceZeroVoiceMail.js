@@ -1,4 +1,3 @@
-// IndiceZeroVoiceMail.js
 window.addEventListener("load", () => {
   const popup2 = document.getElementById("popup2");
   const popup2Text = document.getElementById("popup2-text");
@@ -80,7 +79,7 @@ window.addEventListener("load", () => {
       popup2Text.innerHTML = `
         <strong>Laila t’a envoyé un vocal :</strong><br><br>
         <audio id="vocalPlayer" controls style="width:100%;">
-          <source src="audio/rire.mp3" type="audio/mpeg">
+          <source src="audio/easy.mp3" type="audio/mpeg">
           Ton navigateur ne supporte pas la lecture audio.
         </audio>
         <div style="margin-top:10px; display:flex; gap:8px;">
@@ -228,7 +227,7 @@ window.addEventListener("load", () => {
       popup2Text.innerHTML = `
         <strong>Laila t’a envoyé un vocal :</strong><br><br>
         <audio id="vocalPlayer" controls style="width:100%;">
-          <source src="audio/rire.mp3" type="audio/mpeg">
+          <source src="audio/easy.mp3" type="audio/mpeg">
           Ton navigateur ne supporte pas la lecture audio.
         </audio>
         <div style="margin-top:10px; display:flex; gap:8px;">
