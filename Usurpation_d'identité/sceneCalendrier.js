@@ -10,7 +10,7 @@ window.addEventListener("load", () => {
     return;
   }
 
-  // ---------- Dictionnaire des événements ----------
+  // Dictionnaire des événements 
   const events = {
     28: {
       title: "Rendez-vous avec Laila",
@@ -26,7 +26,7 @@ window.addEventListener("load", () => {
     }
   };
 
-  // ---------- Fonction pour créer tout le calendrier ----------
+  //  Fonction pour créer tout le calendrier 
   function createCalendarGrid() {
     calendarGrid.innerHTML = "";
     const daysInFeb = 29; // année bissextile simulée
@@ -84,7 +84,7 @@ window.addEventListener("load", () => {
     }
   }
 
-  // ---------- Fonction qui gère le clic sur une date ----------
+  // Fonction qui gère le clic sur une date 
   function handleCalendarClick(day) {
     if (events[day]) {
       const evt = events[day];
@@ -123,7 +123,7 @@ window.addEventListener("load", () => {
     }
   }
 
-  // ---------- Débloquer le calendrier ----------
+  // Débloquer le calendrier 
   function unlockCalendarApp() {
     calendarAppImg.src = "images/calendrier.png";
     calendarApp.style.pointerEvents = "auto";
@@ -131,16 +131,16 @@ window.addEventListener("load", () => {
     calendarApp.animate([{ transform: "scale(1.1)" }, { transform: "scale(1)" }], { duration: 600, iterations: 2 });
   }
 
-  // ---------- Ouvrir le calendrier ----------
+  // Ouvrir le calendrier
   calendarApp.addEventListener("click", () => {
     createCalendarGrid();
     popupCalendar.classList.add("show");
   });
 
-  // ---------- Fermer le calendrier ----------
+  //Fermer le calendrier 
   closeCalendarPopup.addEventListener("click", () => popupCalendar.classList.remove("show"));
 
-  // ---------- Déclenchement depuis le jeu ----------
+  // Déclenchement depuis le jeu
   window.addEventListener("voicemailEnded", (e) => {
     const heard = e && e.detail && !!e.detail.heard;
     if (heard) unlockCalendarApp();
