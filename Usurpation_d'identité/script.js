@@ -6,7 +6,7 @@ function validerCode() {
   if (code === "404") {
     splash.classList.add("fade-out");
     setTimeout(() => {
-      window.location.href = "game.html";
+      window.location.href = "monologue.html";
     }, 900);
   } else {
     codeInput.style.borderColor = "#ef4444";
