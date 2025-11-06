@@ -421,3 +421,36 @@ Elle propose d’envoyer un vocal, car tout expliquer par message serait trop lo
     typeInDropdown(introMessage);
   }, 500);
 });
+
+ //  DÉBLOCAGE BANQUE ET MOTEUR DE RECHERCHE 
+  window.debloquerBanqueEtRecherche = function () {
+    const banqueApp = document.getElementById("banqueApp");
+    const moteurApp = document.getElementById("searchApp");
+
+    if (banqueApp) {
+      const banqueImg = banqueApp.querySelector("img");
+      banqueApp.style.pointerEvents = "auto";
+      banqueApp.style.cursor = "pointer";
+      if (banqueImg) {
+        banqueImg.src = "images/banque.png";
+        banqueImg.style.filter = "none";
+      }
+    }
+
+    if (moteurApp) {
+      const moteurImg = moteurApp.querySelector("img");
+      moteurApp.style.pointerEvents = "auto";
+      moteurApp.style.cursor = "pointer";
+      if (moteurImg) {
+        moteurImg.src = "images/recherche.png";
+        moteurImg.style.filter = "none";
+      }
+    }
+
+    // Affiche une notification visuelle pour signaler le déblocage
+    const notif = document.createElement("div");
+    notif.className = "system-notif";
+    notif.textContent = " Nouvelle activité suspecte détectée : IBAN inconnu (Karl BAUDIN)";
+    document.body.appendChild(notif);
+    setTimeout(() => notif.remove(), 5000);
+  };
