@@ -7,7 +7,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-image: url('image/image_Accueil7.jpg');
+    background-image: url('images/image_Accueil7.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
@@ -242,7 +242,7 @@ h2 {
 }
 
 .curri-vitae {
-  background: url(image/ban.jpg);
+  background: url(images/ban.jpg);
   color: #fff;
   padding: 20px;
   width: 30%;
@@ -329,7 +329,7 @@ h2 {
 }
 
 .project-cardV {
-  background-image: url("image/Travel.jpg");
+  background-image: url("images/Travel.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -355,7 +355,7 @@ h2 {
 }
 
 .project-cardZ {
-  background-image: url("image/zoo.png");
+  background-image: url("images/zoo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -378,7 +378,7 @@ h2 {
 }
 
 .project-cardM {
-  background-image: url("image/MJ.png");
+  background-image: url("images/MJ.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -401,7 +401,7 @@ h2 {
 }
 
 .project-cardA {
-  background-image: url("image/FamAlg.png");
+  background-image: url("images/FamAlg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -424,7 +424,7 @@ h2 {
 }
 
 .project-cardEAU {
-  background-image: url("image/eau3.png");
+  background-image: url("images/eau3.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -447,7 +447,7 @@ h2 {
 }
 
 .project-cardFAKE {
-  background-image: url("image/Fake.png");
+  background-image: url("images/Fake.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -473,7 +473,7 @@ h2 {
 }
 
 .project-cardI {
-  background-image: url("image/chat.png");
+  background-image: url("images/chat.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -496,7 +496,7 @@ h2 {
 }
 
 .project-cardL {
-  background-image: url("image/lampe.png");
+  background-image: url("images/lampe.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -519,7 +519,7 @@ h2 {
 }
 
 .project-cardU {
-  background-image: url("image/labirynthe.png");
+  background-image: url("images/labirynthe.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -541,7 +541,7 @@ h2 {
 }
 
 .project-cardB {
-  background-image: url("image/blend.png");
+  background-image: url("images/blend.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -565,7 +565,7 @@ h2 {
 }
 
 .project-cardC {
-  background-image: url("image/alo.png");
+  background-image: url("images/alo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -589,7 +589,7 @@ h2 {
 }
 
 .project-cardAF {
-  background-image: url("image/AFTEREFFECTS.jpg");
+  background-image: url("images/AFTEREFFECTS.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -613,7 +613,7 @@ h2 {
 }
 
 .project-cardVR {
-  background-image: url("image/VR.png");
+  background-image: url("images/VR.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -647,7 +647,7 @@ h2 {
 }
 
 .project-cardMA {
-  background-image: url("image/Mark2.png");
+  background-image: url("images/Mark2.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -681,7 +681,7 @@ h2 {
 }
 
 .project-cardUX {
-  background-image: url("image/uxDesign.png");
+  background-image: url("images/uxDesign.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -707,7 +707,7 @@ h2 {
 }
 
 .project-cardCR {
-  background-image: url("image/moi.png");
+  background-image: url("images/moi.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -727,7 +727,7 @@ h2 {
 
 
 footer {
-    background-image: url(image/ban.jpg);
+    background-image: url(images/ban.jpg);
     text-align: center;
     padding: 20px 0;
 }
@@ -1159,6 +1159,7 @@ footer {
     height: 250px;
   }
 }
+
 
 
 
