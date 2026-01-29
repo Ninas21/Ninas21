@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Cycle de l'eau</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: black;
+}
+
+.game {
+  display: flex;
+  height: 100vh;
+}
+
+/* Barres latérales */
+.sidebar {
+  width: 15%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+/* Zone objets */
+.items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* Objets draggable */
+.item {
+  width: 70px;
+  cursor: grab;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.item:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+
+/* Bouton navigation */
+.nav-button {
+  padding: 12px 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.4);
+  color: black;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  margin: 0 auto;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.nav-button:hover {
+  background: rgba(255,255,255,0.6);
+  transform: scale(1.05);
+}
+
+/* Zone centrale */
+.scene {
+  flex: 1;
+  position: relative;
+  background: url("images/Cycle1.png") no-repeat center/contain;
+  background-size: contain;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Drop zones numérotées */
+.drop-zone {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 2px dashed rgba(255,255,255,0.6);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  font-size: 24px;
+}
+
+/* Position des zones */
+#drop1 { top: 10%; left: 50%; transform: translate(-50%, -50%); }
+#drop2 { bottom: 15%; left: 50%; transform: translate(-50%, -50%); }
+#drop3 { top: 45%; left: 55%; transform: translate(-50%, -50%); }
+#drop4 { top: 20%; left: 30%; transform: translate(-50%, -50%); }
+#drop5 { top: 20%; left: 70%; transform: translate(-50%, -50%); }
+
+/* Texte narratif en bas */
+.story {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 18px;
+  max-width: 80%;
+  text-align: center;
+  z-index: 10;
+}
+
+/* Image placée après drop */
+.placed {
+  position: absolute;
+  width: 150px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+
+<div class="game">
+
+  <!-- Barre gauche -->
+  <div class="sidebar">
+    <div class="items">
+      <img src="images/soleil.png" id="sun" class="item" draggable="true">
+      <img src="images/seau.png" id="bucket" class="item" draggable="true">
+      <img src="images/vapeur.png" id="steam" class="item" draggable="true">
+      <img src="images/Nuage.png" id="cloud" class="item" draggable="true">
+      <img src="images/nuage-pluvieuse.png" id="rainCloud" class="item" draggable="true">
+    </div>
+    <a href="index.html" class="nav-button">⬅ Retour</a>
+  </div>
+
+  <!-- Zone centrale -->
+  <div class="scene">
+    <div class="story" id="story">Glisse la première chose qui participe à la formation d'eau</div>
+
+    <div class="drop-zone" id="drop1" data-step="1">1</div>
+    <div class="drop-zone" id="drop2" data-step="2">2</div>
+    <div class="drop-zone" id="drop3" data-step="3">3</div>
+    <div class="drop-zone" id="drop4" data-step="4">4</div>
+    <div class="drop-zone" id="drop5" data-step="5">5</div>
+  </div>
+
+  <!-- Barre droite -->
+  <div class="sidebar">
+    <a href="eau-animaux.html" class="nav-button">Suivant</a>
+  </div>
+
+</div>
+
+<script>
+let currentStep = 1;
+const story = document.getElementById("story");
+
+// Drag & Drop
+const draggables = document.querySelectorAll('.sidebar .item');
+const dropZones = document.querySelectorAll('.drop-zone');
+
+draggables.forEach(item => {
+  item.addEventListener('dragstart', e => {
+    e.dataTransfer.setData('text/plain', e.target.id);
+  });
+});
+
+dropZones.forEach(zone => {
+  zone.addEventListener('dragover', e => e.preventDefault());
+  zone.addEventListener('drop', e => {
+    e.preventDefault();
+    const id = e.dataTransfer.getData('text/plain');
+    const draggable = document.getElementById(id);
+
+    if (parseInt(zone.dataset.step) === currentStep) {
+      // Ajouter l'image dans la scène
+      const sceneRect = document.querySelector('.scene').getBoundingClientRect();
+      const zoneRect = zone.getBoundingClientRect();
+      const newImg = document.createElement('img');
+      newImg.src = draggable.src;
+      newImg.className = 'placed';
+      newImg.style.left = (zoneRect.left - sceneRect.left + zoneRect.width/2) + 'px';
+      newImg.style.top = (zoneRect.top - sceneRect.top + zoneRect.height/2) + 'px';
+      document.querySelector('.scene').appendChild(newImg);
+
+      draggable.setAttribute('draggable', false);
+      currentStep++;
+      updateStory();
+    }
+  });
+});
+
+function updateStory() {
+  switch(currentStep) {
+    case 2:
+      story.textContent = "Glisse la 2ème chose qui vient après le soleil";
+      break;
+    case 3:
+      story.textContent = "Glisse la 3ème chose : la vapeur monte de la mer";
+      break;
+    case 4:
+      story.textContent = "Glisse la 4ème chose : le nuage blanc se forme";
+      break;
+    case 5:
+      story.textContent = "Glisse la 5ème chose : le nuage pluvieux fait tomber la pluie";
+      break;
+    case 6:
+      story.textContent = "Bravo, tu as appris maintenant le cycle de l'eau !";
+      break;
+    default:
+      break;
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Eau & Forêt</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: black;
+    font-family: Arial, sans-serif;
+  }
+
+  .scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* Forêt */
+  .forest {
+    position: absolute;
+    inset: 0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .dead {
+    background-image: url("images/Forêt2.png");
+    z-index: 1;
+  }
+
+  .alive {
+    background-image: url("images/Forêt.png");
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  /* Goutte d'eau */
+  .bucket {
+    position: absolute;
+    bottom: 60px;
+    left: 30px;
+    width: 90px;
+    cursor: pointer;
+    z-index: 4;
+    transition: transform 0.2s;
+  }
+
+  .bucket:hover {
+    transform: scale(1.1);
+  }
+
+  /* Pluie */
+  .rain {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0;
+  }
+
+  .drop {
+    position: absolute;
+    top: -20px;
+    width: 2px;
+    height: 15px;
+    background: rgba(180, 200, 255, 0.8);
+    border-radius: 50%;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    to { transform: translateY(110vh); }
+  }
+
+  /* Narration */
+  .story {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    text-align: center;
+    z-index: 10; 
+    width: 80%;
+    max-width: 500px;
+  }
+
+  /* Boutons navigation */
+  .nav-button {
+    position: absolute;
+    top: 20px;
+    padding: 12px 18px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.4);
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    z-index: 10;
+  }
+
+  .nav-button:hover {
+    background: rgba(255,255,255,0.6);
+    transform: scale(1.05);
+  }
+
+  .nav-left { left: 20px; }
+  .nav-right { right: 20px; }
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+
+  <!-- Forêt -->
+  <div class="forest dead"></div>
+  <div class="forest alive"></div>
+
+  <!-- Pluie -->
+  <div class="rain" id="rain"></div>
+
+  <!-- Goutte d'eau -->
+  <img src="images/Eau.png" class="bucket" id="bucket">
+
+  <!-- Narration -->
+  <div class="story">
+    <p id="text">La forêt est silencieuse. Les arbres ont soif.</p>
+  </div>
+
+  <!-- Boutons navigation -->
+  <a href="index.html" class="nav-button nav-left">⬅ Retour</a>
+  <a href="eau-animaux.html" class="nav-button nav-right">Suivant</a>
+
+</div>
+
+<script>
+const bucket = document.getElementById("bucket");
+const rain = document.getElementById("rain");
+const aliveForest = document.querySelector(".alive");
+const text = document.getElementById("text");
+let level = 0;
+
+function startRain() {
+  // Vider la pluie précédente
+  rain.innerHTML = "";
+  rain.style.opacity = 1;
+
+  // Créer 50 gouttes
+  for (let i = 0; i < 50; i++) {
+    const drop = document.createElement("div");
+    drop.className = "drop";
+    drop.style.left = Math.random() * 100 + "vw";
+    drop.style.animationDuration = (0.5 + Math.random()) + "s";
+    drop.style.opacity = Math.random();
+    rain.appendChild(drop);
+  }
+
+  // Arrêter la pluie après 1s
+  setTimeout(() => {
+    rain.style.opacity = 0;
+    rain.innerHTML = "";
+  }, 1000);
+}
+
+function waterForest() {
+  if (level < 4) {
+    level++;
+    startRain();
+
+    // Forêt devient progressivement vivante
+    aliveForest.style.opacity = level * 0.25;
+
+    // Texte narratif
+    switch(level) {
+      case 1: text.textContent = "L’eau tombe doucement sur la terre."; break;
+      case 2: text.textContent = "Les racines se réveillent."; break;
+      case 3: text.textContent = "Les feuilles retrouvent leur couleur."; break;
+      case 4: text.textContent = "La forêt respire à nouveau."; break;
+    }
+  }
+}
+
+bucket.addEventListener("click", waterForest);
+</script>
+
+</body>
+</html>

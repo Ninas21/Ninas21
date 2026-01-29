@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Animaux de la mer</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: black;
+}
+
+.game {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 15%;
+  background: black;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.item {
+  width: 90px;
+  cursor: grab;
+}
+
+/* Scene */
+.scene {
+  flex: 1;
+  position: relative;
+  background: url("images/mer.png") no-repeat center/contain;
+  background-color: black;
+}
+
+/* Zone mer */
+.drop-zone {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 40%;
+  border: 3px dashed rgba(255,255,255,0.6);
+  border-radius: 20px;
+}
+
+/* Texte */
+.story {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 18px;
+}
+
+/* Image placée */
+.placed {
+  position: absolute;
+  width: 100px;
+}
+</style>
+</head>
+<body>
+
+<div class="game">
+
+  <!-- Gauche -->
+  <div class="sidebar">
+    <div class="items">
+      <!-- Animaux marins -->
+      <img src="images/Poisson 3.png" class="item" draggable="true" data-type="marine">
+      <img src="images/dauphin.png" class="item" draggable="true" data-type="marine">
+      <img src="images/pieuvre.png" class="item" draggable="true" data-type="marine">
+
+      <!-- Animaux non marins -->
+      <img src="images/poussin.png" class="item" draggable="true" data-type="land">
+      <img src="images/lapin.png" class="item" draggable="true" data-type="air">
+    </div>
+
+    <a href="index.html" class="nav-button"> Retour</a>
+  </div>
+
+  <!-- Centre -->
+  <div class="scene">
+    <div class="story" id="story">
+      Fais glisser les animaux qui vivent dans la mer
+    </div>
+
+    <div class="drop-zone" id="sea"></div>
+  </div>
+
+  <!-- Droite -->
+  <div class="sidebar">
+    <a href="suivant.html" class="nav-button">Suivant</a>
+  </div>
+
+</div>
+
+<script>
+const story = document.getElementById("story");
+const sea = document.getElementById("sea");
+const items = document.querySelectorAll(".item");
+
+// Drag start
+items.forEach(item => {
+  item.addEventListener("dragstart", e => {
+    e.dataTransfer.setData("type", item.dataset.type);
+    e.dataTransfer.setData("src", item.src);
+    e.dataTransfer.setData("id", item);
+  });
+});
+
+// Autoriser drop
+sea.addEventListener("dragover", e => e.preventDefault());
+
+// Drop
+sea.addEventListener("drop", e => {
+  e.preventDefault();
+
+  const type = e.dataTransfer.getData("type");
+  const src = e.dataTransfer.getData("src");
+
+  if (type === "marine") {
+    const img = document.createElement("img");
+    img.src = src;
+    img.className = "placed";
+    img.style.left = Math.random() * 60 + 20 + "%";
+    img.style.top = Math.random() * 40 + 50 + "%";
+    sea.appendChild(img);
+
+    story.textContent = "Bien joué ! Cet animal vit dans la mer ";
+  } else {
+    story.textContent = "Oups ! Cet animal ne vit pas dans la mer";
+  }
+});
+</script>
+
+</body>
+</html>

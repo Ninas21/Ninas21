@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Animaux et Eau</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: black;
+}
+
+.game {
+  display: flex;
+  height: 100vh;
+}
+
+/* Barres latérales */
+.sidebar {
+  width: 15%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+/* Zone boutons haut */
+.top-nav {
+  display: flex;
+  justify-content: center;
+}
+
+/* Zone objets */
+.items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 180px;
+}
+
+/* Boutons navigation */
+.nav-button {
+  padding: 12px 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.4); /* blanc semi-transparent */
+  color: black; /* texte lisible sur fond blanc */
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.nav-button:hover {
+  background: rgba(255,255,255,0.6); /* un peu plus visible au hover */
+  transform: scale(1.05);
+}
+
+/* Objets */
+.item {
+  width: 70px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.item:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+
+/* Scène centrale */
+.scene {
+  position: relative;
+  width: 70%;
+  background: url("images/Forest.png") no-repeat center/contain;
+  background-color: black;
+}
+
+/* Animal wrapper */
+.animal-wrapper {
+  position: absolute;
+  width: 180px;
+}
+
+#poussinWrapper { left: 75%; top: 40%; }
+#lapinWrapper   { left: 40%; top: 35%; }
+
+/* Images animaux */
+.animal {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.animal.color {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* Objets donnés */
+.given {
+  position: absolute;
+  width: 60px;
+}
+
+/* Narration en haut */
+.story {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 16px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  z-index: 10;
+}
+</style>
+</head>
+
+<body>
+
+<div class="game">
+
+  <!-- BARRE GAUCHE -->
+  <div class="sidebar">
+
+    <div class="top-nav">
+      <a href="index.html" class="nav-button">Retour</a>
+    </div>
+
+    <div class="items">
+      <img src="images/nourriture.png" id="food" class="item">
+      <img src="images/carotte.png" id="carrot" class="item">
+      <img src="images/bol-eau.png" id="water" class="item">
+    </div>
+
+  </div>
+
+  <!-- SCÈNE -->
+  <div class="scene">
+
+    <div class="animal-wrapper" id="poussinWrapper">
+      <img src="images/poussin2.png" class="animal">
+      <img src="images/poussin.png" class="animal color" id="poussinColor">
+    </div>
+
+    <div class="animal-wrapper" id="lapinWrapper">
+      <img src="images/lapin2.png" class="animal">
+      <img src="images/lapin.png" class="animal color" id="lapinColor">
+    </div>
+
+    <div class="story">
+      <p id="text">Le poussin a faim.</p>
+    </div>
+
+  </div>
+
+  <!-- BARRE DROITE -->
+  <div class="sidebar">
+
+    <div class="top-nav">
+      <a href="eau-foret.html" class="nav-button">Suivant</a>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+let step = 0;
+
+const text = document.getElementById("text");
+const poussinColor = document.getElementById("poussinColor");
+const lapinColor = document.getElementById("lapinColor");
+
+// Fonction pour placer un objet dans la scène
+function giveItem(src, x, y) {
+  const img = document.createElement("img");
+  img.src = src;
+  img.className = "given";
+  img.style.left = x;
+  img.style.top = y;
+  document.querySelector(".scene").appendChild(img);
+}
+
+// Nourriture: poussin
+food.onclick = () => {
+  if (step === 0) {
+    giveItem("images/nourriture.png", "70%", "65%");
+    poussinColor.style.opacity = 0.4;
+    text.textContent = "Merci… mais j’ai encore soif.";
+    step = 1;
+  }
+};
+
+// Bol d’eau: poussin ou lapin selon étape
+water.onclick = () => {
+  if (step === 1) {
+    giveItem("images/bol-eau.png", "75%", "70%");
+    poussinColor.style.opacity = 1;
+    text.textContent = "Le lapin a faim.";
+    step = 2;
+  } 
+  else if (step === 3) {
+    giveItem("images/bol-eau.png", "50%", "90%");
+    lapinColor.style.opacity = 1;
+    text.textContent = "Tous les animaux sont sauvés";
+    step = 4;
+  }
+};
+
+// Carotte: lapin
+carrot.onclick = () => {
+  if (step === 2) {
+    giveItem("images/carotte.png", "55%", "90%");
+    lapinColor.style.opacity = 0.4;
+    text.textContent = "Merci… mais j’ai besoin d’eau.";
+    step = 3;
+  }
+};
+</script>
+
+</body>
+</html>

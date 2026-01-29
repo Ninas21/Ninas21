@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Eau & Forêt</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: black;
+    font-family: Arial, sans-serif;
+  }
+
+  .scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* Forêt */
+  .forest {
+    position: absolute;
+    inset: 0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .dead {
+    background-image: url("images/Forêt2.png");
+    z-index: 1;
+  }
+
+  .alive {
+    background-image: url("images/Forêt.png");
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  /* Goutte d'eau */
+  .bucket {
+    position: absolute;
+    bottom: 60px;
+    left: 30px;
+    width: 90px;
+    cursor: pointer;
+    z-index: 4;
+    transition: transform 0.2s;
+  }
+
+  .bucket:hover {
+    transform: scale(1.1);
+  }
+
+  /* Pluie */
+  .rain {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0;
+  }
+
+  .drop {
+    position: absolute;
+    top: -20px;
+    width: 2px;
+    height: 15px;
+    background: rgba(180, 200, 255, 0.8);
+    border-radius: 50%;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    to { transform: translateY(110vh); }
+  }
+
+ 
+ 
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+
+  <!-- Forêt -->
+  <div class="forest dead"></div>
+  <div class="forest alive"></div>
+
+  <!-- Pluie -->
+  <div class="rain" id="rain"></div>
+
+  <!-- Goutte d'eau -->
+  <img src="images/Eau.png" class="bucket" id="bucket">
+
+
+
+</div>
+
+<script>
+const bucket = document.getElementById("bucket");
+const rain = document.getElementById("rain");
+const aliveForest = document.querySelector(".alive");
+
+let level = 0;
+
+function startRain() {
+  // Vider la pluie précédente
+  rain.innerHTML = "";
+  rain.style.opacity = 1;
+
+  // Créer 50 gouttes
+  for (let i = 0; i < 50; i++) {
+    const drop = document.createElement("div");
+    drop.className = "drop";
+    drop.style.left = Math.random() * 100 + "vw";
+    drop.style.animationDuration = (0.5 + Math.random()) + "s";
+    drop.style.opacity = Math.random();
+    rain.appendChild(drop);
+  }
+
+  // Arrêter la pluie après 1s
+  setTimeout(() => {
+    rain.style.opacity = 0;
+    rain.innerHTML = "";
+  }, 1000);
+}
+
+function waterForest() {
+  if (level < 4) {
+    level++;
+    startRain();
+
+    // Forêt devient progressivement vivante
+    aliveForest.style.opacity = level * 0.25;
+
+  
+  }
+}
+
+bucket.addEventListener("click", waterForest);
+</script>
+
+</body>
+</html>

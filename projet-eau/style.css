@@ -1,0 +1,167 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* overlay au-dessus */
+.overlay {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* Titre */
+.overlay h1 {
+  font-weight: 300;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+/* Grille des blocs */
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(2, 220px);
+  gap: 20px;
+}
+
+/* Bloc cliquable */
+.block {
+  height: 140px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  padding: 15px;
+  
+}
+
+/* Hover */
+.block:hover {
+  background: rgba(255, 255, 255, 0.3);
+ 
+}
+
+.block {
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+/* voile sombre */
+.block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+  
+}
+
+/* Bloc forêt fixe */
+.block.forest {
+  background-image: url("images/foret-img.png");
+  background-size: 100% 100%; /* reste fixe */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Voile sombre reste normal */
+.block.forest::before {
+  background: rgba(0,0,0,0.35);
+  transition: none; /* pas de transition */
+}
+
+/* Texte reste au-dessus */
+.block.forest span {
+  z-index: 2;
+}
+
+/* Bloc forêt fixe */
+.block.animals {
+  background-image: url("images/foret-img.png");
+  background-size: 100% 100%; /* reste fixe */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Voile sombre reste normal */
+.block.animals::before {
+  background: rgba(0,0,0,0.35);
+  transition: none; /* pas de transition */
+}
+
+/* Texte reste au-dessus */
+.block.animals span {
+  z-index: 2;
+}
+
+
+/* Bloc forêt fixe */
+.block.humans {
+  background-image: url("images/foret-img.png");
+  background-size: 100% 100%; /* reste fixe */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Voile sombre reste normal */
+.block.humans::before {
+  background: rgba(0,0,0,0.35);
+  transition: none; /* pas de transition */
+}
+
+/* Texte reste au-dessus */
+.block.humans span {
+  z-index: 2;
+}
+
+
+
+
+/* texte au-dessus */
+.block span {
+  position: relative;
+  z-index: 2;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+/* hover */
+.block:hover::before {
+  background: rgba(0,0,0,0.15);
+}
+
+/* Images */
+.block.forest {
+  background-image: url("images/foret-img.png");
+}
+
+.block.animals {
+  background-image: url("images/eau1.png");
+}
+
+.block.humans {
+  background-image: url("images/eau2.png");
+}
+
+.block.sea {
+  background-image: url("images/mer.png");
+}
