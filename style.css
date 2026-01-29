@@ -7,7 +7,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-image: url('images/image_D_Accueil7.jpg');
+    background-image: url('image/image_Accueil7.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
@@ -113,8 +113,8 @@ body {
 
 
 .logo img {
-  width: 150px;     
-  height: auto;     
+  width: 150px;     /* ou toute autre valeur adaptée */
+  height: auto;     /* pour conserver les proportions */
    animation: flip 4s ease-in-out infinite; /* Retour et rotation continue */
 }
 
@@ -162,7 +162,7 @@ h2 {
     font-size: 30px;
     text-align: center;
     padding: 25px;
-    color: #2c3e50; 
+    color: #2c3e50; /* Bleu foncé pour les titres */
 }
 
 
@@ -204,7 +204,7 @@ h2 {
 
 
 .coup{
-    background: #662D91; 
+    background: #662D91; /* blanc argenté */
     margin-left: 250px;  
     margin-right: 250px;
     border-radius: 10px;  
@@ -214,7 +214,7 @@ h2 {
     font-family: 'Poppins', sans-serif;
     margin-bottom: 20px;
     text-align: center;
-    color: #fff; 
+    color: #fff; /* Couleur bleu */
     padding: 50px;
 }
 
@@ -242,7 +242,7 @@ h2 {
 }
 
 .curri-vitae {
-  background: url(images/ban.jpg);
+  background: url(image/ban.jpg);
   color: #fff;
   padding: 20px;
   width: 30%;
@@ -262,7 +262,7 @@ h2 {
 .retour {
     margin-left: 10px;
     display: inline-block;
-    background-color: #2c3e50; 
+    background-color: #2c3e50; /* Bleu foncé */
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -285,7 +285,7 @@ h2 {
 
 .btn {
     display: inline-block;
-    background-color: #2c3e50; 
+    background-color: #2c3e50; /* Bleu foncé */
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -307,6 +307,13 @@ h2 {
 }
 
 
+
+
+
+
+
+
+
 .project-cards {
   display: flex;
   justify-content: space-between;
@@ -322,7 +329,7 @@ h2 {
 }
 
 .project-cardV {
-  background-image: url("images/Travel.jpg");
+  background-image: url("image/Travel.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -348,7 +355,7 @@ h2 {
 }
 
 .project-cardZ {
-  background-image: url("images/animaux-sauv.png");
+  background-image: url("image/zoo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -371,7 +378,7 @@ h2 {
 }
 
 .project-cardM {
-  background-image: url("images/MJ.png");
+  background-image: url("image/MJ.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -394,7 +401,7 @@ h2 {
 }
 
 .project-cardA {
-  background-image: url("images/famAlg.png");
+  background-image: url("image/FamAlg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -411,13 +418,62 @@ h2 {
 }
 
 
+.project-cardEAU-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.project-cardEAU {
+  background-image: url("image/eau3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.project-cardEAU:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.4); /* Fond plus clair au survol */
+}
+
+
+.project-cardFAKE-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.project-cardFAKE {
+  background-image: url("image/Fake.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.project-cardFAKE:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.4); /* Fond plus clair au survol */
+}
+
+
+
+
+
 .project-cardI-link {
   display: inline-block;
   text-decoration: none;
 }
 
 .project-cardI {
-  background-image: url("images/chat.png");
+  background-image: url("image/chat.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -440,7 +496,7 @@ h2 {
 }
 
 .project-cardL {
-  background-image: url("images/lampe.png");
+  background-image: url("image/lampe.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -463,7 +519,7 @@ h2 {
 }
 
 .project-cardU {
-  background-image: url("images/labirynthe.png");
+  background-image: url("image/labirynthe.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -485,7 +541,7 @@ h2 {
 }
 
 .project-cardB {
-  background-image: url("images/blend.png");
+  background-image: url("image/blend.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -509,7 +565,7 @@ h2 {
 }
 
 .project-cardC {
-  background-image: url("images/alo.png");
+  background-image: url("image/alo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -533,7 +589,7 @@ h2 {
 }
 
 .project-cardAF {
-  background-image: url("images/AFTEREFFECTS.jpg");
+  background-image: url("image/AFTEREFFECTS.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -557,7 +613,7 @@ h2 {
 }
 
 .project-cardVR {
-  background-image: url("images/VR.png");
+  background-image: url("image/VR.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -574,34 +630,30 @@ h2 {
 }
 
 
-
-
-footer {
-    background-image: url(images/ban.jpg);
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    font-size: 0.9rem;
-    color: #000000;
+.project-cardG {
+  width: 90%;
+  max-width: 320px;
+  height: 200px;
+  background-color: lightblue;
+  margin: 20px auto;
+  border: 2px solid red;
+  display: block;
 }
 
 
 .project-cardMA-link {
-  display: block;
-  width: fit-content;  /* ou une largeur fixe */
-  margin: 0 auto;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .project-cardMA {
-  background-image: url("images/Mark2.png");
+  background-image: url("image/Mark2.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 300px;
   height: 200px;
-   
+  margin-left: 450px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   cursor: pointer;
@@ -613,19 +665,55 @@ footer p {
 }
 
 
-.project-cardCR-link {
+
+.project-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Permet de passer à la ligne */
+  gap: 20px; /* Ajoute un espace entre les cartes */
+}
+
+
+.project-cardUX-link {
   display: block;
   width: fit-content;  /* ou une largeur fixe */
   margin: 0 auto;
 }
 
-.project-cardCR {
-  background-image: url("images/moi.png");
+.project-cardUX {
+  background-image: url("image/uxDesign.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 300px;
   height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.project-cardUX:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.4); /* Fond plus clair au survol */
+}
+
+
+
+
+
+.project-cardCR-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.project-cardCR {
+  background-image: url("image/moi.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 200px;
+  margin-left: 450px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   cursor: pointer;
@@ -638,51 +726,85 @@ footer p {
 
 
 
-.project-cardFI-link {
-   display: block;
-  width: fit-content;  /* ou une largeur fixe */
-  margin: 0 auto;
+footer {
+    background-image: url(image/ban.jpg);
+    text-align: center;
+    padding: 20px 0;
 }
 
-.project-cardFI {
-  background-image: url("images/VigiVie.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 300px;
-  height: 200px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+footer p {
+    font-size: 0.9rem;
+    color: #000000;
+}
+
+
+.project-img {
+  width: 150px;
   cursor: pointer;
-}
-
-.project-cardFI:hover {
-    transform: scale(1.05);
-    background-color: rgba(255, 255, 255, 0.4); /* Fond plus clair au survol */
-}
-
-.project-cardUS-link {
-   display: block;
-  width: fit-content;  /* ou une largeur fixe */
-  margin: 0 auto;
-}
-
-.project-cardUS {
-  background-image: url("images/Parcours utilisateur 2.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 300px;
-  height: 200px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.project-cardUS:hover {
-    transform: scale(1.05);
-    background-color: rgba(255, 255, 255, 0.4); /* Fond plus clair au survol */
+.project-img:hover {
+  transform: scale(1.05);
 }
+
+
+#hidden-box {
+  position: fixed;
+  top: 0; /* ← au lieu de top: 10px */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  background: linear-gradient(135deg, #6A0DAD, #F9F9FF);
+  border: 1px solid #ccc;
+  padding: 1px;
+  text-align: center;
+  transition: width 0.5s ease;
+  overflow: hidden;
+  z-index: 999;
+  border-radius: 0 0 8px 8px; /* coins arrondis uniquement en bas */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+    #hidden-box.open {
+      width: 80%; /* devient large */
+    }
+
+    #toggle-btn {
+      cursor: pointer;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .infos h1, h3, p, ul{
+        color: #fff;
+        margin: 20px;
+    }
+    #content {
+      display: none;
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    #hidden-box.open #content {
+      display: block;
+    }
+
+    #close-btn {
+      float: right;
+      margin-right: 20px;
+      background: linear-gradient(to bottom, #6c3faa, #d1a0f7);
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    #close-btn:hover {
+      background-color: #555;
+    }
 
 
 
@@ -814,7 +936,8 @@ footer p {
 
 
 
-/*RESPONSIVE GÉNÉRAL < 1200px*/
+
+/* RESPONSIVE GÉNÉRAL < 1200px */
 @media (max-width: 1199px) {
   .container {
     width: 95%;
@@ -831,7 +954,7 @@ footer p {
   }
 }
 
-/* TABLETTES / IPAD / SURFACE < 1024px*/
+/* TABLETTES / IPAD / SURFACE < 1024px */
 @media (max-width: 1024px) {
   .project-card {
     width: 45%;
@@ -889,7 +1012,7 @@ footer p {
   }
 }
 
-/*  SMARTPHONES / IPHONE / GALAXY / OPPO < 768px*/
+/*SMARTPHONES / IPHONE / GALAXY / OPPO < 768px */
 @media (max-width: 768px) {
   h1, h2 {
     font-size: 1.5em;
@@ -914,9 +1037,11 @@ footer p {
 }
 
   .banniere {
-    align-items: center;
-    padding: 10px;
-  }
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
   .logo img {
     height: 120px;
@@ -933,7 +1058,7 @@ footer p {
     padding: 10px;
   }
 
-    .menu-toggle {
+ .menu-toggle {
   display: block;
   position: relative;
   z-index: 1001;
@@ -977,7 +1102,11 @@ footer p {
   color: #000;
   font-size: 1.2em;
    
-} 
+}
+
+footer {
+    padding: 30px;
+}
 }
 
 /* PETITS SMARTPHONES < 480px*/
@@ -1018,7 +1147,7 @@ footer p {
 
 }
 
-/* GRAND ÉCRAN DESKTOP > 1200px*/
+/*GRAND ÉCRAN DESKTOP > 1200px*/
 @media (min-width: 1200px) {
   .container {
     width: 1200px;
@@ -1030,7 +1159,6 @@ footer p {
     height: 250px;
   }
 }
-
 
 
 
