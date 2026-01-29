@@ -401,7 +401,7 @@ h2 {
 }
 
 .project-cardA {
-  background-image: url("images/FamAlg.png");
+  background-image: url("images/famAlg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1159,6 +1159,7 @@ footer {
     height: 250px;
   }
 }
+
 
 
 
