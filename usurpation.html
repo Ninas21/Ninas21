@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site web Fake Identity</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style général du corps de la page */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8ff; /* Fond bleu clair */
+    color: #333; /* Texte sombre */
+    line-height: 1.6;
+    padding: 40px;
+    text-align: center; /* Centrer le texte */
+}
+
+/* Style du titre principal */
+h3 {
+    font-size: 25px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding: 0; 
+    background-color: transparent; 
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Style du paragraphe sous le titre */
+p {
+    font-size: 23px;
+    color: #2c3e50; 
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+
+
+.btn-retour {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(145deg, #ffffff, #dcdcdc); /* blanc argenté */
+  color: #2c3e50; /* texte gris foncé pour contraste */
+  padding: 10px 22px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.btn-retour:hover {
+  background: linear-gradient(145deg, #f0f0f0, #e0e0e0); /* effet nacré au survol */
+  transform: scale(1.05);
+}
+
+.btn-retour:active {
+  transform: scale(0.97);
+}
+
+
+
+.projects-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.project-block {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.project-description {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.project-description h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #1a4d4f;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #1a4d4f;
+  padding-bottom: 10px;
+}
+
+.project-description h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+
+.project-description p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.project-description ul {
+  padding-left: 20px;
+}
+
+.project-description li {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+  background: #333;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border-left: 4px solid #1a4d4f;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.project-description strong {
+  color: #1a4d4f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-description {
+    padding: 20px;
+  }
+  .project-description h2 {
+    font-size: 1.6rem;
+  }
+}
+
+
+
+
+.project-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.project-cardFAKE-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.project-cardFAKE {
+  background-image: url("image/Fake.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-cardFAKE:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+   
+
+    .btn-retour {
+        font-size: 14px;
+        padding: 8px 18px;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 450px) {
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .btn-retour {
+        font-size: 13px;
+        padding: 6px 14px;
+    }
+}
+</style>
+
+
+
+
+<body>
+
+    <section class="section projects">
+  <div class="container">
+    <h2 class="projects-title">Mon projet de création d'un site web interactif "Usurpation d'identité numérique"</h2>
+
+    <div class="project-block">
+      <h3>Site web interactif "Usurpation d'identité numérique"</h3>
+      <p>Mon projet est réalisé dans le cadre d'un projet académique et universitaire pour l'exposition à la BU de Paris 8 du 9/01/2026 au 30/01/2026 en collaboration avec les étudiants du Master MCPN-Nanterre, assuré par :
+
+<strong>Mr. Everardo REYES, Mr. Mattieu QUINIOU, Mr. Michel AGNOLA, Mr. Samuel DA SILVA et Mme. Rosa CINELLI. </strong>
+Ce projet est considéré comme un site interactif qui est basé sur un jeu qui sensibilise les utilisateurs aux dangers d'usurpation d'identité numérique. On a utilisé de différents langages et différentes technologies pour pouvoir rendre le jeu interactif.</p>
+
+      <section class="project-description">
+        <h4>Site web interactif sur les dangers de l'usurpation d'identité numérique à l'université Paris 8 (2025/2026)</h4>
+
+        <p>
+          Ce projet est un site proposant un jeu et une navigation intuitive avec une interface inspirée des plateformes des années 70/80.
+        </p>
+
+        <ul>
+          <li><strong>Page d’accueil :</strong> un mini monologue pour présenter la victime</li>
+          <li><strong>Page de départ:</strong> une page qui permet de saisir le chiffre "404" pour accéder au jeu</li>
+          <li><strong>Page jeu et visual novel:</strong> Cette page présente une interface qui ressemble à celle d'un écran PC inspirée de windows XP. Plusieurs icones se débloquent petit à petit en évolution avec le jeu pour détecter l'arnaque.</li>
+          <li><strong>Page de sensibilisation:</strong> présenter les statistiques et les histoires réelles de différentes usurpations d'identités numériques liées à l'IA.</li>
+          <li><strong>Page de fin:</strong> Une erreur s'est produite, tu as été arnaqué. Recommencer le jeu.</li>
+          
+        </ul>
+
+        <p>
+          Ce site combine HTML, CSS, JavaScript et outils comme Live Server, Electron, illustrator pour offrir une expérience interactive et pédagogique.
+        </p>
+
+      </section>
+
+      <div class="project-container">
+       
+        <a href="404NotFound-main/404NotFound-main/index.html" class="project-cardFAKE-link">
+                 <div class="project-cardFAKE"></div>
+                </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="accueil.html#projects" class="btn-retour">Retour</a>
+
+</body>
+</html>

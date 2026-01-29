@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet VR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style général du corps de la page */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8ff; /* Fond bleu clair */
+    color: #333; /* Texte sombre */
+    line-height: 1.6;
+    padding: 40px;
+    text-align: center; /* Centrer le texte */
+}
+
+/* Style du titre principal */
+h3 {
+    font-size: 25px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding: 0; 
+    background-color: transparent; 
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Style du paragraphe sous le titre */
+p {
+    font-size: 23px;
+    color: #2c3e50; 
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+
+
+.btn-retour {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(145deg, #ffffff, #dcdcdc); /* blanc argenté */
+  color: #2c3e50; /* texte gris foncé pour contraste */
+  padding: 10px 22px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.btn-retour:hover {
+  background: linear-gradient(145deg, #f0f0f0, #e0e0e0); /* effet nacré au survol */
+  transform: scale(1.05);
+}
+
+.btn-retour:active {
+  transform: scale(0.97);
+}
+
+
+.project-img {
+  width: 600px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.project-img:hover {
+  transform: scale(1.05);
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    h3 {
+        font-size: 20px;
+        padding: 0 10px;
+    }
+
+    p {
+        font-size: 18px;
+        padding: 0 10px;
+    }
+
+    
+    .btn-retour {
+        font-size: 14px;
+        padding: 8px 18px;
+        top: 15px;
+        left: 15px;
+    }
+}
+
+/*CSS pour rendre la page responsive*/
+@media screen and (max-width: 400px) {
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .btn-retour {
+        font-size: 13px;
+        padding: 7px 16px;
+    }
+}
+</style>
+
+<body>
+
+<h3>Projet UX Design</h3>
+                    <p>Mon projet UX/UI pour une application de "Trouver des évènements dans sa ville " nommée: <strong>Even </strong></p>
+
+                    <a href="projets/Projet UX Design.pdf" target="_blank">
+                    <img src="image/uxDesign.png" alt="Voir le projet Even" class="project-img">
+                    </a>
+                    
+
+<a href="accueil.html#projects" class="btn-retour">Retour</a>
+
+</body>
+</html>
