@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Css/fin.css" />
+    <link rel="stylesheet" href="./Css/visualNovel.css" />
+    <link rel="stylesheet" href="./Css/chat.css" />
+    <link rel="stylesheet" href="./Css/ErrorMessage.css" />
+    <link rel="stylesheet" href="./Css/gallery.css" />
+    <link rel="stylesheet" href="./Css/audio_player.css" />
+    <link rel="stylesheet" href="./Css/bank.css" />
+    <link rel="stylesheet" href="./Css/internet.css" />
+    <link rel="stylesheet" href="./Css/informationStat.css" />
+    <title>SAVE FRIEND ONLINE</title>
+  </head>
+  <body>
+    <div id="novel-container">
+      <img
+        id="character-image"
+        src="./Images/pensee.svg"
+        alt="Personnage"
+        style="display: block"
+      />
+
+      <!-- Icônes d'applications dans le novel-container -->
+      <div id="app-icons-container">
+        <img src="Images/dossier.svg" alt="Dossier" class="app-icon" />
+        <img
+          id="calendar-icon"
+          src="Images/calendrier.svg"
+          alt="Calendrier"
+          class="app-icon disabled"
+        />
+        <img
+          id="gallery-icon"
+          src="Images/galerie.svg"
+          alt="Galerie"
+          class="app-icon disabled"
+        />
+        <img
+         id="resultat-icon"
+          src="Images/resultat.svg"
+          alt="Résultat"
+          class="app-icon disabled"
+        />
+      </div>
+      <div id="app-icons-container2">
+        <img
+          id="mail-icon"
+          src="Images/Mail.svg"
+          alt="Mail"
+          class="app-icon disabled"
+          aria-disabled="true"
+        />
+        <img
+          id="internet-icon"
+          src="Images/internet.svg"
+          alt="Internet"
+          class="app-icon disabled"
+        />
+        <img
+          id="bank-icon"
+          src="Images/banque.svg"
+          alt="Banque"
+          class="app-icon disabled"
+        />
+        <img src="Images/note.svg" alt="Note" class="app-icon disabled" />
+      </div>
+
+      <!-- Icône Notification (2e rappel) cachée par défaut -->
+      <img
+        id="notification-icon"
+        src="Images/Notif.svg"
+        alt="Rappel (anniversaire)"
+        class="rappel-icon rappel-icon2 hidden"
+      />
+      <!-- Icône Notification de message cachée par défaut -->
+      <img
+        id="message-notif-icon"
+        src="Images/NotifMess.svg"
+        alt="Notification message"
+        class="rappel-icon rappel-icon3 hidden"
+      />
+      <div id="hacked-screen">
+        <div class="error-window">
+          <div class="title-bar">
+            <div class="buttons"></div>
+          </div>
+        </div>
+      </div>
+      <div id="dialogue-box">
+        <!-- Indication visuelle pour cliquer et continuer -->
+        <img
+          id="dialogue-hint"
+          class="dialogue-hint"
+          src="Images/down.svg"
+          alt="Cliquez pour continuer"
+          title="Cliquez pour continuer"
+        />
+      </div>
+      <!-- Affichage du chat qui contient tout les contacts de l'utilisateur -->
+      <div id="chat-app" class="hidden" aria-hidden="true">
+        <div class="window-header">
+          <span class="title">Messagerie</span>
+          <button id="close-window" class="close">×</button>
+        </div>
+        <div class="window-body">
+          <aside id="contacts">
+            <ul id="contact-list" class="contact-list"></ul>
+          </aside>
+          <section id="thread">
+            <div class="thread-header">
+              <div class="contact-info">
+                <img id="current-avatar" class="avatar" alt="avatar" />
+                <div class="contact-meta">
+                  <div id="current-name" class="name">Inconnu</div>
+                  <div id="current-status" class="status">
+                    Ce compte ne fait pas partie de votre liste de contacts
+                  </div>
+                </div>
+              </div>
+              <button
+                id="toggle-contact"
+                class="add-btn"
+                title="Ajouter / Retirer des contacts"
+              >
+                +
+              </button>
+            </div>
+            <div id="messages" class="messages"></div>
+            <div id="main-chat-cta" class="pc-cta">
+              <button id="main-chat-cta-btn" class="pc-cta-btn">
+                Cliquer pour répondre
+                <img
+                  class="pc-cta-icon"
+                  src="Images/Envoyer.svg"
+                  alt="Envoyer"
+                />
+              </button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <!-- Fenetre de Galerie -->
+    <div id="gallery-window" style="display: none">
+      <div id="gallery-header">
+        <h2>Galerie</h2>
+        <button id="close-gallery">×</button>
+      </div>
+      <div id="folders-container">
+        <!-- Dossiers de la galerie -->
+        <div class="folder-item" data-folder="AnnivLaila">
+          <img src="./Galerie/photo.jpg" alt="Photo anniversaire Laila" />
+          <span class="folder-name">Anniv Laila</span>
+        </div>
+        <div class="folder-item" data-folder="Seoul2025">
+          <img src="./Galerie/photo1.jpg" alt="Photo Séoul 2025" />
+          <span class="folder-name">Séoul 2025</span>
+        </div>
+        <div class="folder-item" data-folder="FeteJustine">
+          <img src="./Galerie/photo2.jpg" alt="Photo Fête Justine" />
+          <span class="folder-name">Fête Justine</span>
+        </div>
+        <div class="folder-item" data-folder="App1">
+          <img src="./Galerie/photo3.jpg" alt="Photo nom de app" />
+          <span class="folder-name">nom de app</span>
+        </div>
+        <div class="folder-item" data-folder="App2">
+          <img src="./Galerie/photo4.jpg" alt="Photo nom de app" />
+          <span class="folder-name">nom de app</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fenêtre modale pour l'affichage des images en grand -->
+    <div id="image-modal" class="hidden">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <button id="prev-button" class="nav-button prev-button">
+          &#10094;
+        </button>
+        <img id="modal-image" src="" alt="Image agrandie" />
+        <button id="next-button" class="nav-button next-button">
+          &#10095;
+        </button>
+      </div>
+    </div>
+
+    <div id="bank-window" class="window-container" style="display: none">
+      <div class="window-frame">
+        <div class="bar-title">
+          <div class="title-bar-text">Banque</div>
+          <div class="title-bar-controls">
+            <button class="closeB">X</button>
+          </div>
+        </div>
+        <div class="window-content">
+          <img src="./Images/smile.svg" alt="Emoji heureux" class="emoji" />
+          <p class="message-Argent">Vous avez reçu une demande d'argent de</p>
+          <p class="sender">Sam Legrand</p>
+          <div class="amount-display">1 000€</div>
+          <button class="send-button">Envoyer</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="window-container1" id="internet-browser" style="display: none">
+      <div class="title-bar1">
+        <div class="title-bar-text">Internet</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close">X</button>
+        </div>
+      </div>
+      <div class="window-content1">
+        <!-- Page 1: Initial Search Page -->
+        <div id="page-1" class="page active">
+          <img
+            src="./Images/online.svg"
+            alt="Online Logo"
+            class="online-logo"
+          />
+          <p class="description">Surfez sur le web avec Online</p>
+          <div class="search-section">
+            <input type="text" class="search-input" placeholder="" readonly />
+            <div class="buttons">
+              <button class="online-button">Online Search</button>
+              <button class="online-button">Je suis chanceux</button>
+            </div>
+          </div>
+          <a href="#" class="more-online">More Online!</a>
+          <p class="copyright">Copyright ©1999 Online Inc.</p>
+          <img src="./Images/clique.svg" alt="Cliquez pour passer aux slides" class="click-indicator" />
+        </div>
+
+          <!-- Page 2: Search Page with Input -->
+        <div id="page-2" class="page active">
+          <img
+            src="./Images/online.svg"
+            alt="Online Logo"
+            class="online-logo"
+          />
+          <p class="description">Surfez sur le web avec Online</p>
+          <div class="search-section">
+            <input type="text" class="search-input" value="Sam LEGRAND" readonly />
+            <div class="buttons">
+              <button class="online-button">Online Search</button>
+              <button class="online-button">Je suis chanceux</button>
+            </div>
+          </div>
+          <a href="#" class="more-online">More Online!</a>
+          <p class="copyright">Copyright ©1999 Online Inc.</p>
+        </div>
+        <!-- Page 3: Search Results Page -->
+        <div id="page-3" class="page">
+          <div class="results-header">
+            <img
+              src="./Images/online.svg"
+              alt="Online Logo Small"
+              class="online-logo-small"
+            />
+            <input
+              type="text"
+              class="search-input-results"
+              value="Sam LEGRAND"
+              readonly
+            />
+            <button class="online-button-results">Online Search</button>
+          </div>
+          <div class="results-summary">
+            <span class="web-year">2000 WEB</span>
+            <span class="result-count"
+              >Résultats <strong>1 - 10</strong> d'un total de
+              <strong>20</strong> pour <strong>Sam LEGRAND</strong></span
+            >
+          </div>
+          <div class="search-results">
+            <div class="result-item">
+              <h3><a href="#">Les Égarés De Grimsvale</a></h3>
+              <p>
+                Donne cours de danse sur la capitale, n’hésitez pas à réserver
+                un cours.
+              </p>
+              <p class="url">
+                https://sam.legrand.cours-de-danse.org/ -
+                <a href="#"
+                  >Voir l’ancienne version sur les archives d’online</a
+                >
+              </p>
+            </div>
+            <div class="result-item">
+              <h3><a href="#">Mémorial <span> Sam LEGRAND </span></a></h3>
+              <p>
+                Un site en la mémoire de Sam LEGRAND, disparu depuis le xx jours
+                xxxx
+              </p>
+              <p class="url">
+                https://sam.legrand.cours-de-danse.org/ -
+                <a href="#"
+                  >Voir l’ancienne version sur les archives d’online</a
+                >
+              </p>
+            </div>
+            <div class="result-item">
+              <h3><a href="#"> Avis de recherche <span>Sam LEGRAND</span></a></h3>
+              <p>
+                Disparition de ma soeur Sam LEGRAND depuis le 17 janvier xxxx - Si informations me contacter.
+              </p>
+              <p class="url">
+                https://sam.legrand.cours-de-danse.org/ -
+                <a href="#"
+                  >Voir l’ancienne version sur les archives d’online</a
+                >
+              </p>
+            </div>
+            <div class="result-item">
+              <h3><a href="#"> <span>Sam LEGRAND</span> Danseur profesionel</a></h3>
+              <p>
+                Donne cours de danse sur la capitale, n’hésitez pas à réserver
+                un cours.
+              </p>
+              <p class="url">
+                https://sam.legrand.cours-de-danse.org/ -
+                <a href="#"
+                  >Voir l’ancienne version sur les archives d’online</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Page 4: Search Results Page lien cliqué -->
+        <div id="page-4" class="page">
+          <div class="results-header">
+            <img
+              src="./Images/online.svg"
+              alt="Online Logo Small"
+              class="online-logo-small"
+            />
+            <input
+              type="text"
+              class="search-input-results"
+              value="Sam LEGRAND"
+              readonly
+            />
+            <button class="online-button-results">Online Search</button>
+          </div>
+          <div class="results-summary">
+            <span class="web-year">2000 WEB</span>
+            <span class="result-count"
+              >Résultats <strong>1 - 10</strong> d'un total de
+              <strong>20</strong> pour <strong>Sam LEGRAND</strong></span
+            >
+          </div>
+          <div class="search-results">
+            <div class="result-item">
+              <h3><a class="result-title" href="#">Les Égarés De Grimsvale</a></h3>
+              <p>
+                Donne cours de danse sur la capitale, n’hésitez pas à réserver
+                un cours.
+              </p>
+              <p class="url">
+                https://sam.legrand.cours-de-danse.org/ -
+                <a href="#"
+                  >Voir l’ancienne version sur les archives d’online</a
+                >
+              </p>
+            </div>
+            <div class="result-item">
+              <h3><a href="#">Mémorial <span> Sam LEGRAND </span></a></h3>
+              <p>
+                Un site en la mémoire de Sam LEGRAND, disparu depuis le xx jours
+                xxxx
+              </p>
+              <p class="url">
+                https://sam.legrand.cours-de-danse.org/ -
+                <a href="#"
+                  >Voir l’ancienne version sur les archives d’online</a
+                >
+              </p>
+            </div>
+            <div class="result-item">
+              <h3><a href="#"> Avis de recherche <span>Sam LEGRAND</span></a></h3>
+              <p>
+                Disparition de ma soeur Sam LEGRAND depuis le 17 janvier xxxx - Si informations me contacter.
+              </p>
+              <p class="url">
+                https://sam.legrand.cours-de-danse.org/ -
+                <a href="#"
+                  >Voir l’ancienne version sur les archives d’online</a
+                >
+              </p>
+            </div>
+            <div class="result-item">
+              <h3><a href="#"> <span>Sam LEGRAND</span> Danseur profesionel</a></h3>
+              <p>
+                Donne cours de danse sur la capitale, n’hésitez pas à réserver
+                un cours.
+              </p>
+              <p class="url">
+                https://sam.legrand.cours-de-danse.org/ -
+                <a href="#"
+                  >Voir l’ancienne version sur les archives d’online</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Page 5: Loading Page -->
+        <div id="page-5" class="page loading-page">
+          <div class="loader"></div>
+          <p class="loading-text">LOADING...</p>
+        </div>
+
+        <!-- Page 6: Browser Page -->
+        <div id="page-6" class="page">
+          <div class="browser-header">
+            <div class="browser-controls">
+              <button class="browser-button">X</button>
+              <button class="browser-button">X</button>
+              <button class="browser-button">X</button>
+            </div>
+            <div class="address-bar">
+              <input type="text" value="https://enquete-communaute.cours-de-danse.org/" readonly />
+            </div>
+          </div>
+          <div class="browser-content">
+            <h2 class="blog-title">Blog bénévole dédié aux disparitions</h2>
+            <div class="missing-person-entry">
+              <div class="person-image-placeholder SamLeGrand"></div>
+              <div class="person-details">
+                <h3 style="color: #fff;">Sam LEGRAND</h3>
+                <p>Dernière apparition le 11 décembre 2022 à 16:17, quittant sa résidence. Aucune trace physique retrouvée sur les lieux.</p>
+                <p>Si vous disposez d'informations, vous êtes priée de contacter le Bureau Central des Disparitions – Ligne 07-92-00-00-00.</p>
+              </div>
+            </div>
+
+            <div class="missing-person-entry">
+              <div class="person-image-placeholder ElodieRAKOTO"></div>
+              <div class="person-details">
+                <h3 style="color: #fff;">Laïla M⍰r⍰g⍰⍰nz</h3>
+                <p>
+                  Dernière apparition le 11 décembre 2022 à 16:17, quittant sa
+                  résidence. Aucune trace physique retrouvée sur les lieux.
+                </p>
+                <p>
+                  Si vous disposez d'informations, vous êtes priée de contacter
+                  le Bureau Central des Disparitions – Ligne 07-92-00-00-00.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- La fin -->
+    <div class="slideshow-container" style="display: none">
+      <img
+        id="image1"
+        class="slideshow-image active"
+        src="./Images/fin.png"
+        alt="Image 1"
+      />
+      <img
+        id="image2"
+        class="slideshow-image"
+        src="./Images/fin1.png"
+        alt="Image 2"
+      />
+    </div>
+
+    <!-- Écran de fin de jeu déplacé hors de novel-container pour éviter le masquage -->
+    <div id="end-game-screen" style="display: none; text-align: center; padding: 50px; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; background-color: white; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+      <img src="./Images/cadenasO.svg" alt="Cadenas ouvert" style="width: 150px; margin-bottom: 20px;">
+      <p style="font-size: 1.5em; margin-bottom: 30px;">La vigilance est notre meilleure défense.</p>
+      <button id="restart-game-btn" style="padding: 15px 30px; font-size: 1.2em; cursor: pointer;">Recommencer le jeu</button>
+    </div>
+
+
+    <div class="information-window" id="information-stat-window" style="display: none;">
+      <div class="title-bar-info">
+        <span class="title">Informations</span>
+        <button
+          class="close-button-info"
+          id="close-information-stat-window-btn"
+        >
+          X
+        </button>
+      </div>
+      <div class="window-content-info">
+        <div class="container">
+          <div class="main-title-container">
+            <button class="nav-button-info nav-button-left" id="prev-btn">
+              <img
+                src="./Images/gauche.svg"
+                alt="Gauche"
+                class="main-title-icon"
+              />
+            </button>
+            <h1 id="page-title">
+              Images IA vs réalité : attention aux arnaques
+            </h1>
+            <button class="nav-button-info nav-button-right" id="next-btn">
+              <img
+                src="./Images/droit.svg"
+                alt="Droit"
+                class="main-title-icon"
+              />
+            </button>
+          </div>
+          <div id="page-1" class="page-info">
+            <div class="main-cards-row">
+              <div class="column-of-two-cards">
+                <!-- BLOC 1 : Étude + camembert -->
+                <div class="card">
+                  <div class="card-content-row">
+                    <div class="card-text-content">
+                      <h2>1 - Images IA vs images réelles</h2>
+                      <p>
+                        <strong>Microsoft Research (2023–2024)</strong><br />
+                        Capacité humaine à distinguer des images générées par
+                        intelligence artificielle de vraies photographies.
+                      </p>
+                      <p class="highlight info">Conclusion</p>
+                      <p>
+                        Les humains ont des difficultés significatives à
+                        distinguer les images générées par IA des photographies
+                        réelles, en particulier lorsque les images sont de haute
+                        qualité.
+                      </p>
+                    </div>
+                    <div class="card-canvas-container">
+                      <canvas id="aiImageChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- BLOC 2 : Escroqueries + barres + liens officiels -->
+                <div class="card">
+                  <div class="card-content-row card-content-row-escroquerie">
+                    <div class="card-text-content">
+                      <h3>2 - Escroquerie internationale aux célébrités</h3>
+                      <p>
+                        Une enquête publiée par <strong>The Guardian</strong> a
+                        révélé une fraude massive utilisant des vidéos deepfake
+                        de célébrités pour promouvoir de faux investissements.
+                      </p>
+
+                      <p>
+                        - Victimes : environ <strong>6 000 personnes</strong><br />
+                        - Pertes financières :
+                        <strong>≈ 35 millions de dollars</strong><br />
+                        - Victimes dans plusieurs pays (Royaume-Uni, Canada,
+                        Europe)
+                      </p>
+
+                      <p class="source">
+                        🔗 Source officielle :
+                        <a
+                          href="https://www.theguardian.com/money/2025/mar/05/revealed-the-scammers-who-conned-savers-out-of-35m-using-fake-celebrity-ads?"
+                          target="_blank"
+                          style="color: #0b65f4"
+                        >
+                          The Guardian — Escroquerie aux célébrités
+                        </a>
+                      </p>
+                    </div>
+                    <div class="card-text-content">
+                      <h3>3 - Romance & deepfakes — Hong Kong</h3>
+                      <p>
+                        Des profils et appels vidéo deepfake ont été utilisés
+                        dans des arnaques sentimentales et financières, causant
+                        plus de
+                        <strong>46 millions de dollars</strong> de pertes.
+                      </p>
+
+                      <p class="source">
+                        🔗 Source officielle :
+                        <a
+                          href="https://www.ndtv.com/world-news/hong-kong-busts-deepfake-scam-46-million-stolen-in-romance-fraud-6802120?utm_source=chatgpt.com"
+                          target="_blank"
+                          style="color: #0b65f4"
+                        >
+                          NDTV — Romance & deepfakes, Hong Kong
+                        </a>
+                      </p>
+                      <canvas id="scamMoneyChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="single-card-column">
+                <!-- BLOC 3 : Conseils + sources -->
+                <div class="card tips">
+                  <div class="tips-main-content-row">
+                    <div class="tips-icon-column">
+                      <img src="./Images/Attention.svg" alt="Attention" />
+                    </div>
+                    <div class="tips-text-column">
+                      <h2>Attention</h2>
+                      <ul>
+                        <li>
+                          Ne jamais faire confiance uniquement à une image ou
+                          une vidéo
+                        </li>
+                        <li>
+                          Observer attentivement les visages, mains et
+                          arrière-plans
+                        </li>
+                        <li>Vérifier la source sur plusieurs médias fiables</li>
+                        <li>Se méfier des messages urgents ou émotionnels</li>
+                        <li>
+                          Demander conseil à un proche avant toute décision
+                          financière
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="tips-main-content-row">
+                    <div class="tips-icon-column"></div>
+                    <div class="tips-text-column">
+                      <h3 style="color: #000">Pour approfondir le sujet</h3>
+                      <a
+                        href="https://op.europa.eu/fr/publication-detail/-/publication/06099c52-dc33-11ee-b9d9-01aa75ed71a1/language-en"
+                        target="_blank"
+                        style="color: #0b65f4; font-size: 0.8em"
+                        >Rapport Europol – Facing reality? Deepfakes et
+                        application de la loi</a
+                      ><br />
+                      <a
+                        href="https://cyber.gouv.fr/offre-de-service/formations-entrainement-et-decouverte-des-metiers/formations/formations-delivrees-par-lanssi/mooc-secnumacademie/"
+                        target="_blank"
+                        style="color: #0b65f4; font-size: 0.8em"
+                        >ANSSI – Programme
+                        MOOC SecNumacadémie </a
+                      ><br />
+
+                      <a
+                        href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/actualites/rapport-activite-2024"
+                        target="_blank"
+                        style="color: #0b65f4; font-size: 0.8em"
+                        >Cybermalveillance.gouv.fr – Rapport d’activité 2024</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="page-2" class="page-info">
+            <div class="main-cards-row">
+              <!-- COLONNE GAUCHE : DEUX CARTES -->
+              <div class="column-of-two-cards">
+                <!-- CARTE 1 : AUDIO IA + CAMEMBERT -->
+                <div class="card">
+                  <div class="card-content-row">
+                    <div class="card-text-content">
+                      <h2>1 - Arnaques par audio IA (voix clonées)</h2>
+                        <p>
+                          <strong>FBI / Europol / McAfee (2023–2025)</strong
+                        ><br />
+                          Les arnaques par audio IA reposent sur la génération ou
+                          le clonage de voix afin d’imiter des proches, des
+                          dirigeants ou des institutions officielles.
+                        </p>
+                        <p class="highlight info">Constats clés</p>
+                        <p>
+                          Environ
+                          <strong>30 % des consommateurs</strong> déclarent avoir
+                          déjà été ciblés par un appel frauduleux utilisant une
+                          voix clonée par intelligence artificielle.
+                        </p>
+                        <p class="highlight info">Conclusion</p>
+                        <p>
+                          La voix crée un lien émotionnel immédiat. Cette
+                          proximité rend les victimes particulièrement vulnérables
+                          et réduit leur capacité de vérification.
+                        </p>
+                    </div>
+                    <div class="card-canvas-container">
+                      <canvas id="audioPieChart"></canvas>
+                    </div>
+                </div>
+                </div>
+                <!-- CARTE 2 : IMPACT + BARRES -->
+                <div class="card">
+                  <div class="card-content-row">
+                    <div class="card-text-content">
+                      <h3>2 - Impact réel des arnaques audio IA (Vishing)</h3>
+                      <p>
+                        Les attaques de type <strong>vishing</strong> (phishing vocal) connaissent une croissance très rapide, grâce à la facilité de clonage des voix.
+                      </p>
+                      <p class="highlight info">Exemples concrets</p>
+                      <ul>
+                        <li><strong>Inde :</strong> Clonage de la voix d’un proche pour extorquer des dizaines de milliers de dollars enivron (30000 $)</li>
+                        <li><strong>États-Unis :</strong> Faux conseillers / banques → pertes de plusieurs millions de $ (FBI IC3, 2023) environ (2500000 $)</li>
+                        <li><strong>Royaume-Uni :</strong> Voix clonée d’un parent décédé → pertes de plusieurs dizaines de milliers £ environ (50000 £)</li>
+                      </ul>
+                      <p class="highlight info">Impact global estimé</p>
+                      <ul>
+                        <li>Vishing (voix proches) : 40%</li>
+                        <li>Vishing (fausses institutions) : 35%</li>
+                        <li>Vishing émotionnel / autres : 25%</li>
+                      </ul>
+                      <p class="source">
+                        Sources : <a href="https://www.ic3.gov/Media/PDF/AnnualReport/2023_IC3Report.pdf" target="_blank">FBI IC3 2023</a> · 
+                        <a href="https://www.europol.europa.eu/" target="_blank">Europol</a> · 
+                        <a href="https://www.bbc.com/news/technology-64050154" target="_blank">BBC News</a>
+                      </p>
+                    </div>
+                    <div class="card-canvas-container">
+                      <canvas id="audioPieChart1"></canvas>
+                    </div>
+                  </div>
+                </div>               
+              </div>
+              <!-- COLONNE DROITE : CONSEILS -->
+              <div class="single-card-column">
+                <div class="card tips">
+                  <div class="tips-main-content-row">
+                    <div class="tips-icon-column">
+                      <img src="./Images/Attention.svg" alt="Attention" />
+                    </div>
+                    <div class="tips-text-column">
+                      <h2>Attention</h2>
+                      <ul>
+                        <li>
+                          Ne jamais agir uniquement sur la base d’un appel vocal
+                        </li>
+                        <li>
+                          Se méfier des demandes urgentes ou émotionnelles
+                        </li>
+                        <li>Raccrocher et rappeler via un numéro officiel</li>
+                        <li>
+                          Ne jamais communiquer d’informations sensibles par
+                          téléphone
+                        </li>
+                        <li>Parler à un proche en cas de doute</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="tips-main-content-row">
+                    <div class="tips-icon-column"></div>
+                    <div class="tips-text-column">
+                      <h3 style="color: #000">Pour approfondir le sujet</h3>
+                      <a
+                        href="https://www.ic3.gov/Media/PDF/AnnualReport/2023_IC3Report.pdf"
+                        target="_blank"
+                        style="color: #0b65f4; font-size: 0.8em"
+                      >
+                        FBI — Internet Crime Report (IC3) </a
+                      ><br />
+                      <a
+                        href="https://www.mcafee.com/content/dam/consumer/en-us/resources/cybersecurity/artificial-intelligence/rp-beware-the-artificial-impostor-report.pdf"
+                        target="_blank"
+                        style="color: #0b65f4; font-size: 0.8em"
+                      >
+                        McAfee — Artificial Imposters—Cybercriminals Turn to AI Voice Cloning for a New Breed of Scam
+                      </a>
+                      <a
+                        href="https://www.cybermalveillance.gouv.fr"
+                        target="_blank"
+                        style="color: #0b65f4; font-size: 0.8em"
+                      >
+                        Cybermalveillance.gouv.fr </a
+                      ><br />
+                      <a
+                        href="https://cyber.gouv.fr/"
+                        target="_blank"
+                        style="color: #0b65f4; font-size: 0.8em"
+                      >
+                          ANSSI - cyber.gouv.fr
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="page-3" class="page-info">
+            <div class="main-cards-row">
+              <div class="column-of-two-cards">
+                <!-- CARTE 1 : Phishing & Smishing (camembert) -->
+                <div class="card">
+                  <div class="card-content-row">
+                    <div class="card-text-content">
+                      <h2>1 - Fraude bancaire : Phishing & Smishing</h2>
+                      <p>
+                        <strong>Banque de France / OSMP / 2023–2025</strong><br />
+                        Les attaques par phishing (emails) et smishing (SMS) visent
+                        à voler des informations sensibles.
+                      </p>
+                      <p class="highlight info">Constats clés</p>
+                      <p>
+                        <p>
+                          - Plus de <strong>52 %</strong> des fraudes sont dues au phishing & smishing<br>
+                          - Environ <strong>32 %</strong> des fraudes concernent la manipulation
+                          via faux conseillers / ingénierie sociale<br>
+                          - Autres fraudes en ligne (achats frauduleux, e-commerce) : <strong>16 %</strong>
+                        </p>
+                      </p>
+                    </div>
+                    <div class="card-canvas-container">
+                      <canvas id="fraudTypePieChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CARTE 2 : Faux conseillers / Fraudes avancées (bar chart) -->
+               <div class="card">
+                <div class="card-content-row">
+                  <div class="card-text-content">
+                    <h2>2 - Fraude bancaire et crypto : Faux conseillers & arnaques Bitcoin</h2>
+                    <p>
+                      Des fraudeurs se font passer pour des conseillers bancaires ou des experts en crypto,
+                      et manipulent les victimes pour obtenir de l'argent ou des informations.
+                    </p>
+
+                    <p class="highlight info">Impact financier</p>
+                    <p>
+                      • Faux conseillers / manipulation : <strong>≈ 1,2 milliard €</strong><br>
+                      • Arnaques Bitcoin / crypto : <strong>≈ 2 milliards €</strong><br>
+                      • Autres fraudes financières en ligne : <strong>≈ 0,8 milliard €</strong>
+                    </p>
+
+                    <p class="source">
+                      Sources fiables : Banque de France · AMF · Europol · Cybermalveillance.gouv.fr
+                    </p>
+                  </div>
+                  <div class="card-canvas-container">
+                    <canvas id="fakeAdvisorBarChart"></canvas>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <!-- COLONNE DROITE : Conseils -->
+              <div class="single-card-column">
+                <div class="card tips">
+                  <div class="tips-main-content-row">
+                    <div class="tips-icon-column">
+                      <img src="./Images/Attention.svg" alt="Attention" />
+                    </div>
+                    <div class="tips-text-column">
+                      <h2>Attention</h2>
+                      <ul>
+                        <li>Vérifier l'expéditeur des e-mails et SMS suspects</li>
+                        <li>Ne jamais cliquer sur des liens douteux</li>
+                        <li>Vérifier toujours l’adresse du site avant toute opération</li>
+                        <li>Ne jamais fournir des informations personnelles sur des sites non sécurisés</li>
+                        <li>Utiliser des mots de passe uniques et sécurisés</li>
+                        <li>Activer l'authentification à deux facteurs (2FA)</li>
+                        <li>Contacter directement votre banque en cas de doute</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="tips-main-content-row">
+                    <div class="tips-icon-column"></div>
+                    <div class="tips-text-column">
+                      <h3 style="color: #000">Pour approfondir le sujet</h3>
+                      <a href="https://www.fbf.fr/espace-presse/chiffres-cles/la-cybersecurite-en-chiffres/"
+                        target="_blank" style="color: #0b65f4; font-size: 0.8em">
+                        FBF — La cybersécurité en chiffres
+                      </a><br>
+                      <a href="https://www.europol.europa.eu/operations-services-and-innovation/public-awareness-and-prevention-guides/your-life-online-protect-it"
+                        target="_blank" style="color: #0b65f4; font-size: 0.8em">
+                        Europol — Your life is online. Protect it!
+                      </a><br>
+                      <a href="https://www.europol.europa.eu/operations-services-and-innovation/public-awareness-and-prevention-guides/scam-aware-mindset-simple-habits-to-stay-protected:fr"
+                        target="_blank" style="color: #0b65f4; font-size: 0.8em">
+                        Europol — Scam-aware mindset : simple habits to stay protected
+                      </a><br>
+                      <a href="https://www.cybermalveillance.gouv.fr/"
+                        target="_blank" style="color: #0b65f4; font-size: 0.8em">
+                        Cybermalveillance.gouv.fr
+                      </a><br>
+                      <a href="https://www.amf-france.org/fr/espace-epargnants/proteger-son-epargne/eviter-les-arnaques"
+                        target="_blank" style="color: #0b65f4; font-size: 0.8em">
+                        AMF — Éviter les arnaques (fraudes financières)
+                      </a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div id="end-game-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 9998;"></div>
+    <div id="end-game-screen" style="display: none; text-align: center; padding: 50px; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; background-color: white; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+      <img src="./Images/cadenasF.svg" alt="Cadenas ouvert" style="width: 150px; margin-bottom: 20px;">
+      <p style="font-size: 1.5em; margin-bottom: 30px;">La vigilance est notre meilleure défense.</p>
+      <button id="restart-game-btn" style="padding: 15px 30px; font-size: 1.2em; cursor: pointer;">Recommencer le jeu</button>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./Js/informationStat.js"></script>
+    <script src="./Js/visualNovel.js"></script>
+    <script src="./Js/Calendrier.js"></script>
+    <script src="./Js/RappelAnniversaire.js"></script>
+    <script src="Js/RappelMessageVide.js"></script>
+    <script src="Js/chatData.js"></script>
+    <script src="Js/chat.js"></script>
+    <script src="./Js/gallery.js"></script>
+    <script src="./Js/bank.js"></script>
+    <script src="./Js/internet.js"></script>
+  </body>  
+    <audio id="typing-sound" src="Audios/typing.mp3" preload="auto"></audio>
+    <audio
+      id="notification-sound"
+      src="Audios/notification.mp3"
+      preload="auto"
+    ></audio>
+  </body>
+</html>
