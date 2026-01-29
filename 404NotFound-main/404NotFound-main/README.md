@@ -3,7 +3,7 @@
 
 https://Ninas21.github.io/404NotFound/
 
-https://ninas21.github.io/Ninas21/404NotFound/
+https://ninas21.github.io/Ninas21/404NotFound/404NotFound/
 
 ## SAVE FRIEND ONLINE - Visual Novel -  By Electron
  ### Description
