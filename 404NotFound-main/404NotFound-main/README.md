@@ -1,8 +1,6 @@
 # 404NotFound
 ## Tester le lien 
 
-https://Ninas21.github.io/404NotFound/
-
 https://ninas21.github.io/Ninas21/404NotFound-main/404NotFound-main/
 
 ## SAVE FRIEND ONLINE - Visual Novel -  By Electron
